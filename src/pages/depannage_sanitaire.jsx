@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getServiceLink } from '../utils/serviceRoutes';
 import {
@@ -70,33 +70,33 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions compl?tes pour l'habitat",
+        desc: "Solutions complètes pour l'habitat",
         items: [
-          'D?pannage fuites',
-          'D?pannage sanitaires',
-          'D?pannage chauffage',
-          'R?novation sanitaires',
+          'Dépannage fuites',
+          'Dépannage sanitaires',
+          'Dépannage chauffage',
+          'Rénovation sanitaires',
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en gr?s',
-          'Inspection cam?ra et recherche fuites'
+          'Remplacement canalisation en grès',
+          'Inspection caméra et recherche fuites'
         ]
       },
       {
-        title: 'D?bouchage',
+        title: 'Débouchage',
         desc: 'Intervention haute pression',
         items: [
-          'D?bouchage WC & ?viers',
-          'D?bouchage canalisations',
-          'Inspection cam?ra',
-          'Service de d?bouchage ?gout',
+          'Débouchage WC & éviers',
+          'Débouchage canalisations',
+          'Inspection caméra',
+          'Service de Débouchage égout',
           'Service de curage et entretien'
         ]
       }
     ]
   },
-  { label: 'R?alisations', href: '/realisations' },
+  { label: 'Réalisations', href: '/realisations' },
   {
     label: 'Zones',
     href: '/#zones',
@@ -105,7 +105,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Li?ge et alentours', href: '/zones/liege' },
+      { label: 'Liège et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -942,3 +942,4 @@ export default function DepannageSanitairesPage() {
     </div>
   );
 }
+
