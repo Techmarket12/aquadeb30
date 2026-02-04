@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { 
   Phone, 
   MapPin, 
@@ -31,6 +32,25 @@ import {
   ZoomIn,
   Maximize2
 } from 'lucide-react';
+import ContactPage from './pages/contact';
+import RealisationsPage from './pages/realisations';
+import DepannageFuitesPage from './pages/depannage_fuites';
+import DepannageSanitairesPage from './pages/depannage_sanitaire';
+import DepannageChauffagePage from './pages/depannage_chauffage';
+import RenovationSanitairePage from './pages/renovation_sanitaire';
+import EntretienPage from './pages/entretien';
+import DebouchageWCEviersPage from './pages/wc_evier_debouchage';
+import NamurPage from './pages/Namur';
+import CharleroiPage from './pages/Charleroi';
+import MonsPage from './pages/mons';
+import BruxellesPage from './pages/Bruxelles';
+import BrabantWallonFlamandPage from './pages/braband_wallon_flamand';
+import LiegePage from './pages/Liege';
+import VerviersPage from './pages/Verviers';
+import ServiceRobinetteriePage from './pages/service_robinetterie';
+import RemplacementCanalisationGresPage from './pages/remplacement_canalisation_gres';
+import InspectionCameraRechercheFuitesPage from './pages/inspection_camera_recherche_fuites';
+import { getServiceLink } from './utils/serviceRoutes';
 
 // --- STYLES INJECTÉS POUR LES ANIMATIONS ---
 const styles = `
@@ -67,46 +87,57 @@ const BRAND = {
 
 // --- DATA ---
 const NAV_LINKS = [
-  { label: "Accueil", href: "#" },
-  { 
-    label: "Nos Services", 
-    href: "#services",
-    type: "mega",
+  { label: 'Accueil', href: '/' },
+  {
+    label: 'Nos Services',
+    href: '/#services',
+    type: 'mega',
     columns: [
       {
-        title: "Plomberie",
-        desc: "Solutions complètes pour l'habitat",
+        title: 'Plomberie',
+        desc: "Solutions compl?tes pour l'habitat",
         items: [
-          "Dépannage fuites", "Dépannage sanitaires", "Dépannage chauffage", 
-          "Rénovation sanitaires", "Entretien", "Service de robinetterie", 
-          "Service de boiler / chauffe-eau", "Remplacement canalisation en grès", 
-          "Inspection caméra et recherche fuites"
+          'D?pannage fuites',
+          'D?pannage sanitaires',
+          'D?pannage chauffage',
+          'R?novation sanitaires',
+          'Entretien',
+          'Service de robinetterie',
+          'Service de boiler / chauffe-eau',
+          'Remplacement canalisation en gr?s',
+          'Inspection cam?ra et recherche fuites'
         ]
       },
       {
-        title: "Débouchage",
-        desc: "Intervention haute pression",
+        title: 'D?bouchage',
+        desc: 'Intervention haute pression',
         items: [
-          "Débouchage WC & Éviers", "Débouchage canalisations", 
-          "Inspection caméra", "Service de débouchage égout", 
-          "Service de curage et entretien"
+          'D?bouchage WC & ?viers',
+          'D?bouchage canalisations',
+          'Inspection cam?ra',
+          'Service de d?bouchage ?gout',
+          'Service de curage et entretien'
         ]
       }
     ]
   },
-  { label: "Réalisations", href: "#realisations" },
-  { 
-    label: "Zones", 
-    href: "#zones",
-    type: "dropdown",
+  { label: 'R?alisations', href: '/realisations' },
+  {
+    label: 'Zones',
+    href: '/#zones',
+    type: 'dropdown',
     items: [
-      "Toutes nos zones", "Namur et alentours", "Charleroi et alentours", 
-      "Liège et alentours", "Verviers et alentours", "Mons et alentours", 
-      "Brabant wallon et flamand"
+      { label: 'Toutes nos zones', href: '/zones' },
+      { label: 'Namur et alentours', href: '/zones/namur' },
+      { label: 'Charleroi et alentours', href: '/zones/charleroi' },
+      { label: 'Li?ge et alentours', href: '/zones/liege' },
+      { label: 'Verviers et alentours', href: '/zones/verviers' },
+      { label: 'Mons et alentours', href: '/zones/mons' },
+      { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
     ]
   },
-  { label: "Contact", href: "#contact" },
-  { label: "Urgence 24/7", href: BRAND.phoneLink, isButton: true }
+  { label: 'Contact', href: '/contact' },
+  { label: 'Urgence 24/7', href: BRAND.phoneLink, isButton: true }
 ];
 
 const REALIZATIONS = [
@@ -402,12 +433,13 @@ const Portfolio3D = ({ images, onSelect }) => {
 
 // --- APP ---
 
-export default function App() {
+function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -439,7 +471,7 @@ export default function App() {
             </span>
           </div>
           <div className="flex gap-4">
-            <a href={`mailto:${BRAND.email}`} className="hover:text-white transition-colors">Devis Gratuit</a>
+            <Link to="/contact" className="hover:text-white transition-colors">Devis Gratuit</Link>
             <span>|</span>
             <span className="flex items-center gap-1 text-orange-400 font-bold">
               <Star className="w-3 h-3 fill-current" /> 4.9/5 (150+ Avis)
@@ -453,7 +485,7 @@ export default function App() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           
           {/* Logo */}
-          <a href="#" className="flex-shrink-0 flex items-center gap-3 group">
+          <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500 rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
               <img src={BRAND.logoUrl} alt="Aqua&Deb Logo" className="relative h-12 w-12 md:h-14 md:w-14 rounded-full object-cover border-2 border-white shadow-md" />
@@ -462,55 +494,66 @@ export default function App() {
               <span className="text-xl md:text-2xl font-black text-slate-900 leading-none tracking-tighter">AQUA<span className="text-blue-600">&</span>DEB</span>
               <span className="text-[10px] md:text-xs font-bold text-red-600 uppercase tracking-widest">Urgence 24h/24</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center gap-6">
-            {NAV_LINKS.map((link, idx) => (
-              !link.isButton ? (
-                <div key={idx} className="relative group">
-                  <a 
-                    href={link.href} 
-                    className="flex items-center gap-1 text-slate-600 hover:text-blue-700 font-bold text-sm uppercase tracking-wide transition-colors py-4"
-                  >
-                    {link.label}
-                    {(link.type === 'mega' || link.type === 'dropdown') && <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />}
-                  </a>
+            {NAV_LINKS.map((link, idx) => {
+              const isRouterLink = link.href.startsWith('/');
+              const NavComponent = isRouterLink ? Link : 'a';
 
-                  {/* Mega Menu Services */}
-                  {link.type === 'mega' && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white shadow-xl rounded-xl border border-slate-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-4 group-hover:translate-y-0 z-50 grid grid-cols-2 gap-8">
-                      {link.columns.map((col, cIdx) => (
-                        <div key={cIdx}>
-                          <h4 className="text-blue-600 font-black uppercase text-xs tracking-wider mb-1">{col.title}</h4>
-                          <p className="text-xs text-slate-400 mb-4">{col.desc}</p>
-                          <ul className="space-y-2">
-                            {col.items.map((item, iIdx) => (
-                              <li key={iIdx}>
-                                <a href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 flex items-center gap-2 transition-colors">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-blue-500"></span>
-                                  {item}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
+              if (!link.isButton) {
+                return (
+                  <div key={idx} className="relative group">
+                    <NavComponent 
+                      to={isRouterLink ? link.href : undefined} 
+                      href={!isRouterLink ? link.href : undefined}
+                      className="flex items-center gap-1 text-slate-600 hover:text-blue-700 font-bold text-sm uppercase tracking-wide transition-colors py-4"
+                    >
+                      {link.label}
+                      {(link.type === 'mega' || link.type === 'dropdown') && <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />}
+                    </NavComponent>
+
+                    {/* Mega Menu Services */}
+                    {link.type === 'mega' && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] bg-white shadow-xl rounded-xl border border-slate-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-4 group-hover:translate-y-0 z-50 grid grid-cols-2 gap-8">
+                        {link.columns.map((col, cIdx) => (
+                          <div key={cIdx}>
+                              <h4 className="text-blue-600 font-black uppercase text-xs tracking-wider mb-1">{col.title}</h4>
+                              <p className="text-xs text-slate-400 mb-4">{col.desc}</p>
+                              <ul className="space-y-2">
+                                {col.items.map((item, iIdx) => (
+                                  <li key={iIdx}>
+                                    <Link
+                                      to={getServiceLink(item)}
+                                      className="text-sm font-medium text-slate-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
+                                    >
+                                      <span className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-blue-500"></span>
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  )}
+                    )}
 
-                  {/* Dropdown Zones */}
-                  {link.type === 'dropdown' && (
-                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-4 group-hover:translate-y-0 z-50">
-                      {link.items.map((item, iIdx) => (
-                         <a key={iIdx} href="#" className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
-                           {item}
-                         </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
+                    {/* Dropdown Zones */}
+                    {link.type === 'dropdown' && (
+                      <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-4 group-hover:translate-y-0 z-50">
+                        {link.items.map((item, iIdx) => (
+                           <a key={iIdx} href={typeof item === 'string' ? '#' : item.href} className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                             {typeof item === 'string' ? item : item.label}
+                           </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
                 <a 
                   key={idx}
                   href={link.href}
@@ -518,8 +561,8 @@ export default function App() {
                 >
                   <Phone className="w-4 h-4" /> {link.label}
                 </a>
-              )
-            ))}
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -531,58 +574,80 @@ export default function App() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl p-0 flex flex-col gap-0 xl:hidden max-h-[90vh] overflow-y-auto animate-in slide-in-from-top-5 z-40">
-            {NAV_LINKS.map((link, idx) => (
-              <div key={idx} className="border-b border-slate-50 last:border-0">
-                 {link.type === 'mega' ? (
-                   <>
-                    <button 
-                      onClick={() => setActiveDropdown(activeDropdown === idx ? null : idx)}
-                      className="w-full flex items-center justify-between p-4 font-bold text-lg text-slate-700 bg-slate-50/50"
-                    >
-                      {link.label}
-                      <ChevronDown className={`w-5 h-5 transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} />
-                    </button>
-                    {activeDropdown === idx && (
-                      <div className="px-4 pb-4 space-y-4 bg-slate-50">
+            {NAV_LINKS.map((link, idx) => {
+              const isRouterLink = link.href.startsWith('/');
+              const NavComponent = isRouterLink ? Link : 'a';
+
+              return (
+                <div key={idx} className="border-b border-slate-50 last:border-0">
+                   {link.type === 'mega' ? (
+                     <>
+                      <button 
+                        onClick={() => setActiveDropdown(activeDropdown === idx ? null : idx)}
+                        className="w-full flex items-center justify-between p-4 font-bold text-lg text-slate-700 bg-slate-50/50"
+                      >
+                        {link.label}
+                        <ChevronDown className={`w-5 h-5 transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} />
+                      </button>
+                      {activeDropdown === idx && (
+                        <div className="px-4 pb-4 space-y-4 bg-slate-50">
                         {link.columns.map((col, cIdx) => (
                           <div key={cIdx}>
                             <h5 className="text-blue-600 font-bold uppercase text-xs mb-2">{col.title}</h5>
                             <ul className="space-y-2 border-l-2 border-slate-200 pl-4">
-                              {col.items.map((item, iIdx) => (
-                                <li key={iIdx} className="text-sm text-slate-600">{item}</li>
+                                {col.items.map((item, iIdx) => (
+                                <li key={iIdx} className="text-sm text-slate-600">
+                                  <Link
+                                    to={getServiceLink(item)}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="text-blue-700 font-semibold"
+                                  >
+                                    {item}
+                                  </Link>
+                                </li>
                               ))}
                             </ul>
                           </div>
                         ))}
                       </div>
-                    )}
-                   </>
-                 ) : link.type === 'dropdown' ? (
-                   <>
-                    <button 
-                      onClick={() => setActiveDropdown(activeDropdown === idx ? null : idx)}
-                      className="w-full flex items-center justify-between p-4 font-bold text-lg text-slate-700 bg-slate-50/50"
+                      )}
+                     </>
+                   ) : link.type === 'dropdown' ? (
+                     <>
+                      <button 
+                        onClick={() => setActiveDropdown(activeDropdown === idx ? null : idx)}
+                        className="w-full flex items-center justify-between p-4 font-bold text-lg text-slate-700 bg-slate-50/50"
+                      >
+                        {link.label}
+                        <ChevronDown className={`w-5 h-5 transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} />
+                      </button>
+                      {activeDropdown === idx && (
+                        <div className="px-4 pb-4 bg-slate-50">
+                          <ul className="space-y-2 border-l-2 border-slate-200 pl-4">
+                            {link.items.map((item, iIdx) => (
+                              <li key={iIdx} className="text-sm text-slate-600">
+                                <a href={typeof item === 'string' ? '#' : item.href} className="text-blue-700 font-semibold">
+                                  {typeof item === 'string' ? item : item.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                     </>
+                   ) : (
+                    <NavComponent 
+                      to={isRouterLink ? link.href : undefined} 
+                      href={!isRouterLink ? link.href : undefined}
+                      className={`block p-4 font-bold text-lg ${link.isButton ? 'bg-red-50 text-red-600' : 'text-slate-700'}`} 
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
-                      <ChevronDown className={`w-5 h-5 transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} />
-                    </button>
-                    {activeDropdown === idx && (
-                      <div className="px-4 pb-4 bg-slate-50">
-                        <ul className="space-y-2 border-l-2 border-slate-200 pl-4">
-                          {link.items.map((item, iIdx) => (
-                            <li key={iIdx} className="text-sm text-slate-600">{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                   </>
-                 ) : (
-                  <a href={link.href} className={`block p-4 font-bold text-lg ${link.isButton ? 'bg-red-50 text-red-600' : 'text-slate-700'}`} onClick={() => setMobileMenuOpen(false)}>
-                    {link.label}
-                  </a>
-                 )}
-              </div>
-            ))}
+                    </NavComponent>
+                   )}
+                </div>
+              );
+            })}
              <div className="p-4 bg-slate-50 space-y-3">
               <button onClick={() => { setIsAiModalOpen(true); setMobileMenuOpen(false); }} className="w-full bg-indigo-600 text-white py-4 rounded-xl text-center font-bold flex justify-center items-center gap-2 shadow-lg">
                 <Sparkles className="w-5 h-5 text-yellow-300" /> Assistant IA
@@ -852,7 +917,11 @@ export default function App() {
                     <textarea className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors h-24 resize-none" placeholder="Décrivez brièvement la situation..."></textarea>
                   </div>
 
-                  <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2">
+                  <button 
+                    type="button"
+                    onClick={() => navigate('/contact')}
+                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2"
+                  >
                     <Send className="w-5 h-5" /> Envoyer ma demande
                   </button>
                 </form>
@@ -897,6 +966,10 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Contact</h4>
               <ul className="space-y-4 text-sm">
+                <li className="flex items-center gap-3">
+                   <Send className="w-4 h-4 text-slate-500" />
+                   <Link to="/contact" className="hover:text-white transition-colors">Page contact</Link>
+                </li>
                 <li className="flex items-center gap-3">
                    <Phone className="w-4 h-4 text-orange-600" />
                    <a href={BRAND.phoneLink} className="text-white font-bold hover:text-orange-500 transition-colors">{BRAND.phoneDisplay}</a>
@@ -949,3 +1022,37 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/realisations" element={<RealisationsPage />} />
+        <Route path="/depannage-fuites" element={<DepannageFuitesPage />} />
+        <Route path="/depannage-sanitaires" element={<DepannageSanitairesPage />} />
+        <Route path="/depannage-chauffage" element={<DepannageChauffagePage />} />
+        <Route path="/renovation-sanitaires" element={<RenovationSanitairePage />} />
+        <Route path="/entretien" element={<EntretienPage />} />
+        <Route path="/wc-evier-debouchage" element={<DebouchageWCEviersPage />} />
+        <Route path="/service-robinetterie" element={<ServiceRobinetteriePage />} />
+        <Route path="/remplacement-canalisation-gres" element={<RemplacementCanalisationGresPage />} />
+        <Route path="/inspection-camera-recherche-fuites" element={<InspectionCameraRechercheFuitesPage />} />
+        {/* Service boiler : en attendant une page dédiée, on pointe vers chauffage (boiler) */}
+        <Route path="/service-boiler-chauffe-eau" element={<DepannageChauffagePage />} />
+        {/* Zones */}
+        <Route path="/zones" element={<HomePage />} />
+        <Route path="/zones/namur" element={<NamurPage />} />
+        <Route path="/zones/charleroi" element={<CharleroiPage />} />
+        <Route path="/zones/liege" element={<LiegePage />} />
+        <Route path="/zones/verviers" element={<VerviersPage />} />
+        <Route path="/zones/mons" element={<MonsPage />} />
+        <Route path="/zones/brabant-wallon-flamand" element={<BrabantWallonFlamandPage />} />
+        <Route path="/zones/bruxelles" element={<BruxellesPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+
