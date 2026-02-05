@@ -6,7 +6,9 @@ import {
   CheckCircle2,
   ChevronDown,
   Menu,
-  X
+  X,
+  Send,
+  Mail
 } from 'lucide-react';
 
 const BRAND = {
@@ -15,7 +17,7 @@ const BRAND = {
   phoneLink: 'tel:0493415283',
   email: 'aquadeb22@gmail.com',
   logoUrl:
-    'https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-1/499261426_1646166543443500_3035594003407558786_n.jpg'
+    'https://res.cloudinary.com/dw9jkwccj/image/upload/v1766673668/aquadeb_cgzzsg.png'
 };
 
 const NAV_LINKS = [
@@ -191,8 +193,110 @@ export default function LiegePage() {
           </div>
         </div>
       </main>
+
+      <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+              <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+            </div>
+            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
+              À propos de nous
+            </h4>
+            <p className="text-sm leading-relaxed text-slate-500">
+              Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
+              disponible 24h/24 et 7j/7.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
+              Nos services
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                'Services de plomberie',
+                'Services de débouchage',
+                'Dépannage plomberie',
+                'Rénovation plomberie',
+                'Entretien plomberie'
+              ].map((item, i) => (
+                <li key={i}>
+                  <a href="#" className="hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
+              Zones d’intervention
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                (item, i) => (
+                  <li key={i}>
+                    <a href="#" className="hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
+              Contact
+            </h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-center gap-3">
+                <Send className="w-4 h-4 text-slate-500" />
+                <Link to="/contact" className="hover:text-white transition-colors">
+                  Page contact
+                </Link>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-orange-600" />
+                <a href={BRAND.phoneLink} className="text-white font-bold hover:text-orange-500 transition-colors">
+                  {BRAND.phoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-slate-500" />
+                <a href={`mailto:${BRAND.email}`} className="hover:text-white transition-colors">
+                  {BRAND.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
+              Informations légales
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {['Conditions générales', 'Politique de confidentialité', 'Mentions légales'].map((item, i) => (
+                <li key={i}>
+                  <a href="#" className="hover:text-white transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
+          <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+        </div>
+      </footer>
     </div>
   );
 }
+
 
 

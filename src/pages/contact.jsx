@@ -609,6 +609,10 @@ export default function ContactPage() {
             
             {/* Col 1: À propos */}
             <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">À propos de nous</h4>
               <p className="text-sm leading-relaxed text-slate-500 mb-6">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois, disponible 24h/24 et 7j/7.
@@ -693,4 +697,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
 

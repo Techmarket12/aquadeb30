@@ -46,7 +46,7 @@ const BRAND = {
   phoneLink: 'tel:0493415283',
   email: 'aquadeb22@gmail.com',
   logoUrl:
-    'https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-1/499261426_1646166543443500_3035594003407558786_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=fxUdz8CZDwIQ7kNvwFPE_mG&_nc_oc=AdmHXiZb_JPA4yegaOUXndoZ-eflzFNBiB-aRRMWSLmrOaDIiir48tn-cViJMfAbNEY&_nc_zt=24&_nc_ht=scontent-lga3-3.xx&_nc_gid=9JrntzsW-6BdH6ZD_wi9dA&oh=00_AfngjZ802_se1bD5T_Kna3ZxygdW341dHZwuMWQydKYtnw&oe=6947583C'
+    'https://res.cloudinary.com/dw9jkwccj/image/upload/v1766673668/aquadeb_cgzzsg.png?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=fxUdz8CZDwIQ7kNvwFPE_mG&_nc_oc=AdmHXiZb_JPA4yegaOUXndoZ-eflzFNBiB-aRRMWSLmrOaDIiir48tn-cViJMfAbNEY&_nc_zt=24&_nc_ht=scontent-lga3-3.xx&_nc_gid=9JrntzsW-6BdH6ZD_wi9dA&oh=00_AfngjZ802_se1bD5T_Kna3ZxygdW341dHZwuMWQydKYtnw&oe=6947583C'
 };
 
 const NAV_LINKS = [
@@ -629,8 +629,11 @@ export default function EntretienPlomberiePage() {
         </section>
 
         <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600">
-          <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-            <div>
+          <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
                 À propos de nous
               </h4>
@@ -638,9 +641,11 @@ export default function EntretienPlomberiePage() {
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie,
                 disponible 24h/24 et 7j/7.
               </p>
-            </div>
-
-            <div>
+            </div>            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
                 Nos services
               </h4>
@@ -657,9 +662,11 @@ export default function EntretienPlomberiePage() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div>
+            </div>            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
                 Zones d’intervention
               </h4>
@@ -670,9 +677,11 @@ export default function EntretienPlomberiePage() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div>
+            </div>            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
                 Contact
               </h4>
@@ -690,9 +699,11 @@ export default function EntretienPlomberiePage() {
                   <a href={`mailto:${BRAND.email}`} className="hover:text-white transition-colors">{BRAND.email}</a>
                 </li>
               </ul>
-            </div>
-
-            <div>
+            </div>            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
+                <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
+              </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
                 Informations légales
               </h4>
@@ -714,4 +725,6 @@ export default function EntretienPlomberiePage() {
     </div>
   );
 }
+
+
 
