@@ -565,10 +565,18 @@ function HomePage() {
             })}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button className="xl:hidden p-2 text-slate-800" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-          </button>
+          {/* Mobile Menu Button + Status */}
+          <div className="xl:hidden flex items-center gap-3">
+            <div className="flex items-center gap-2 bg-green-50 border border-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm">
+              <div className="h-6 w-6 rounded-full bg-green-600 text-white flex items-center justify-center">
+                <Check className="w-4 h-4" />
+              </div>
+              <span>Ouvert aujourd'hui</span>
+            </div>
+            <button className="p-2 text-slate-800" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
