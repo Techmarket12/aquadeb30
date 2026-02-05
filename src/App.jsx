@@ -571,7 +571,7 @@ function HomePage() {
               <div className="h-6 w-6 rounded-full bg-green-600 text-white flex items-center justify-center">
                 <Check className="w-4 h-4" />
               </div>
-              <span>Ouvert aujourd'hui</span>
+              <span className="text-[10px] leading-none">Ouvert aujourd'hui</span>
             </div>
             <button className="p-2 text-slate-800" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
