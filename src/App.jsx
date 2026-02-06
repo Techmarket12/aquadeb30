@@ -1,11 +1,11 @@
 ﻿import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { 
-  Phone, 
-  MapPin, 
-  Clock, 
-  CheckCircle2, 
-  ShieldCheck, 
+import {
+  Phone,
+  MapPin,
+  Clock,
+  CheckCircle2,
+  ShieldCheck,
   ArrowRight,
   Menu,
   X,
@@ -32,6 +32,7 @@ import {
   ZoomIn,
   Maximize2
 } from 'lucide-react';
+import CloudinaryUploader, { uploadFiles } from './components/CloudinaryUploader';
 import ContactPage from './pages/contact';
 import RealisationsPage from './pages/realisations';
 import DepannageFuitesPage from './pages/depannage_fuites';
@@ -440,6 +441,9 @@ function HomePage() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
+  const [selectedFiles, setSelectedFiles] = useState(null);
+  const [uploadedUrls, setUploadedUrls] = useState([]);
+  const [uploadingPhotos, setUploadingPhotos] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -730,10 +734,18 @@ function HomePage() {
                   
                   <p className="text-slate-600 mb-6 font-medium">Laissez votre numéro, un technicien vous rappelle dans <span className="text-red-600 font-bold underline">2 minutes</span>.</p>
                   
-                  <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                  <form
+                    className="space-y-4"
+                    action="https://formspree.io/f/movneogw"
+                    method="POST"
+                  >
+                    <input type="hidden" name="_subject" value="Demande de rappel express" />
                     <div>
-                      <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Votre Urgence</label>
-                      <select className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors">
+                       <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Votre Urgence</label>
+                      <select
+                        name="urgence"
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
+                      >
                         <option>🚿 Fuite d'eau</option>
                         <option>🚽 WC Bouché</option>
                         <option>🛁 Canalisation bouchée</option>
@@ -743,7 +755,13 @@ function HomePage() {
                     </div>
                     <div>
                        <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Votre Numéro</label>
-                      <input type="tel" placeholder="04XX XX XX XX" className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors" />
+                      <input
+                        name="phone"
+                        type="tel"
+                        placeholder="04XX XX XX XX"
+                        required
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
+                      />
                     </div>
                     <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2">
                       <Phone className="w-5 h-5" /> Être rappelé
@@ -751,11 +769,134 @@ function HomePage() {
                   </form>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
-        {/* --- QUI SOMMES NOUS --- */}
+        {/* --- FORMULAIRE COMPLET (déplacé ici, avant Notre Expertise) --- */}
+        <section id="contact" className="py-20 bg-blue-900 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="p-8 md:p-10 bg-white">
+                <h3 className="text-3xl font-black text-slate-900 text-center mb-2">Devis gratuit en ligne</h3>
+                
+                <form
+                  className="space-y-5 mt-6"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    const form = e.currentTarget;
+                    setUploadingPhotos(true);
+                    setUploadedUrls([]);
+                    try {
+                      const formData = new FormData(form);
+
+                      // Upload des fichiers sur Cloudinary avant l'envoi Formspree
+                      if (selectedFiles && selectedFiles.length > 0) {
+                        const urls = await uploadFiles(selectedFiles);
+                        urls.forEach((url) => formData.append('photos[]', url));
+                        setUploadedUrls(urls);
+                      }
+
+                      const res = await fetch('https://formspree.io/f/movneogw', {
+                        method: 'POST',
+                        headers: { Accept: 'application/json' },
+                        body: formData
+                      });
+                      if (!res.ok) {
+                        const txt = await res.text();
+                        throw new Error(`Envoi Formspree échoué (${res.status}) ${txt}`);
+                      }
+
+                      form.reset();
+                      setSelectedFiles(null);
+                      alert('Message envoyé !');
+                    } catch (err) {
+                      console.error(err);
+                      alert("Impossible d'envoyer le formulaire. Réessayez.");
+                    } finally {
+                      setUploadingPhotos(false);
+                    }
+                  }}
+                >
+                  <input type="hidden" name="_subject" value="Formulaire contact - page Accueil" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-600 uppercase">Nom Complet</label>
+                      <input
+                        name="name"
+                        type="text"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-600 uppercase">Téléphone <span className="text-red-500">*</span></label>
+                      <input
+                        name="phone"
+                        type="tel"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-600 uppercase">Code Postal / Ville</label>
+                      <input
+                        name="location"
+                        type="text"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-600 uppercase">Type de Service</label>
+                      <select
+                        name="service"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors text-slate-700"
+                      >
+                        <option>Débouchage Urgent</option>
+                        <option>Fuite d'eau</option>
+                        <option>Installation Sanitaire</option>
+                        <option>Chauffage / Boiler</option>
+                        <option>Autre demande</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-600 uppercase">Détails du problème</label>
+                    <textarea
+                      name="message"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors h-24 resize-none"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-600 uppercase flex items-center justify-between">
+                      <span>Photos du problème (Optionnel)</span>
+                    </label>
+                    <CloudinaryUploader onFilesChange={setSelectedFiles} />
+                  </div>
+
+                  <button 
+                    type="submit"
+                    disabled={uploadingPhotos}
+                    className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2"
+                  >
+                    <Send className="w-5 h-5" /> {uploadingPhotos ? "Upload des photos..." : "Envoyer ma demande"}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- QUI SOMMES NOUS (Notre Expertise déplacé après le formulaire) --- */}
         <section id="services" className="py-20 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -856,84 +997,6 @@ function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* --- FORMULAIRE COMPLET --- */}
-        <section id="contact" className="py-20 bg-blue-900 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-              <div className="bg-blue-600 p-10 md:w-1/3 text-white flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-black mb-4">Contact Direct</h3>
-                  <p className="text-blue-100 mb-8 text-sm">Remplissez ce formulaire pour une prise en charge prioritaire.</p>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-6 h-6 text-blue-200" />
-                      <span className="font-bold text-lg">{BRAND.phoneDisplay}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-6 h-6 text-blue-200" />
-                      <span className="font-medium text-sm">Intervention partout en Belgique</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 pt-8 border-t border-blue-500">
-                  <p className="text-xs text-blue-200">En cas d'urgence vitale ou dégât des eaux majeur, privilégiez l'appel téléphonique.</p>
-                </div>
-              </div>
-
-              <div className="p-10 md:w-2/3 bg-white">
-                <h3 className="text-2xl font-black text-slate-900 mb-2">Ne laissez pas le problème s'aggraver.</h3>
-                <p className="text-slate-500 mb-8 text-sm">Obtenez un devis gratuit ou planifiez une intervention.</p>
-                
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-xs font-bold text-slate-600 uppercase">Nom Complet</label>
-                      <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors" placeholder="Jean Dupont" />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-xs font-bold text-slate-600 uppercase">Téléphone <span className="text-red-500">*</span></label>
-                      <input type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors" placeholder="04XX XX XX XX" required />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                     <div className="space-y-1">
-                      <label className="text-xs font-bold text-slate-600 uppercase">Code Postal / Ville</label>
-                      <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors" placeholder="Ex: 5000 Namur" />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-xs font-bold text-slate-600 uppercase">Type de Service</label>
-                      <select className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors text-slate-700">
-                        <option>Débouchage Urgent</option>
-                        <option>Fuite d'eau</option>
-                        <option>Installation Sanitaire</option>
-                        <option>Chauffage / Boiler</option>
-                        <option>Autre demande</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-600 uppercase">Détails du problème</label>
-                    <textarea className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors h-24 resize-none" placeholder="Décrivez brièvement la situation..."></textarea>
-                  </div>
-
-                  <button 
-                    type="button"
-                    onClick={() => navigate('/contact')}
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2"
-                  >
-                    <Send className="w-5 h-5" /> Envoyer ma demande
-                  </button>
-                </form>
-              </div>
             </div>
           </div>
         </section>
@@ -1066,9 +1129,3 @@ export default function App() {
     </Router>
   );
 }
-
-
-
-
-
-

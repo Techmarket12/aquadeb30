@@ -157,11 +157,6 @@ export default function ContactPage() {
     setFormData(prev => ({ ...prev, file: e.target.files[0] }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Message envoyé ! (Simulation)");
-  };
-
   return (
     <div className="font-sans text-slate-800 antialiased bg-white selection:bg-orange-500 selection:text-white">
       <style>{styles}</style>
@@ -490,7 +485,13 @@ export default function ContactPage() {
                     <p className="text-slate-600">Détaillez votre demande pour recevoir un devis précis rapidement.</p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-8">
+                  <form
+                    action="https://formspree.io/f/movneogw"
+                    method="POST"
+                    encType="multipart/form-data"
+                    className="space-y-8"
+                  >
+                    <input type="hidden" name="_subject" value="Formulaire contact - page Contact" />
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-800 uppercase tracking-wide">Nom & Prénom <span className="text-red-500">*</span></label>
@@ -499,8 +500,8 @@ export default function ContactPage() {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                           required
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                         />
                       </div>
                       <div className="space-y-2">
@@ -510,8 +511,8 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                           required
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                         />
                       </div>
                     </div>
@@ -523,8 +524,8 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                         required
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium text-slate-800"
                       />
                     </div>
 
@@ -534,8 +535,8 @@ export default function ContactPage() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium h-40 resize-none text-slate-800"
                         required
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 focus:bg-white outline-none transition-all font-medium h-40 resize-none text-slate-800"
                       ></textarea>
                     </div>
 
@@ -547,6 +548,7 @@ export default function ContactPage() {
                         <input 
                           type="file" 
                           onChange={handleFileChange}
+                          name="attachment"
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                           accept="image/*"
                         />
