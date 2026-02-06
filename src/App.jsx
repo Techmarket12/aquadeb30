@@ -154,7 +154,12 @@ const REALIZATIONS = [
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-10-23_xfspng.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-10-13_iagd72.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-07-19_gfrqxz.webp",
-  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770375099/WhatsApp_Image_2026-02-06_at_11.50.48_soe8fv.jpg"
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770375099/WhatsApp_Image_2026-02-06_at_11.50.48_soe8fv.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770385254/WhatsApp_Image_2026-02-06_at_12.38.28_cvuspk.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770385254/IMG_3469.jpg_ycgn8m.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770385235/IMG_3491.jpg_fuvui5.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770385235/Image_tk9vwd.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770385234/IMG_3489_utycd7.webp"
 ];
 
 const REVIEWS = [
