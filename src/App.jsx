@@ -962,6 +962,54 @@ function HomePage() {
           </div>
         </section>
 
+        {/* --- FORMULAIRE RAPPEL MOBILE (avant Notre Expertise) --- */}
+        <section className="py-12 bg-white lg:hidden">
+          <div className="container mx-auto px-4">
+            <div className="bg-white rounded-3xl shadow-2xl p-6 border border-slate-200/70">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-black text-slate-900">Rappel Gratuit</h3>
+                <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+              </div>
+              <p className="text-slate-600 mb-4 font-medium">
+                Laissez votre numéro, un technicien vous rappelle dans <span className="text-red-600 font-bold underline">2 minutes</span>.
+              </p>
+
+              <form
+                className="space-y-4"
+                action="https://formspree.io/f/movneogw"
+                method="POST"
+              >
+                <input type="hidden" name="_subject" value="Demande de rappel express (mobile)" />
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Votre Urgence</label>
+                  <select
+                    name="urgence"
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
+                  >
+                    <option>🚿 Fuite d'eau</option>
+                    <option>🚽 WC Bouché</option>
+                    <option>🛁 Canalisation bouchée</option>
+                    <option>🔥 Panne Chauffe-eau</option>
+                    <option>❓ Autre</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Votre Numéro</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    required
+                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
+                  />
+                </div>
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2">
+                  <Phone className="w-5 h-5" /> Être rappelé
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
         {/* --- QUI SOMMES NOUS (Notre Expertise) --- */}
         <section id="services" className="py-20 bg-slate-50">
           <div className="container mx-auto px-4">
