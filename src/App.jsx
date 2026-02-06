@@ -148,10 +148,13 @@ const REALIZATIONS = [
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-07-24_v2fniu.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-03_qlmfhy.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/chauffe-eau-avant-apres_ncrzro.png",
-  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/fuite-wc-avant-apres_pcejsa.png",
-  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/2025-07-22_kvhscn.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/2025-07-24_2_yb3vi3.webp",
-  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/reparation-tuyauterie-avant-apres_xq3gnb.png"
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/reparation-tuyauterie-avant-apres_xq3gnb.png",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374845/WhatsApp_Image_2026-02-06_at_11.45.01_d8hhwo.jpg",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-10-23_xfspng.webp",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-10-13_iagd72.webp",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770374736/2025-07-19_gfrqxz.webp",
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770375099/WhatsApp_Image_2026-02-06_at_11.50.48_soe8fv.jpg"
 ];
 
 const REVIEWS = [
@@ -896,48 +899,6 @@ function HomePage() {
           </div>
         </section>
 
-        {/* --- QUI SOMMES NOUS (Notre Expertise déplacé après le formulaire) --- */}
-        <section id="services" className="py-20 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="text-blue-600 font-black uppercase tracking-widest text-sm mb-2 block">Notre Expertise</span>
-                <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                  Plus qu'un simple plombier, <br/>
-                  <span className="text-blue-600">votre partenaire local.</span>
-                </h2>
-                <div className="space-y-6 text-lg text-slate-600">
-                  <p>
-                    Chez <strong>Aqua&Deb</strong>, nous savons qu'une panne ne prévient pas. C'est pourquoi nous avons mis en place une équipe d'élite prête à intervenir <strong>24h/24 et 7j/7</strong>.
-                  </p>
-                  <p>
-                    Nous couvrons l'ensemble de la <strong>Wallonie et Bruxelles</strong>. Que vous soyez à Namur, Liège, Charleroi ou Mons, nous avons un technicien à moins de 45 minutes de chez vous.
-                  </p>
-                  <ul className="space-y-3 mt-6">
-                    {["Devis clair et détaillé avant travaux", "Matériel haute pression dernière génération", "Respect de votre habitation (propreté garantie)"].map((item, i) => (
-                       <li key={i} className="flex items-center font-bold text-slate-800">
-                         <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
-                           <CheckCircle2 className="w-4 h-4" />
-                         </div>
-                         {item}
-                       </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl opacity-20 transform rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
-                {/* Suppression de grayscale ici */}
-                <img 
-                  src="https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-06_whopbd.webp" 
-                  alt="Équipe Plomberie" 
-                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700" 
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* --- NOS REALISATIONS (3D CAROUSEL) --- */}
         <section id="realisations" className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4 mb-16 flex flex-col items-center text-center">
@@ -997,6 +958,47 @@ function HomePage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* --- QUI SOMMES NOUS (Notre Expertise) --- */}
+        <section id="services" className="py-20 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="text-blue-600 font-black uppercase tracking-widest text-sm mb-2 block">Notre Expertise</span>
+                <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                  Plus qu'un simple plombier, <br/>
+                  <span className="text-blue-600">votre partenaire local.</span>
+                </h2>
+                <div className="space-y-6 text-lg text-slate-600">
+                  <p>
+                    Chez <strong>Aqua&Deb</strong>, nous savons qu'une panne ne prévient pas. C'est pourquoi nous avons mis en place une équipe d'élite prête à intervenir <strong>24h/24 et 7j/7</strong>.
+                  </p>
+                  <p>
+                    Nous couvrons l'ensemble de la <strong>Wallonie et Bruxelles</strong>. Que vous soyez à Namur, Liège, Charleroi ou Mons, nous avons un technicien à moins de 45 minutes de chez vous.
+                  </p>
+                  <ul className="space-y-3 mt-6">
+                    {["Devis clair et détaillé avant travaux", "Matériel haute pression dernière génération", "Respect de votre habitation (propreté garantie)"].map((item, i) => (
+                       <li key={i} className="flex items-center font-bold text-slate-800">
+                         <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
+                           <CheckCircle2 className="w-4 h-4" />
+                         </div>
+                         {item}
+                       </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl opacity-20 transform rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
+                <img 
+                  src="https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-06_whopbd.webp" 
+                  alt="Équipe Plomberie" 
+                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700" 
+                />
+              </div>
             </div>
           </div>
         </section>
