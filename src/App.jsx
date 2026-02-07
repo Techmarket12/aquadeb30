@@ -491,6 +491,32 @@ function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Ensure autoplay works on mobile when the section is visible
+  useEffect(() => {
+    const playIfPossible = (vid) => {
+      if (!vid) return;
+      vid.muted = true;
+      vid.playsInline = true;
+      const playPromise = vid.play();
+      if (playPromise?.catch) playPromise.catch(() => {});
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playIfPossible(mobileVideoRef.current);
+            playIfPossible(desktopVideoRef.current);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -1098,6 +1124,7 @@ function HomePage() {
                   className="block lg:hidden w-full rounded-2xl shadow-2xl h-64 object-cover mb-6"
                   controls
                   muted
+                  autoPlay
                   playsInline
                   preload="auto"
                   crossOrigin="anonymous"
@@ -1150,6 +1177,7 @@ function HomePage() {
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700"
                   controls
                   muted
+                  autoPlay
                   playsInline
                   preload="auto"
                   crossOrigin="anonymous"
