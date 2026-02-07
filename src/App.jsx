@@ -496,25 +496,47 @@ function HomePage() {
     const playIfPossible = (vid) => {
       if (!vid) return;
       vid.muted = true;
+      vid.defaultMuted = true;
       vid.playsInline = true;
       const playPromise = vid.play();
       if (playPromise?.catch) playPromise.catch(() => {});
     };
 
+    const isSectionVisible = () => {
+      const el = sectionRef.current;
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+    };
+
+    const triggerPlayIfVisible = () => {
+      if (isSectionVisible()) {
+        playIfPossible(mobileVideoRef.current);
+        playIfPossible(desktopVideoRef.current);
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            playIfPossible(mobileVideoRef.current);
-            playIfPossible(desktopVideoRef.current);
-          }
+          if (entry.isIntersecting) triggerPlayIfVisible();
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0.25 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+
+    // Fallback for browsers requiring a user gesture (mobile Safari)
+    const gestureHandler = () => triggerPlayIfVisible();
+    window.addEventListener('touchstart', gestureHandler, { once: true });
+    window.addEventListener('click', gestureHandler, { once: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('touchstart', gestureHandler);
+      window.removeEventListener('click', gestureHandler);
+    };
   }, []);
 
   useEffect(() => {
@@ -1124,7 +1146,9 @@ function HomePage() {
                   className="block lg:hidden w-full rounded-2xl shadow-2xl h-64 object-cover mb-6"
                   controls
                   muted
+                  defaultMuted
                   autoPlay
+                  loop
                   playsInline
                   preload="auto"
                   crossOrigin="anonymous"
@@ -1177,7 +1201,9 @@ function HomePage() {
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700"
                   controls
                   muted
+                  defaultMuted
                   autoPlay
+                  loop
                   playsInline
                   preload="auto"
                   crossOrigin="anonymous"
