@@ -142,6 +142,7 @@ const NAV_LINKS = [
 ];
 
 const REALIZATIONS = [
+  "https://res.cloudinary.com/dw9jkwccj/image/upload/v1770494649/Afficher_les_photos_re%CC%81centes_vltw1p.png",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-07-29_vohdwv.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-06_whopbd.webp",
   "https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-06_1_bzt1gn.webp",
@@ -469,6 +470,8 @@ const Portfolio3D = ({ images, onSelect }) => {
 // --- APP ---
 
 function HomePage() {
+  const primaryVideoSrc = "https://res.cloudinary.com/dw9jkwccj/video/upload/q_auto:eco,f_mp4,vc_h264,w_960/v1770495352/img-3504-2_arpybAyG_jkpvml.mp4";
+  const fallbackVideoSrc = "https://res.cloudinary.com/dw9jkwccj/video/upload/v1770495352/img-3504-2_arpybAyG_jkpvml.mp4";
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
@@ -1055,25 +1058,56 @@ function HomePage() {
           </div>
         </section>
 
-        {/* --- QUI SOMMES NOUS (Notre Expertise) --- */}
+        {/* --- NOTRE SAVOIR FAIRE (Égouttage & Canalisations) --- */}
         <section id="services" className="py-20 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="text-blue-600 font-black uppercase tracking-widest text-sm mb-2 block">Notre Expertise</span>
-                <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                  Plus qu'un simple plombier, <br/>
-                  <span className="text-blue-600">votre partenaire local.</span>
+                <span className="text-blue-600 font-black uppercase tracking-widest text-sm mb-2 block">NOTRE SAVOIR FAIRE</span>
+                <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+                  Travaux d’égouttage et canalisations
                 </h2>
+                <p className="text-blue-700 font-bold text-lg mt-2 mb-6 uppercase tracking-wider">un diagnostic précis, des solutions durables.</p>
+                {/* Vidéo mobile placée juste après le sous-titre */}
+                <video
+                  className="block lg:hidden w-full rounded-2xl shadow-2xl h-64 object-cover mb-6"
+                  controls
+                  muted
+                  playsInline
+                  preload="auto"
+                  crossOrigin="anonymous"
+                  src={primaryVideoSrc}
+                  onError={(e) => {
+                    const vid = e.currentTarget;
+                    if (vid.dataset.fallbackApplied) return;
+                    vid.dataset.fallbackApplied = "1";
+                    vid.src = fallbackVideoSrc;
+                    vid.load();
+                  }}
+                  onStalled={(e) => {
+                    const vid = e.currentTarget;
+                    vid.load();
+                  }}
+                />
                 <div className="space-y-6 text-lg text-slate-600">
                   <p>
-                    Chez <strong>Aqua&Deb</strong>, nous savons qu'une panne ne prévient pas. C'est pourquoi nous avons mis en place une équipe d'élite prête à intervenir <strong>24h/24 et 7j/7</strong>.
+                    Chez <strong>Aqua&Deb</strong>, nous intervenons bien au-delà du simple dépannage. Nous sommes spécialisés dans les travaux d’égouttage, le remplacement de canalisations et l’inspection par caméra afin d’identifier précisément l’origine des problèmes et d’y apporter une solution fiable et durable.
                   </p>
                   <p>
-                    Nous couvrons l'ensemble de la <strong>Wallonie et Bruxelles</strong>. Que vous soyez à Namur, Liège, Charleroi ou Mons, nous avons un technicien à moins de 45 minutes de chez vous.
+                    Grâce à nos équipements de diagnostic de dernière génération, nous localisons fissures, affaissements, obstructions ou ruptures sans travaux inutiles. Chaque intervention commence par une analyse claire de la situation, suivie d’une proposition adaptée à l’installation et au budget du client.
+                  </p>
+                  <p>
+                    Nous intervenons sur l’ensemble de la <strong>Wallonie et Bruxelles</strong>, aussi bien pour des habitations privées que pour des immeubles ou locaux professionnels, avec la même exigence de qualité et de propreté.
                   </p>
                   <ul className="space-y-3 mt-6">
-                    {["Devis clair et détaillé avant travaux", "Matériel haute pression dernière génération", "Respect de votre habitation (propreté garantie)"].map((item, i) => (
+                    {[
+                      "Inspection des canalisations par caméra haute définition",
+                      "Travaux d’égouttage complets et réparations ciblées",
+                      "Remplacement de canalisations défectueuses ou obsolètes",
+                      "Diagnostic précis avant toute intervention",
+                      "Devis clair et détaillé avant travaux",
+                      "Respect total de l’habitation et de l’environnement"
+                    ].map((item, i) => (
                        <li key={i} className="flex items-center font-bold text-slate-800">
                          <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
                            <CheckCircle2 className="w-4 h-4" />
@@ -1084,12 +1118,27 @@ function HomePage() {
                   </ul>
                 </div>
               </div>
-              <div className="relative group">
+              <div className="relative group hidden lg:block">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl opacity-20 transform rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
-                <img 
-                  src="https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142108/2025-08-06_whopbd.webp" 
-                  alt="Équipe Plomberie" 
-                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700" 
+                <video
+                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700"
+                  controls
+                  muted
+                  playsInline
+                  preload="auto"
+                  crossOrigin="anonymous"
+                  src={primaryVideoSrc}
+                  onError={(e) => {
+                    const vid = e.currentTarget;
+                    if (vid.dataset.fallbackApplied) return;
+                    vid.dataset.fallbackApplied = "1";
+                    vid.src = fallbackVideoSrc;
+                    vid.load();
+                  }}
+                  onStalled={(e) => {
+                    const vid = e.currentTarget;
+                    vid.load();
+                  }}
                 />
               </div>
             </div>
