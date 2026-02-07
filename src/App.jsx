@@ -278,15 +278,41 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
 };
 
 // --- LIGHTBOX COMPONENT ---
-const Lightbox = ({ image, onClose }) => {
-  if (!image) return null;
+const Lightbox = ({ images = [], currentIndex, onClose, onPrev, onNext }) => {
+  if (currentIndex === null || currentIndex === undefined) return null;
+  const image = images[currentIndex];
+
   return (
     <div className="fixed inset-0 z-[120] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 animate-in fade-in duration-300">
-      <button onClick={onClose} className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-white/10 p-2 rounded-full hover:bg-white/20 z-50">
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-white/10 p-2 rounded-full hover:bg-white/20 z-50"
+      >
         <X className="w-8 h-8" />
       </button>
+
+      <button
+        onClick={onPrev}
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 text-white p-3 rounded-full shadow-lg backdrop-blur z-50"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={onNext}
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 text-white p-3 rounded-full shadow-lg backdrop-blur z-50"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
       <div className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center">
-        <img src={image} alt="Réalisation Fullscreen" className="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain animate-in zoom-in-95 duration-300" />
+        <img
+          src={image}
+          alt="Réalisation Fullscreen"
+          className="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain animate-in zoom-in-95 duration-300"
+        />
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/80 bg-black/40 px-3 py-1 rounded-full">
+          {currentIndex + 1} / {images.length}
+        </div>
       </div>
     </div>
   );
@@ -402,7 +428,7 @@ const Portfolio3D = ({ images, onSelect }) => {
           const handleClick = () => {
              const diff = (index - activeIndex + images.length) % images.length;
              if (index === activeIndex) {
-               onSelect(img); // Open lightbox if active
+               onSelect(index); // Open lightbox if active
              } else {
                setActiveIndex(index); // Just slide if not active
              }
@@ -447,7 +473,7 @@ function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const navigate = useNavigate();
   const [selectedFiles, setSelectedFiles] = useState(null);
   const [uploadedUrls, setUploadedUrls] = useState([]);
@@ -464,7 +490,21 @@ function HomePage() {
       <style>{styles}</style>
       
       <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} />
-      <Lightbox image={selectedImage} onClose={() => setSelectedImage(null)} />
+      <Lightbox
+        images={REALIZATIONS}
+        currentIndex={selectedIndex}
+        onClose={() => setSelectedIndex(null)}
+        onPrev={() =>
+          setSelectedIndex((prev) =>
+            prev === null ? null : (prev - 1 + REALIZATIONS.length) % REALIZATIONS.length
+          )
+        }
+        onNext={() =>
+          setSelectedIndex((prev) =>
+            prev === null ? null : (prev + 1) % REALIZATIONS.length
+          )
+        }
+      />
 
       {/* --- FLASH INFO BAR --- */}
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold animate-pulse">
@@ -914,7 +954,7 @@ function HomePage() {
              </p>
           </div>
 
-          <Portfolio3D images={REALIZATIONS} onSelect={setSelectedImage} />
+          <Portfolio3D images={REALIZATIONS} onSelect={setSelectedIndex} />
           
         </section>
 

@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getServiceLink } from '../utils/serviceRoutes';
+import CloudinaryUploader, { uploadFiles } from '../components/CloudinaryUploader';
 import {
   Phone,
   MapPin,
@@ -26,7 +27,6 @@ import {
   Send,
   Check,
   Mail,
-  UploadCloud,
   ChevronLeft,
   ChevronRight,
   ZoomIn,
@@ -138,9 +138,11 @@ export default function ContactPage() {
     name: '',
     phone: '',
     email: '',
-    message: '',
-    file: null
+    message: ''
   });
+  const [selectedFiles, setSelectedFiles] = useState(null);
+  const [uploadedUrls, setUploadedUrls] = useState([]);
+  const [uploadingPhotos, setUploadingPhotos] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -151,10 +153,6 @@ export default function ContactPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e) => {
-    setFormData(prev => ({ ...prev, file: e.target.files[0] }));
   };
 
   return (
@@ -486,10 +484,43 @@ export default function ContactPage() {
                   </div>
 
                   <form
-                    action="https://formspree.io/f/movneogw"
-                    method="POST"
-                    encType="multipart/form-data"
                     className="space-y-8"
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      const form = e.currentTarget;
+                      setUploadingPhotos(true);
+                      setUploadedUrls([]);
+                      try {
+                        const formDataToSend = new FormData(form);
+
+                        if (selectedFiles && selectedFiles.length > 0) {
+                          const urls = await uploadFiles(selectedFiles);
+                          urls.forEach((url) => formDataToSend.append('photos[]', url));
+                          setUploadedUrls(urls);
+                        }
+
+                        const res = await fetch('https://formspree.io/f/movneogw', {
+                          method: 'POST',
+                          headers: { Accept: 'application/json' },
+                          body: formDataToSend
+                        });
+
+                        if (!res.ok) {
+                          const txt = await res.text();
+                          throw new Error(`Envoi Formspree échoué (${res.status}) ${txt}`);
+                        }
+
+                        form.reset();
+                        setSelectedFiles(null);
+                        setFormData({ name: '', phone: '', email: '', message: '' });
+                        alert('Message envoyé !');
+                      } catch (err) {
+                        console.error(err);
+                        alert("Impossible d'envoyer le formulaire. Réessayez.");
+                      } finally {
+                        setUploadingPhotos(false);
+                      }
+                    }}
                   >
                     <input type="hidden" name="_subject" value="Formulaire contact - page Contact" />
                     <div className="grid md:grid-cols-2 gap-8">
@@ -544,32 +575,23 @@ export default function ContactPage() {
                       <label className="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
                         <span>Photos du problème (Optionnel)</span>
                       </label>
-                      <div className="relative group cursor-pointer">
-                        <input 
-                          type="file" 
-                          onChange={handleFileChange}
-                          name="attachment"
-                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-                          accept="image/*"
-                        />
-                        <div className="w-full border-2 border-dashed border-slate-300 rounded-xl p-8 flex flex-col items-center justify-center text-slate-500 group-hover:border-orange-500 group-hover:bg-orange-50/10 transition-all bg-slate-50">
-                          {formData.file ? (
-                            <div className="flex items-center gap-3 text-green-600 font-bold text-lg">
-                              <CheckCircle2 className="w-6 h-6" /> {formData.file.name}
-                            </div>
-                          ) : (
-                            <>
-                              <UploadCloud className="w-10 h-10 mb-3 text-slate-400 group-hover:text-orange-500 transition-colors" />
-                              <span className="text-sm font-bold text-slate-600">Cliquez pour ajouter une photo</span>
-                              <span className="text-xs text-slate-400 mt-1">JPG, PNG (Max 5 Mo)</span>
-                            </>
-                          )}
-                        </div>
-                      </div>
+                      <CloudinaryUploader onFilesChange={setSelectedFiles} />
+                      {uploadingPhotos && (
+                        <p className="text-xs text-slate-500">Upload des photos en cours...</p>
+                      )}
+                      {uploadedUrls.length > 0 && (
+                        <p className="text-xs text-green-600 font-semibold">
+                          {uploadedUrls.length} photo(s) prêtes à être envoyées.
+                        </p>
+                      )}
                     </div>
 
-                    <button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg py-5 rounded-xl shadow-xl shadow-orange-600/20 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3 mt-4">
-                      <Send className="w-5 h-5" /> Envoyer ma demande
+                    <button 
+                      type="submit" 
+                      disabled={uploadingPhotos}
+                      className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-slate-300 text-white font-bold text-lg py-5 rounded-xl shadow-xl shadow-orange-600/20 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3 mt-4"
+                    >
+                      <Send className="w-5 h-5" /> {uploadingPhotos ? "Upload en cours..." : "Envoyer ma demande"}
                     </button>
                   </form>
                 </div>
@@ -699,5 +721,9 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
+
+
 
 
