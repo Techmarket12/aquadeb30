@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useCallback } from 'react';
+﻿import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import {
   Phone,
@@ -472,6 +472,9 @@ const Portfolio3D = ({ images, onSelect }) => {
 function HomePage() {
   const primaryVideoSrc = "https://res.cloudinary.com/dw9jkwccj/video/upload/q_auto:eco,f_mp4,vc_h264,w_960/v1770495352/img-3504-2_arpybAyG_jkpvml.mp4";
   const fallbackVideoSrc = "https://res.cloudinary.com/dw9jkwccj/video/upload/v1770495352/img-3504-2_arpybAyG_jkpvml.mp4";
+  const sectionRef = useRef(null);
+  const mobileVideoRef = useRef(null);
+  const desktopVideoRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
@@ -486,6 +489,27 @@ function HomePage() {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            [mobileVideoRef.current, desktopVideoRef.current].forEach((vid) => {
+              if (vid) {
+                const playPromise = vid.play();
+                if (playPromise?.catch) playPromise.catch(() => {});
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -511,7 +535,7 @@ function HomePage() {
 
       {/* --- FLASH INFO BAR --- */}
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold animate-pulse">
-        ⚠️ Techniciens disponibles immédiatement dans votre secteur. Arrivée en 45 min garantie.
+        ?? Techniciens disponibles immédiatement dans votre secteur. Arrivée en 45 min garantie.
       </div>
 
       {/* --- TOP BAR (Desktop) --- */}
@@ -797,11 +821,11 @@ function HomePage() {
                         name="urgence"
                         className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
                       >
-                        <option>🚿 Fuite d'eau</option>
-                        <option>🚽 WC Bouché</option>
-                        <option>🛁 Canalisation bouchée</option>
-                        <option>🔥 Panne Chauffe-eau</option>
-                        <option>❓ Autre</option>
+                        <option>?? Fuite d'eau</option>
+                        <option>?? WC Bouché</option>
+                        <option>?? Canalisation bouchée</option>
+                        <option>?? Panne Chauffe-eau</option>
+                        <option>? Autre</option>
                       </select>
                     </div>
                     <div>
@@ -1034,11 +1058,11 @@ function HomePage() {
                     name="urgence"
                     className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
                   >
-                    <option>🚿 Fuite d'eau</option>
-                    <option>🚽 WC Bouché</option>
-                    <option>🛁 Canalisation bouchée</option>
-                    <option>🔥 Panne Chauffe-eau</option>
-                    <option>❓ Autre</option>
+                    <option>?? Fuite d'eau</option>
+                    <option>?? WC Bouché</option>
+                    <option>?? Canalisation bouchée</option>
+                    <option>?? Panne Chauffe-eau</option>
+                    <option>? Autre</option>
                   </select>
                 </div>
                 <div>
@@ -1059,7 +1083,7 @@ function HomePage() {
         </section>
 
         {/* --- NOTRE SAVOIR FAIRE (Égouttage & Canalisations) --- */}
-        <section id="services" className="py-20 bg-slate-50">
+        <section id="services" className="py-20 bg-slate-50" ref={sectionRef}>
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -1070,6 +1094,7 @@ function HomePage() {
                 <p className="text-blue-700 font-bold text-lg mt-2 mb-6 uppercase tracking-wider">un diagnostic précis, des solutions durables.</p>
                 {/* Vidéo mobile placée juste après le sous-titre */}
                 <video
+                  ref={mobileVideoRef}
                   className="block lg:hidden w-full rounded-2xl shadow-2xl h-64 object-cover mb-6"
                   controls
                   muted
@@ -1121,6 +1146,7 @@ function HomePage() {
               <div className="relative group hidden lg:block">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-3xl opacity-20 transform rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
                 <video
+                  ref={desktopVideoRef}
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-all duration-700"
                   controls
                   muted
