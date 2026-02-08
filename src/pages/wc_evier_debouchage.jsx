@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getServiceLink } from '../utils/serviceRoutes';
+import { trackPhoneConversion } from '../components/GoogleAdsTracking';
 import {
   Phone,
   Droplets,
@@ -63,7 +64,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -72,7 +73,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -98,7 +99,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -108,7 +109,7 @@ const NAV_LINKS = [
   { label: 'Urgence 24/7', href: BRAND.phoneLink, isButton: true }
 ];
 
-const AiDiagnosticModal = ({ isOpen, onClose }) => {
+const AiDiagnosticModal = ({ isOpen, onClose, onPhoneClick }) => {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -170,7 +171,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Votre WC ou évier est bouché ? Décrivez le problème (l'eau remonte, bruits, odeurs). L'IA vous conseille.
+                Votre WC ou évier est bouché ? Décrivez le probléme (l'eau remonte, bruits, odeurs). L'IA vous conseille.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
@@ -204,6 +205,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
               </div>
               <a
                 href={BRAND.phoneLink}
+                onClick={onPhoneClick}
                 className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-xl text-xl"
               >
                 <Phone className="w-6 h-6" /> Appeler le Déboucheur
@@ -222,6 +224,7 @@ export default function DebouchageWCEviersPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
+  const handlePhoneClick = () => trackPhoneConversion();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -232,7 +235,7 @@ export default function DebouchageWCEviersPage() {
   return (
     <div className="font-sans text-slate-800 antialiased bg-white selection:bg-orange-500 selection:text-white">
       <style>{styles}</style>
-      <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} />
+      <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} onPhoneClick={handlePhoneClick} />
 
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold">
         Déboucheurs disponibles immédiatement dans votre secteur. Intervention express.
@@ -351,6 +354,7 @@ export default function DebouchageWCEviersPage() {
                 <a
                   key={idx}
                   href={link.href}
+                  onClick={link.isButton ? handlePhoneClick : undefined}
                   className="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-black text-sm uppercase tracking-wide shadow-md transition-all hover:scale-105 flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" /> {link.label}
@@ -393,7 +397,7 @@ export default function DebouchageWCEviersPage() {
                                 <li key={iIdx} className="text-sm text-slate-600">
                                   <Link
                                     to={getServiceLink(item)}
-                                    onClick={() => setMobileMenuOpen(false)}
+                                    onClick={() => { if (link.isButton) handlePhoneClick(); setMobileMenuOpen(false); }}
                                     className="text-blue-700 font-semibold"
                                   >
                                     {item}
@@ -436,7 +440,7 @@ export default function DebouchageWCEviersPage() {
                       to={isRouterLink ? link.href : undefined}
                       href={!isRouterLink ? link.href : undefined}
                       className={`block p-4 font-bold text-lg ${link.isButton ? 'bg-red-50 text-red-600' : 'text-slate-700'}`}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => { if (link.isButton) handlePhoneClick(); setMobileMenuOpen(false); }}
                     >
                       {link.label}
                     </NavComponent>
@@ -476,7 +480,7 @@ export default function DebouchageWCEviersPage() {
               <AlertTriangle className="w-4 h-4" /> Urgence débouchage 24h/24
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Débouchage <span className="text-orange-500">WC & Éviers</span>
+              Débouchage <span className="text-orange-500">WC & éviers</span>
               <br />
               intervention immédiate
             </h1>
@@ -492,7 +496,7 @@ export default function DebouchageWCEviersPage() {
                   <Clock className="w-5 h-5 text-orange-300" /> Service Express
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Nous arrivons généralement en moins de <strong>45 minutes</strong> pour tout problème de WC ou canalisation engorgée.
+                  Nous arrivons généralement en moins de <strong>45 minutes</strong> pour tout probléme de WC ou canalisation engorgée.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -508,7 +512,7 @@ export default function DebouchageWCEviersPage() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-300" /> Travail Propre
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Respect de vos installations sanitaires. Nettoyage de la zone après l'intervention de débouchage.
+                  Respect de vos installations sanitaires. Nettoyage de la zone aprés l'intervention de débouchage.
                 </p>
               </div>
             </div>
@@ -516,6 +520,7 @@ export default function DebouchageWCEviersPage() {
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <a
                 href={BRAND.phoneLink}
+                onClick={handlePhoneClick}
                 className="bg-orange-600 hover:bg-orange-700 text-white font-black py-5 px-8 rounded-xl shadow-xl flex items-center justify-center gap-3"
               >
                 <Phone className="w-6 h-6" /> Appeler un déboucheur
@@ -537,7 +542,7 @@ export default function DebouchageWCEviersPage() {
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
               Aqua&Deb est le spécialiste du <strong>débouchage sanitaire</strong> en Belgique. Que ce soit pour un objet tombé dans les toilettes,
-              un amas de graisse dans l'évier de cuisine ou un problème de calcaire, nous avons la solution.
+              un amas de graisse dans l'évier de cuisine ou un probléme de calcaire, nous avons la solution.
               Nous utilisons des méthodes mécaniques et l'<strong>hydrocurage</strong> pour nettoyer vos tuyaux en profondeur
               sans utiliser de produits chimiques corrosifs.
             </p>
@@ -547,11 +552,11 @@ export default function DebouchageWCEviersPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black text-slate-900 mb-12 text-center">
-              Vos problèmes de <span className="text-blue-600">canalisations</span> résolus
+              Vos problémes de <span className="text-blue-600">canalisations</span> résolus
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['WC Bouché', 'Évier de cuisine', 'Douche & Baignoire', 'Sterput / Siphon'].map((item, i) => (
+              {['WC Bouché', 'évier de cuisine', 'Douche & Baignoire', 'Sterput / Siphon'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <Droplets className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
@@ -573,7 +578,7 @@ export default function DebouchageWCEviersPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Écoulement très lent dans l'évier ou la douche</span>
+                    <span>écoulement trés lent dans l'évier ou la douche</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -587,11 +592,11 @@ export default function DebouchageWCEviersPage() {
                 <ul className="space-y-3 text-slate-600 text-sm">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Arrêtez de faire couler de l'eau ou de tirer la chasse</span>
+                    <span>Arrétez de faire couler de l'eau ou de tirer la chasse</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Évitez les déboucheurs chimiques (risque de brûlure)</span>
+                    <span>évitez les déboucheurs chimiques (risque de brélure)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -616,21 +621,21 @@ export default function DebouchageWCEviersPage() {
           <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
-                Pourquoi faire appel à un <span className="text-red-600">professionnel</span> ?
+                Pourquoi faire appel é un <span className="text-red-600">professionnel</span> ?
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Les ventouses et produits de supermarché ne suffisent souvent pas pour les bouchons tenaces situés
-                loin dans la canalisation. Insister peut même endommager vos tuyaux ou provoquer une inondation.
-                Nos techniciens disposent de <strong>furets électriques</strong> et de systèmes <strong>haute pression</strong>
+                loin dans la canalisation. Insister peut méme endommager vos tuyaux ou provoquer une inondation.
+                Nos techniciens disposent de <strong>furets électriques</strong> et de systémes <strong>haute pression</strong>
                 qui pulvérisent le bouchon et nettoient les parois du tuyau.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Nous intervenons sur tout type de sanitaire : WC suspendu, WC au sol, évier double bac,
-                douche à l'italienne, lavabo, bidet et urinoir.
+                douche é l'italienne, lavabo, bidet et urinoir.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Élimination totale du bouchon',
+                  'élimination totale du bouchon',
                   "Pas de produits chimiques nocifs",
                   'Nettoyage des parois (curage)',
                   'Intervention propre et sécurisée'
@@ -663,7 +668,7 @@ export default function DebouchageWCEviersPage() {
               {[
                 {
                   t: 'Contact Urgence',
-                  d: "Vous nous expliquez le problème. Nous vous donnons les consignes de sécurité."
+                  d: "Vous nous expliquez le probléme. Nous vous donnons les consignes de sécurité."
                 },
                 {
                   t: 'Diagnostic sur place',
@@ -675,7 +680,7 @@ export default function DebouchageWCEviersPage() {
                 },
                 {
                   t: 'Débouchage & Test',
-                  d: "Utilisation du matériel adapté. Test d'écoulement à grand débit pour valider."
+                  d: "Utilisation du matériel adapté. Test d'écoulement é grand débit pour valider."
                 }
               ].map((s, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
@@ -696,13 +701,13 @@ export default function DebouchageWCEviersPage() {
               Nos équipements de <span className="text-blue-600">pointe</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {['Pompe manuelle pro', 'Furet électrique', 'Haute Pression (Kärcher)'].map((item, i) => (
+              {['Pompe manuelle pro', 'Furet électrique', 'Haute Pression (Kércher)'].map((item, i) => (
                 <div key={i} className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
                   <Camera className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Nous adaptons la méthode à la gravité du bouchon. De la simple pression d'air pour un siphon
-                    à l'hydrocurage pour une canalisation principale entartrée.
+                    Nous adaptons la méthode é la gravité du bouchon. De la simple pression d'air pour un siphon
+                    é l'hydrocurage pour une canalisation principale entartrée.
                   </p>
                 </div>
               ))}
@@ -734,7 +739,7 @@ export default function DebouchageWCEviersPage() {
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Tarification claire adaptée à la complexité du travail. Pas de frais cachés.
+                    Tarification claire adaptée é la complexité du travail. Pas de frais cachés.
                   </p>
                 </div>
               ))}
@@ -750,11 +755,11 @@ export default function DebouchageWCEviersPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nos équipes de déboucheurs sillonnent la <strong>Belgique</strong>. Que vous soyez à <strong>Bruxelles</strong>,
+              Nos équipes de déboucheurs sillonnent la <strong>Belgique</strong>. Que vous soyez é <strong>Bruxelles</strong>,
               en <strong>Wallonie</strong> ou en périphérie, un camion d'intervention est proche de chez vous.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -781,7 +786,7 @@ export default function DebouchageWCEviersPage() {
                     a: "Non, nous privilégions les méthodes mécaniques et l'eau sous pression pour préserver vos tuyaux et l'environnement."
                   },
                   {
-                    q: "Combien coûte un débouchage ?",
+                    q: "Combien coéte un débouchage ?",
                     a: "Le prix dépend de la nature du bouchon. Un débouchage simple est moins cher qu'un hydrocurage de colonne."
                   },
                   {
@@ -800,11 +805,10 @@ export default function DebouchageWCEviersPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">WC ou Évier bouché ?</h2>
+          <h2 className="text-3xl font-black mb-4">WC ou évier bouché ?</h2>
           <p className="mb-8 text-lg">Ne laissez pas la situation s'aggraver. Aqua&Deb intervient en moins d'une heure.</p>
           <a
-            href={BRAND.phoneLink}
-            className="inline-flex items-center gap-3 bg-white text-orange-600 font-black px-10 py-5 rounded-xl shadow-xl"
+            
           >
             <Phone className="w-6 h-6" /> {BRAND.phoneDisplay}
           </a>
@@ -817,7 +821,7 @@ export default function DebouchageWCEviersPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -852,10 +856,10 @@ export default function DebouchageWCEviersPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -882,7 +886,7 @@ export default function DebouchageWCEviersPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-orange-600" />
-                  <a href={BRAND.phoneLink} className="text-white font-bold hover:text-orange-500 transition-colors">
+                  <a href={BRAND.phoneLink} onClick={handlePhoneClick} className="text-white font-bold hover:text-orange-500 transition-colors">
                     {BRAND.phoneDisplay}
                   </a>
                 </li>
@@ -914,13 +918,38 @@ export default function DebouchageWCEviersPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

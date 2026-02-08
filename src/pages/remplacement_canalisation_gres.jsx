@@ -66,7 +66,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -75,7 +75,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -101,7 +101,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -173,11 +173,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Problème d'égout ? Affaissement de terrain ? Vieilles canalisations ? Décrivez la situation.
+                Probléme d'égout ? Affaissement de terrain ? Vieilles canalisations ? Décrivez la situation.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : J'ai un trou dans mon jardin au dessus des tuyaux, ça sent mauvais..."
+                placeholder="Exemple : J'ai un trou dans mon jardin au dessus des tuyaux, éa sent mauvais..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -476,13 +476,13 @@ export default function RemplacementCanalisationGresPage() {
 
           <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <Construction className="w-4 h-4" /> Gros Œuvre & Assainissement
+              <Construction className="w-4 h-4" /> Gros Ouvre & Assainissement
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Remplacement de <br /><span className="text-orange-500">Canalisations en Grès</span>
+              Remplacement de <br /><span className="text-orange-500">Canalisations en Grés</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Vos vieilles canalisations en terre cuite (grès) sont cassées, effondrées ou envahies par les racines ?
+              Vos vieilles canalisations en terre cuite (grés) sont cassées, effondrées ou envahies par les racines ?
               Nous assurons le <strong>remplacement complet</strong> et la <strong>modernisation</strong> de votre réseau d'égouttage
               par des matériaux PVC/PE durables et conformes aux normes actuelles.
             </p>
@@ -490,10 +490,10 @@ export default function RemplacementCanalisationGresPage() {
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <Hammer className="w-5 h-5 text-orange-300" /> Démolition & Évacuation
+                  <Hammer className="w-5 h-5 text-orange-300" /> Démolition & évacuation
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Nous gérons l'ouverture du sol (béton, terre, carrelage) et l'évacuation des anciens tuyaux en grès.
+                  Nous gérons l'ouverture du sol (béton, terre, carrelage) et l'évacuation des anciens tuyaux en grés.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -501,7 +501,7 @@ export default function RemplacementCanalisationGresPage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Matériaux Durables
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Installation de tuyaux PVC SN4/SN8 ou PE haute densité, résistants à la pression et aux racines.
+                  Installation de tuyaux PVC SN4/SN8 ou PE haute densité, résistants é la pression et aux racines.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -509,7 +509,7 @@ export default function RemplacementCanalisationGresPage() {
                   <Shovel className="w-5 h-5 text-cyan-300" /> Remise en état
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Rebouchage des tranchées, compactage et remise en état de vos extérieurs ou intérieurs après travaux.
+                  Rebouchage des tranchées, compactage et remise en état de vos extérieurs ou intérieurs aprés travaux.
                 </p>
               </div>
             </div>
@@ -534,10 +534,10 @@ export default function RemplacementCanalisationGresPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black text-slate-900 mb-6 text-center">
-              Expert en <span className="text-blue-600">Rénovation d'Égouttage</span>
+              Expert en <span className="text-blue-600">Rénovation d'égouttage</span>
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
-              Les canalisations en grès (terre cuite vitrifiée), très courantes dans les anciennes habitations,
+              Les canalisations en grés (terre cuite vitrifiée), trés courantes dans les anciennes habitations,
               deviennent cassantes avec le temps. Les mouvements de terrain provoquent des cassures nettes (cisaillement)
               et les joints au ciment s'effritent, laissant entrer les racines qui bouchent tout.
               Aqua&Deb remplace ces réseaux vétustes pour garantir une évacuation fluide pour les 50 prochaines années.
@@ -548,16 +548,16 @@ export default function RemplacementCanalisationGresPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black text-slate-900 mb-12 text-center">
-              Nos solutions <span className="text-blue-600">Grès vers PVC</span>
+              Nos solutions <span className="text-blue-600">Grés vers PVC</span>
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['Remplacement complet', 'Réparation ponctuelle', 'Pose de chambre de visite', 'Raccordement à l\'égout'].map((item, i) => (
+              {['Remplacement complet', 'Réparation ponctuelle', 'Pose de chambre de visite', 'Raccordement é l\'égout'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <Construction className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Travaux de <strong>{item.toLowerCase()}</strong> réalisés dans les règles de l'art.
+                    Travaux de <strong>{item.toLowerCase()}</strong> réalisés dans les régles de l'art.
                     Respect des pentes, lits de pose en sable stabilisé et étanchéité parfaite.
                   </p>
                 </div>
@@ -566,7 +566,7 @@ export default function RemplacementCanalisationGresPage() {
 
             <div className="mt-12 grid lg:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm">
-                <h3 className="font-black text-lg text-slate-900 mb-3">Le problème du grès</h3>
+                <h3 className="font-black text-lg text-slate-900 mb-3">Le probléme du grés</h3>
                 <ul className="space-y-3 text-slate-600 text-sm">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-red-600 mt-0.5" />
@@ -590,7 +590,7 @@ export default function RemplacementCanalisationGresPage() {
                   Ils sont souples et résistent aux tassements de terrain.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['PVC Benor', 'PEHD', 'Joints élastomères', 'Longévité'].map((tag, i) => (
+                  {['PVC Benor', 'PEHD', 'Joints élastoméres', 'Longévité'].map((tag, i) => (
                     <span key={i} className="bg-green-100 px-3 py-1 rounded text-xs font-bold text-green-800">{tag}</span>
                   ))}
                 </div>
@@ -611,11 +611,11 @@ export default function RemplacementCanalisationGresPage() {
           <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
-                Pourquoi remplacer vos <span className="text-red-600">tuyaux en grès</span> ?
+                Pourquoi remplacer vos <span className="text-red-600">tuyaux en grés</span> ?
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Des bouchons à répétition malgré plusieurs débouchages sont souvent le signe d'un tuyau effondré ou cassé (contre-pente).
-                Continuer à déboucher est une perte d'argent. Le remplacement est la seule solution définitive.
+                Des bouchons é répétition malgré plusieurs débouchages sont souvent le signe d'un tuyau effondré ou cassé (contre-pente).
+                Continuer é déboucher est une perte d'argent. Le remplacement est la seule solution définitive.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 De plus, des tuyaux cassés laissent fuir les eaux usées dans le sol, ce qui peut déstabiliser les fondations de votre maison
@@ -650,13 +650,13 @@ export default function RemplacementCanalisationGresPage() {
               Déroulement du <span className="text-blue-600">chantier</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-3xl mx-auto">
-              Nous gérons le chantier de A à Z, du premier coup de pelle à la remise en état finale.
+              Nous gérons le chantier de A é Z, du premier coup de pelle é la remise en état finale.
             </p>
             <div className="grid md:grid-cols-4 gap-8 text-left">
               {[
                 {
-                  t: 'Étude et Marquage',
-                  d: "Repérage du tracé des canalisations existantes. Marquage au sol de la zone à ouvrir."
+                  t: 'étude et Marquage',
+                  d: "Repérage du tracé des canalisations existantes. Marquage au sol de la zone é ouvrir."
                 },
                 {
                   t: 'Terrassement',
@@ -664,7 +664,7 @@ export default function RemplacementCanalisationGresPage() {
                 },
                 {
                   t: 'Pose et Raccordement',
-                  d: "Enlèvement du grès, pose du PVC sur lit de sable, raccordement aux descentes et à l'égout de rue."
+                  d: "Enlévement du grés, pose du PVC sur lit de sable, raccordement aux descentes et é l'égout de rue."
                 },
                 {
                   t: 'Remblai et Finitions',
@@ -704,7 +704,7 @@ export default function RemplacementCanalisationGresPage() {
             <div className="mt-12 max-w-4xl mx-auto bg-blue-50 border border-blue-100 rounded-2xl p-8 text-left">
               <h3 className="font-black text-slate-900 text-xl mb-3">Assurance Habitation</h3>
               <p className="text-slate-700 leading-relaxed">
-                Si la rupture de canalisation a causé des dégâts des eaux, votre assurance peut parfois intervenir pour la recherche de fuite
+                Si la rupture de canalisation a causé des dégéts des eaux, votre assurance peut parfois intervenir pour la recherche de fuite
                 et les réparations consécutives. Nous vous fournissons un devis détaillé et un rapport photo pour votre dossier.
               </p>
             </div>
@@ -715,7 +715,7 @@ export default function RemplacementCanalisationGresPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black mb-6">Devis sur Mesure</h2>
             <p className="text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Chaque chantier est unique (profondeur, longueur, accès). Nous venons sur place gratuitement pour évaluer les travaux.
+              Chaque chantier est unique (profondeur, longueur, accés). Nous venons sur place gratuitement pour évaluer les travaux.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {["Visite technique Gratuite", "Devis détaillé sous 48h", "Garantie décennale"].map((t, i) => (
@@ -724,7 +724,7 @@ export default function RemplacementCanalisationGresPage() {
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Transparence totale. Pas de coûts cachés. Planning respecté.
+                    Transparence totale. Pas de coéts cachés. Planning respecté.
                   </p>
                 </div>
               ))}
@@ -740,11 +740,11 @@ export default function RemplacementCanalisationGresPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nous réalisons des chantiers d'égouttage partout en <strong>Belgique</strong>, principalement en <strong>Wallonie</strong> et à
+              Nous réalisons des chantiers d'égouttage partout en <strong>Belgique</strong>, principalement en <strong>Wallonie</strong> et é
               <strong>Bruxelles</strong>. Nos équipes sont équipées pour les interventions urbaines et rurales.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -768,15 +768,15 @@ export default function RemplacementCanalisationGresPage() {
                   },
                   {
                     q: "Combien de temps durent les travaux ?",
-                    a: "Pour une habitation standard, le remplacement de l'égouttage extérieur prend généralement 2 à 3 jours."
+                    a: "Pour une habitation standard, le remplacement de l'égouttage extérieur prend généralement 2 é 3 jours."
                   },
                   {
-                    q: "Évacuez-vous les gravats ?",
-                    a: "Oui, nous évacuons la terre excédentaire et les anciens tuyaux en grès vers un centre de tri agréé."
+                    q: "évacuez-vous les gravats ?",
+                    a: "Oui, nous évacuons la terre excédentaire et les anciens tuyaux en grés vers un centre de tri agréé."
                   },
                   {
                     q: "Quelle est la durée de vie du PVC ?",
-                    a: "Les tuyaux PVC modernes ont une durée de vie estimée à plus de 50 ans s'ils sont correctement posés."
+                    a: "Les tuyaux PVC modernes ont une durée de vie estimée é plus de 50 ans s'ils sont correctement posés."
                   }
                 ].map((f, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm text-left">
@@ -790,7 +790,7 @@ export default function RemplacementCanalisationGresPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">Vos égouts sont à refaire ?</h2>
+          <h2 className="text-3xl font-black mb-4">Vos égouts sont é refaire ?</h2>
           <p className="mb-8 text-lg">Contactez Aqua&Deb pour une solution définitive et garantie.</p>
           <a
             href={BRAND.phoneLink}
@@ -807,7 +807,7 @@ export default function RemplacementCanalisationGresPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -842,10 +842,10 @@ export default function RemplacementCanalisationGresPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -904,13 +904,15 @@ export default function RemplacementCanalisationGresPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

@@ -65,7 +65,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -74,7 +74,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -100,7 +100,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -177,11 +177,11 @@ Return:
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Décrivez votre projet et on vous propose un plan simple. Cela aide à préparer le devis.
+                Décrivez votre projet et on vous propose un plan simple. Cela aide é préparer le devis.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Ex: salle de bain 6m2, douche à l'italienne, meubles, carrelage, remplacement tuyauterie, WC suspendu..."
+                placeholder="Ex: salle de bain 6m2, douche é l'italienne, meubles, carrelage, remplacement tuyauterie, WC suspendu..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -263,10 +263,10 @@ export default function RenovationSanitairePage() {
       'Saint Gilles',
       'Woluwe',
       'Namur',
-      'Liège',
+      'Liége',
       'Charleroi',
       'Mons',
-      'La Louvière',
+      'La Louviére',
       'Tournai',
       'Nivelles',
       'Wavre',
@@ -527,9 +527,9 @@ export default function RenovationSanitairePage() {
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
               Aqua&Deb réalise votre <strong>rénovation sanitaire</strong> avec un résultat propre et durable.
-              Modernisation de <strong>salle de bain</strong>, remplacement de <strong>WC</strong>, création de <strong>douche à l'italienne</strong>,
-              mise à niveau de la <strong>plomberie</strong>, évacuations, robinetterie et finitions.
-              Devis clair, conseils, planning et exécution maîtrisée.
+              Modernisation de <strong>salle de bain</strong>, remplacement de <strong>WC</strong>, création de <strong>douche é l'italienne</strong>,
+              mise é niveau de la <strong>plomberie</strong>, évacuations, robinetterie et finitions.
+              Devis clair, conseils, planning et exécution maétrisée.
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
@@ -546,7 +546,7 @@ export default function RenovationSanitairePage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Travail garanti
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Étanchéité, raccordements, finitions. Des matériaux adaptés et une pose soignée.
+                  étanchéité, raccordements, finitions. Des matériaux adaptés et une pose soignée.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -592,15 +592,15 @@ export default function RenovationSanitairePage() {
               C'est optimiser l'usage au quotidien, sécuriser l'<strong>étanchéité</strong>, moderniser la <strong>plomberie</strong>,
               améliorer les évacuations et obtenir des finitions propres.
               Aqua&Deb intervient sur maison, appartement, commerce et immeuble.
-              Nous réalisons la rénovation complète ou partielle, selon l'état des installations et votre budget.
+              Nous réalisons la rénovation compléte ou partielle, selon l'état des installations et votre budget.
             </p>
 
             <div className="mt-12 grid lg:grid-cols-3 gap-8">
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-100">
                 <h3 className="font-black text-lg text-slate-900 mb-3">Quand rénover</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Salle de bain vieillissante, joints noircis, fuites récurrentes, mauvaise ventilation, carrelage abîmé,
-                  WC instable, évacuation lente ou travaux après achat.
+                  Salle de bain vieillissante, joints noircis, fuites récurrentes, mauvaise ventilation, carrelage abémé,
+                  WC instable, évacuation lente ou travaux aprés achat.
                   La rénovation permet de repartir sur une base saine.
                 </p>
               </div>
@@ -614,7 +614,7 @@ export default function RenovationSanitairePage() {
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-100">
                 <h3 className="font-black text-lg text-slate-900 mb-3">Objectif valeur</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Une salle de bain rénovée valorise le logement, rassure à la revente et réduit les risques de dégâts des eaux.
+                  Une salle de bain rénovée valorise le logement, rassure é la revente et réduit les risques de dégéts des eaux.
                 </p>
               </div>
             </div>
@@ -630,23 +630,23 @@ export default function RenovationSanitairePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  t: 'Salle de bain complète',
+                  t: 'Salle de bain compléte',
                   d: 'Dépose, plomberie, douche ou baignoire, meubles, robinetterie, finitions.',
                   icon: <Bath className="w-8 h-8 text-blue-600 mb-4" />
                 },
                 {
                   t: 'WC et sanitaires',
-                  d: "WC suspendu, bâti support, remplacement mécanisme, arrivée d'eau et évacuation.",
+                  d: "WC suspendu, béti support, remplacement mécanisme, arrivée d'eau et évacuation.",
                   icon: <Droplets className="w-8 h-8 text-blue-600 mb-4" />
                 },
                 {
-                  t: "Douche à l'italienne",
+                  t: "Douche é l'italienne",
                   d: "Receveur, pente, évacuation, parois, étanchéité, joints et finitions.",
                   icon: <Home className="w-8 h-8 text-blue-600 mb-4" />
                 },
                 {
                   t: 'Plomberie sanitaire',
-                  d: "Remise à niveau du réseau, multicouche, cuivre, raccordements et tests.",
+                  d: "Remise é niveau du réseau, multicouche, cuivre, raccordements et tests.",
                   icon: <Wrench className="w-8 h-8 text-blue-600 mb-4" />
                 }
               ].map((item, i) => (
@@ -660,10 +660,10 @@ export default function RenovationSanitairePage() {
 
             <div className="mt-12 grid lg:grid-cols-3 gap-8">
               {[{
-                h: 'Étanchéité et protections',
-                p: "Traitement des zones d'eau, joints, siphons, contrôle des infiltrations."
+                h: 'étanchéité et protections',
+                p: "Traitement des zones d'eau, joints, siphons, contréle des infiltrations."
               }, {
-                h: 'Évacuations et pentes',
+                h: 'évacuations et pentes',
                 p: "Optimisation des évacuations pour éviter les odeurs, refoulements et bouchons."
               }, {
                 h: 'Robinetterie et finitions',
@@ -682,18 +682,18 @@ export default function RenovationSanitairePage() {
           <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
-                Pourquoi une rénovation bien faite évite les <span className="text-red-600">problèmes</span>
+                Pourquoi une rénovation bien faite évite les <span className="text-red-600">problémes</span>
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Beaucoup de soucis viennent d'une mauvaise étanchéité, d'une évacuation mal dimensionnée,
                 ou de raccordements mal faits.
-                Une <strong>rénovation sanitaire</strong> doit être pensée comme un ensemble.
-                Nous faisons un contrôle technique, puis une exécution propre avec tests.
+                Une <strong>rénovation sanitaire</strong> doit étre pensée comme un ensemble.
+                Nous faisons un contréle technique, puis une exécution propre avec tests.
               </p>
               <ul className="space-y-4">
                 {[
                   "Réduction des risques de fuite",
-                  'Évacuation fluide et sans odeurs',
+                  'évacuation fluide et sans odeurs',
                   'Finitions plus durables',
                   'Confort et entretien simplifié'
                 ].map((item, i) => (
@@ -716,7 +716,7 @@ export default function RenovationSanitairePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                  <span>Étanchéité zones d'eau, ventilation, évacuations et pentes</span>
+                  <span>étanchéité zones d'eau, ventilation, évacuations et pentes</span>
                 </li>
               </ul>
             </div>
@@ -754,14 +754,14 @@ export default function RenovationSanitairePage() {
             <h2 className="text-3xl font-black mb-6">Budget et tarifs</h2>
             <p className="text-slate-300 mb-10 max-w-5xl mx-auto leading-relaxed">
               Une <strong>rénovation sanitaire</strong> dépend de la surface, de la complexité, des matériaux et des équipements.
-              Nous annonçons un <strong>devis</strong> avant travaux.
-              Vous gardez le contrôle sur les options.
+              Nous annonéons un <strong>devis</strong> avant travaux.
+              Vous gardez le contréle sur les options.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
                 { t: 'Visite et chiffrage', d: 'Analyse technique et devis détaillé.' },
                 { t: 'Fourniture et pose', d: 'Pose équipements, plomberie, étanchéité et finitions.' },
-                { t: 'Garantie', d: "Contrôle, tests et conseils. Travail soigné." }
+                { t: 'Garantie', d: "Contréle, tests et conseils. Travail soigné." }
               ].map((b, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
@@ -783,7 +783,7 @@ export default function RenovationSanitairePage() {
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-5xl mx-auto leading-relaxed">
               Aqua&Deb intervient pour votre <strong>rénovation sanitaire</strong> dans toute la <strong>Belgique</strong>.
-              Nous couvrons <strong>Bruxelles</strong> et la <strong>Wallonie</strong> (Namur, Liège, Charleroi, Mons, Verviers,
+              Nous couvrons <strong>Bruxelles</strong> et la <strong>Wallonie</strong> (Namur, Liége, Charleroi, Mons, Verviers,
               Brabant wallon). Intervention possible selon disponibilités en Flandre.
               Pour un projet de <strong>rénovation salle de bain</strong> ou <strong>rénovation WC</strong>, appelez maintenant.
             </p>
@@ -802,7 +802,7 @@ export default function RenovationSanitairePage() {
                   <MapPin className="w-5 h-5 text-blue-600" /> Wallonie
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Namur, Liège, Charleroi, Mons, La Louvière, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
+                  Namur, Liége, Charleroi, Mons, La Louviére, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
                   Verviers, Dinant, Ciney, Gembloux.
                 </p>
               </div>
@@ -834,16 +834,16 @@ export default function RenovationSanitairePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   {
-                    q: 'Faites vous rénovation complète salle de bain',
+                    q: 'Faites vous rénovation compléte salle de bain',
                     a: "Oui. Dépose, plomberie, évacuations, étanchéité, pose douche ou baignoire, WC, finitions." 
                   },
                   {
-                    q: "Pouvez vous faire douche à l'italienne",
-                    a: "Oui. Contrôle pentes, étanchéité, receveur ou chape, évacuation et parois." 
+                    q: "Pouvez vous faire douche é l'italienne",
+                    a: "Oui. Contréle pentes, étanchéité, receveur ou chape, évacuation et parois." 
                   },
                   {
                     q: 'Combien de temps dure une rénovation',
-                    a: "Selon la complexité et les finitions. Après visite, on vous donne un planning clair." 
+                    a: "Selon la complexité et les finitions. Aprés visite, on vous donne un planning clair." 
                   },
                   {
                     q: 'Vous intervenez dans ma ville',
@@ -880,7 +880,7 @@ export default function RenovationSanitairePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage.
@@ -915,10 +915,10 @@ export default function RenovationSanitairePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -977,13 +977,15 @@ export default function RenovationSanitairePage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

@@ -58,7 +58,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -67,7 +67,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -93,7 +93,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -127,10 +127,10 @@ export default function EntretienPlomberiePage() {
       'Saint Gilles',
       'Woluwe',
       'Namur',
-      'Liège',
+      'Liége',
       'Charleroi',
       'Mons',
-      'La Louvière',
+      'La Louviére',
       'Tournai',
       'Nivelles',
       'Wavre',
@@ -150,7 +150,7 @@ export default function EntretienPlomberiePage() {
       <style>{styles}</style>
 
       <div className="bg-slate-900 text-white text-center py-2 px-4 text-xs md:text-sm font-bold">
-        Services d’Entretien Plomberie en Belgique. Prévention, contrôle et longévité des installations.
+        Services d'Entretien Plomberie en Belgique. Prévention, contréle et longévité des installations.
       </div>
 
       <div className="bg-slate-900 text-slate-300 py-2 text-xs hidden lg:block border-b border-slate-800">
@@ -362,14 +362,14 @@ export default function EntretienPlomberiePage() {
               <CalendarClock className="w-4 h-4" /> Maintenance préventive
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Services d’<span className="text-orange-500">Entretien Plomberie</span>
+              Services d'<span className="text-orange-500">Entretien Plomberie</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl leading-relaxed">
-              Les <strong>services d’entretien plomberie</strong> permettent de prévenir les <strong>fuites d’eau</strong>,
-              les <strong>pannes</strong> et les <strong>dégâts des eaux</strong>. Aqua&Deb réalise un <strong>entretien de plomberie</strong>
+              Les <strong>services d'entretien plomberie</strong> permettent de prévenir les <strong>fuites d'eau</strong>,
+              les <strong>pannes</strong> et les <strong>dégéts des eaux</strong>. Aqua&Deb réalise un <strong>entretien de plomberie</strong>
               complet et professionnel pour sécuriser votre réseau, améliorer la performance des installations sanitaires
               et prolonger la durée de vie de la robinetterie, des évacuations, des WC et des équipements.
-              Nous intervenons en <strong>Belgique</strong>, à <strong>Bruxelles</strong> et dans toute la <strong>Wallonie</strong>.
+              Nous intervenons en <strong>Belgique</strong>, é <strong>Bruxelles</strong> et dans toute la <strong>Wallonie</strong>.
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
@@ -378,7 +378,7 @@ export default function EntretienPlomberiePage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Sécurité
                 </div>
                 <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                  Contrôle des points sensibles, prévention des fuites invisibles et réduction du risque de dégâts.
+                  Contréle des points sensibles, prévention des fuites invisibles et réduction du risque de dégéts.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -386,7 +386,7 @@ export default function EntretienPlomberiePage() {
                   <Wrench className="w-5 h-5 text-orange-300" /> Prévention
                 </div>
                 <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                  Nettoyage préventif, vérification des évacuations, contrôle de pression, réglages et conseils.
+                  Nettoyage préventif, vérification des évacuations, contréle de pression, réglages et conseils.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -423,18 +423,18 @@ export default function EntretienPlomberiePage() {
             </h2>
             <p className="text-slate-600 max-w-5xl mx-auto text-center text-lg leading-relaxed">
               Un <strong>entretien plomberie régulier</strong> est la meilleure stratégie pour éviter les urgences.
-              Avec le temps, le calcaire, les dépôts et l'usure naturelle créent des micro fuites,
+              Avec le temps, le calcaire, les dépéts et l'usure naturelle créent des micro fuites,
               une baisse de pression, des odeurs et des évacuations plus lentes.
-              En anticipant, vous réduisez les risques de <strong>dégâts des eaux</strong> et vous gardez une installation
-              saine. L'entretien est particulièrement utile pour les logements en location, les copropriétés,
+              En anticipant, vous réduisez les risques de <strong>dégéts des eaux</strong> et vous gardez une installation
+              saine. L'entretien est particuliérement utile pour les logements en location, les copropriétés,
               les commerces et les maisons anciennes.
             </p>
             <div className="mt-10 grid lg:grid-cols-3 gap-8">
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-100">
-                <h3 className="font-black text-lg text-slate-900 mb-3">Signes à surveiller</h3>
+                <h3 className="font-black text-lg text-slate-900 mb-3">Signes é surveiller</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Siphon qui sent, évacuation lente, robinet qui goutte, chasse d'eau qui se remplit en continu,
-                  traces d'humidité, pression irrégulière, bruit dans les tuyaux. Ces signaux sont souvent
+                  traces d'humidité, pression irréguliére, bruit dans les tuyaux. Ces signaux sont souvent
                   les premiers indicateurs d'un besoin d'entretien.
                 </p>
               </div>
@@ -442,14 +442,14 @@ export default function EntretienPlomberiePage() {
                 <h3 className="font-black text-lg text-slate-900 mb-3">Bénéfices réels</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Moins de pannes, moins de fuites, moins de bouchons. Un réseau entretenu offre une meilleure
-                  performance et réduit les remplacements coûteux.
+                  performance et réduit les remplacements coéteux.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-100">
                 <h3 className="font-black text-lg text-slate-900 mb-3">Pour qui</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Propriétaires, bailleurs, syndics, gestionnaires de biens, commerçants.
-                  Nous adaptons l'entretien à votre installation et à votre usage.
+                  Propriétaires, bailleurs, syndics, gestionnaires de biens, commeréants.
+                  Nous adaptons l'entretien é votre installation et é votre usage.
                 </p>
               </div>
             </div>
@@ -464,7 +464,7 @@ export default function EntretienPlomberiePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  t: 'Contrôle des points sensibles',
+                  t: 'Contréle des points sensibles',
                   d: "Vérification des raccords, joints, vannes, flexibles, robinets et alimentation générale."
                 },
                 {
@@ -472,8 +472,8 @@ export default function EntretienPlomberiePage() {
                   d: "Test des WC, mécanismes, chasses, mitigeurs, mousseurs et réglages anti fuite."
                 },
                 {
-                  t: 'Évacuations et siphons',
-                  d: "Nettoyage préventif des siphons, contrôle des odeurs, vérification de la pente et du débit."
+                  t: 'évacuations et siphons',
+                  d: "Nettoyage préventif des siphons, contréle des odeurs, vérification de la pente et du débit."
                 },
                 {
                   t: 'Conseils et prévention',
@@ -491,9 +491,9 @@ export default function EntretienPlomberiePage() {
             <div className="mt-12 max-w-5xl mx-auto bg-white rounded-2xl border border-slate-100 p-8">
               <h3 className="font-black text-slate-900 text-xl mb-3">Entretien préventif et économies</h3>
               <p className="text-slate-600 leading-relaxed">
-                L'objectif d'un <strong>entretien plomberie</strong> est simple. Réduire les risques avant qu'un problème
+                L'objectif d'un <strong>entretien plomberie</strong> est simple. Réduire les risques avant qu'un probléme
                 n'apparaisse. Un robinet qui goutte, une chasse qui fuit, un siphon encrassé ou une petite fuite sur un raccord
-                peuvent coûter cher sur l'année et provoquer des dégâts. En intervenant tôt, on limite les réparations,
+                peuvent coéter cher sur l'année et provoquer des dégéts. En intervenant tét, on limite les réparations,
                 on évite les urgences et on prolonge la durée de vie du réseau.
               </p>
             </div>
@@ -504,7 +504,7 @@ export default function EntretienPlomberiePage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-4">Comment se passe une intervention</h2>
             <p className="text-slate-600 mb-12 max-w-4xl mx-auto">
-              Méthode simple, claire et efficace. On contrôle, on nettoie, on sécurise, puis on vous explique.
+              Méthode simple, claire et efficace. On contréle, on nettoie, on sécurise, puis on vous explique.
             </p>
             <div className="grid md:grid-cols-4 gap-8 text-left">
               {[
@@ -513,12 +513,12 @@ export default function EntretienPlomberiePage() {
                   d: 'Vous expliquez votre situation. Nous planifions selon votre zone et vos disponibilités.'
                 },
                 {
-                  t: 'Contrôle technique',
-                  d: 'Inspection des points clés, vérification du débit, de la pression et des éléments à risque.'
+                  t: 'Contréle technique',
+                  d: 'Inspection des points clés, vérification du débit, de la pression et des éléments é risque.'
                 },
                 {
                   t: 'Nettoyage et réglages',
-                  d: 'Nettoyage préventif des siphons, contrôle des WC, réglage robinetterie et éléments sanitaires.'
+                  d: 'Nettoyage préventif des siphons, contréle des WC, réglage robinetterie et éléments sanitaires.'
                 },
                 {
                   t: 'Compte rendu',
@@ -543,17 +543,17 @@ export default function EntretienPlomberiePage() {
             <p className="text-slate-300 mb-10 max-w-5xl mx-auto leading-relaxed">
               Pour un <strong>entretien plomberie</strong>, le prix dépend de la taille de l'installation,
               du nombre d'équipements et de l'état général.
-              Nous annonçons un <strong>devis</strong> avant intervention. Pas de frais cachés.
-              L'objectif est une prestation utile, concrète et rentable.
+              Nous annonéons un <strong>devis</strong> avant intervention. Pas de frais cachés.
+              L'objectif est une prestation utile, concréte et rentable.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {['Déplacement et contrôle', 'Nettoyage préventif', 'Conseils et prévention'].map((t, i) => (
+              {['Déplacement et contréle', 'Nettoyage préventif', 'Conseils et prévention'].map((t, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Intervention utile et ciblée. Priorité aux points à risque et aux causes réelles.
+                    Intervention utile et ciblée. Priorité aux points é risque et aux causes réelles.
                   </p>
                 </div>
               ))}
@@ -569,10 +569,10 @@ export default function EntretienPlomberiePage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-5xl mx-auto leading-relaxed">
-              Aqua&Deb intervient pour l’<strong>entretien plomberie</strong> dans toute la <strong>Belgique</strong>,
-              en priorité à <strong>Bruxelles</strong> et en <strong>Wallonie</strong>.
+              Aqua&Deb intervient pour l'<strong>entretien plomberie</strong> dans toute la <strong>Belgique</strong>,
+              en priorité é <strong>Bruxelles</strong> et en <strong>Wallonie</strong>.
               Nous privilégions la proximité pour un suivi régulier et des interventions planifiées.
-              Namur, Liège, Charleroi, Mons, Verviers et alentours.
+              Namur, Liége, Charleroi, Mons, Verviers et alentours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {zones.map((city, i) => (
@@ -591,12 +591,12 @@ export default function EntretienPlomberiePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   {
-                    q: 'À quelle fréquence faire un entretien plomberie',
-                    a: "En général, une fois par an est recommandé. Pour un logement ancien ou une location, cela peut être plus régulier selon usage."
+                    q: 'é quelle fréquence faire un entretien plomberie',
+                    a: "En général, une fois par an est recommandé. Pour un logement ancien ou une location, cela peut étre plus régulier selon usage."
                   },
                   {
                     q: "L'entretien évite t il les fuites", 
-                    a: "Il permet de détecter l'usure et les signes avant qu'une fuite importante n'apparaisse, ce qui réduit fortement le risque de dégâts."
+                    a: "Il permet de détecter l'usure et les signes avant qu'une fuite importante n'apparaisse, ce qui réduit fortement le risque de dégéts."
                   },
                   {
                     q: 'Intervenez vous pour commerces et copropriétés',
@@ -635,7 +635,7 @@ export default function EntretienPlomberiePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie,
@@ -668,10 +668,10 @@ export default function EntretienPlomberiePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map((item, i) => (
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map((item, i) => (
                   <li key={i}>
                     <a href="#" className="hover:text-white transition-colors">{item}</a>
                   </li>
@@ -718,13 +718,15 @@ export default function EntretienPlomberiePage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

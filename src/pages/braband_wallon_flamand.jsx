@@ -67,7 +67,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -76,7 +76,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -102,7 +102,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -174,11 +174,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Vous habitez le Brabant Wallon ou Flamand ? Décrivez votre problème sanitaire.
+                Vous habitez le Brabant Wallon ou Flamand ? Décrivez votre probléme sanitaire.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : Fuite d'eau à Waterloo, besoin d'un plombier urgent..."
+                placeholder="Exemple : Fuite d'eau é Waterloo, besoin d'un plombier urgent..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -189,7 +189,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse locale...' : "Analyser le problème"}
+                {loading ? 'Analyse locale...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -238,7 +238,7 @@ export default function ZoneBrabantPage() {
       <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} />
 
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold">
-        Intervention express : Wavre, Waterloo, Nivelles, Overijse, Rhode-Saint-Genèse.
+        Intervention express : Wavre, Waterloo, Nivelles, Overijse, Rhode-Saint-Genése.
       </div>
 
       <div className="bg-slate-900 text-slate-300 py-2 text-xs hidden lg:block border-b border-slate-800">
@@ -482,9 +482,9 @@ export default function ZoneBrabantPage() {
               Plombier & Déboucheur <span className="text-orange-500">Brabant</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Au cœur du Brabant Wallon et Flamand, Aqua&Deb est votre référence pour
+              Au cour du Brabant Wallon et Flamand, Aqua&Deb est votre référence pour
               <strong>plomberie</strong>, <strong>chauffage</strong> et <strong>débouchage</strong>.
-              Intervention rapide à Wavre, Waterloo, Nivelles, Braine-l'Alleud, Overijse et environs.
+              Intervention rapide é Wavre, Waterloo, Nivelles, Braine-l'Alleud, Overijse et environs.
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
@@ -501,15 +501,15 @@ export default function ZoneBrabantPage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Service Premium
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Des prestations soignées et un service clientèle attentif pour votre confort.
+                  Des prestations soignées et un service clientéle attentif pour votre confort.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <Truck className="w-5 h-5 text-cyan-300" /> Équipement Complet
+                  <Truck className="w-5 h-5 text-cyan-300" /> équipement Complet
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Débouchage haute pression et inspection caméra pour tous types de canalisations, même difficiles d'accès.
+                  Débouchage haute pression et inspection caméra pour tous types de canalisations, méme difficiles d'accés.
                 </p>
               </div>
             </div>
@@ -551,7 +551,7 @@ export default function ZoneBrabantPage() {
                   <MapPin className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Une présence locale forte pour répondre à vos urgences plomberie dans toute la région.
+                    Une présence locale forte pour répondre é vos urgences plomberie dans toute la région.
                   </p>
                 </div>
               ))}
@@ -563,8 +563,8 @@ export default function ZoneBrabantPage() {
                   <Wrench className="w-6 h-6 text-orange-500" /> Rénovation & Entretien
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Le Brabant regorge de belles demeures. Nous remplaçons les anciennes tuyauteries,
-                  rénovons les salles de bain de standing et entretenons les chaudières pour un confort optimal.
+                  Le Brabant regorge de belles demeures. Nous remplaéons les anciennes tuyauteries,
+                  rénovons les salles de bain de standing et entretenons les chaudiéres pour un confort optimal.
                 </p>
                 <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Fuite d'eau</li>
@@ -580,7 +580,7 @@ export default function ZoneBrabantPage() {
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Canalisations bouchées ? Racines dans les égouts ?
-                  Nous intervenons rapidement avec hydrocureuse et caméra pour déboucher égouts, WC et éviers sans dégâts.
+                  Nous intervenons rapidement avec hydrocureuse et caméra pour déboucher égouts, WC et éviers sans dégéts.
                 </p>
                  <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Hydrocurage</li>
@@ -605,21 +605,21 @@ export default function ZoneBrabantPage() {
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <h4 className="font-bold text-slate-900 mb-4">Communes principales :</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-slate-600">
-                  <span>📍 Wavre</span>
-                  <span>📍 Waterloo</span>
-                  <span>📍 Braine-l'Alleud</span>
-                  <span>📍 Nivelles</span>
-                  <span>📍 Ottignies-LLN</span>
-                  <span>📍 Genval</span>
-                  <span>📍 Rixensart</span>
-                  <span>📍 La Hulpe</span>
-                  <span>📍 Lasne</span>
-                  <span>📍 Tubize</span>
-                  <span>📍 Overijse</span>
-                  <span>📍 Hoeilaart</span>
-                  <span>📍 Rhode-Saint-Genèse</span>
-                  <span>📍 Linkebeek</span>
-                  <span>📍 Beersel</span>
+                  <span>?? Wavre</span>
+                  <span>?? Waterloo</span>
+                  <span>?? Braine-l'Alleud</span>
+                  <span>?? Nivelles</span>
+                  <span>?? Ottignies-LLN</span>
+                  <span>?? Genval</span>
+                  <span>?? Rixensart</span>
+                  <span>?? La Hulpe</span>
+                  <span>?? Lasne</span>
+                  <span>?? Tubize</span>
+                  <span>?? Overijse</span>
+                  <span>?? Hoeilaart</span>
+                  <span>?? Rhode-Saint-Genése</span>
+                  <span>?? Linkebeek</span>
+                  <span>?? Beersel</span>
                 </div>
               </div>
             </div>
@@ -657,7 +657,7 @@ export default function ZoneBrabantPage() {
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                  <h3 className="font-bold text-slate-900 mb-2">Fosses Septiques</h3>
                  <p className="text-sm text-slate-600">
-                   Dans les zones rurales ou résidentielles non raccordées à l'égout, nous assurons l'entretien de vos fosses.
+                   Dans les zones rurales ou résidentielles non raccordées é l'égout, nous assurons l'entretien de vos fosses.
                  </p>
                </div>
             </div>
@@ -707,7 +707,7 @@ export default function ZoneBrabantPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -742,10 +742,10 @@ export default function ZoneBrabantPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -804,13 +804,15 @@ export default function ZoneBrabantPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

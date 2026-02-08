@@ -33,7 +33,7 @@ import {
   Maximize2
 } from 'lucide-react';
 
-// --- STYLES INJECTÉS ---
+// --- STYLES INJECTéS ---
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap');
   
@@ -82,7 +82,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -91,7 +91,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -117,7 +117,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -366,7 +366,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
               Une urgence plomberie ? Une rénovation en vue ? <br className="hidden md:block"/>
-              Notre équipe d'experts est prête à intervenir partout en Belgique. 
+              Notre équipe d'experts est préte é intervenir partout en Belgique. 
             </p>
           </div>
         </section>
@@ -376,7 +376,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               
-              {/* Texte SEO à gauche */}
+              {/* Texte SEO é gauche */}
               <div className="space-y-6">
                 <span className="text-orange-600 font-bold uppercase tracking-wider text-sm">Pourquoi nous choisir ?</span>
                 <h2 className="text-4xl font-black text-slate-900 font-[Montserrat] leading-tight">
@@ -387,7 +387,7 @@ export default function ContactPage() {
                     Chez <strong>Aqua&Deb</strong>, nous savons que chaque minute compte lors d'une <strong>fuite d'eau</strong> ou d'un <strong>débouchage urgent</strong>. C'est pourquoi nous avons mis en place un service client ultra-réactif.
                   </p>
                   <p>
-                    Que vous habitiez à <strong>Bruxelles</strong>, <strong>Namur</strong>, <strong>Liège</strong>, <strong>Charleroi</strong> ou <strong>Mons</strong>, nos techniciens sont géolocalisés pour intervenir en moins de 45 minutes.
+                    Que vous habitiez é <strong>Bruxelles</strong>, <strong>Namur</strong>, <strong>Liége</strong>, <strong>Charleroi</strong> ou <strong>Mons</strong>, nos techniciens sont géolocalisés pour intervenir en moins de 45 minutes.
                   </p>
                   <p>
                     Remplissez le formulaire ci-dessous pour obtenir un <strong>devis gratuit</strong> et sans engagement pour tous vos travaux de plomberie, chauffage et débouchage.
@@ -399,7 +399,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Image à droite */}
+              {/* Image é droite */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-orange-400 rounded-3xl opacity-20 transform rotate-3"></div>
                 <img 
@@ -439,7 +439,7 @@ export default function ContactPage() {
                     <div className="flex items-center gap-4">
                       <img src={ICONS.mailApple} alt="Email" className="w-10 h-10 object-contain" />
                       <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Écrivez-nous</p>
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">écrivez-nous</p>
                         <a href={`mailto:${BRAND.email}`} className="text-base font-bold text-slate-900 hover:text-orange-600 transition-colors break-all">
                           {BRAND.email}
                         </a>
@@ -450,7 +450,7 @@ export default function ContactPage() {
                     <div className="flex items-center gap-4">
                       <img src={ICONS.mapApple} alt="Zone" className="w-10 h-10 object-contain" />
                       <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Siège Social</p>
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">Siége Social</p>
                         <p className="text-base font-bold text-slate-900">
                           Av. des dessus de Lives 2,<br/>5101 Namur
                         </p>
@@ -561,7 +561,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-800 uppercase tracking-wide">Description du problème <span className="text-red-500">*</span></label>
+                      <label className="text-sm font-bold text-slate-800 uppercase tracking-wide">Description du probléme <span className="text-red-500">*</span></label>
                       <textarea 
                         name="message"
                         value={formData.message}
@@ -573,7 +573,7 @@ export default function ContactPage() {
 
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
-                        <span>Photos du problème (Optionnel)</span>
+                        <span>Photos du probléme (Optionnel)</span>
                       </label>
                       <CloudinaryUploader onFilesChange={setSelectedFiles} />
                       {uploadingPhotos && (
@@ -581,7 +581,7 @@ export default function ContactPage() {
                       )}
                       {uploadedUrls.length > 0 && (
                         <p className="text-xs text-green-600 font-semibold">
-                          {uploadedUrls.length} photo(s) prêtes à être envoyées.
+                          {uploadedUrls.length} photo(s) prétes é étre envoyées.
                         </p>
                       )}
                     </div>
@@ -601,7 +601,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* --- NOUVELLE SECTION: ENGAGEMENT QUALITÉ (APRÈS FORMULAIRE) --- */}
+        {/* --- NOUVELLE SECTION: ENGAGEMENT QUALITé (APRéS FORMULAIRE) --- */}
         <section className="py-20 bg-slate-900 text-white text-center">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black mb-12 font-[Montserrat]">Notre engagement qualité</h2>
@@ -609,7 +609,7 @@ export default function ContactPage() {
               <div className="p-6 border border-slate-800 rounded-2xl bg-slate-800/50">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-black">1</div>
                 <h3 className="text-xl font-bold mb-3">Réponse Rapide</h3>
-                <p className="text-slate-400">Nous traitons votre demande dès réception et vous contactons dans les plus brefs délais.</p>
+                <p className="text-slate-400">Nous traitons votre demande dés réception et vous contactons dans les plus brefs délais.</p>
               </div>
               <div className="p-6 border border-slate-800 rounded-2xl bg-slate-800/50">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-black">2</div>
@@ -619,7 +619,7 @@ export default function ContactPage() {
               <div className="p-6 border border-slate-800 rounded-2xl bg-slate-800/50">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-black">3</div>
                 <h3 className="text-xl font-bold mb-3">Suivi Personnalisé</h3>
-                <p className="text-slate-400">Un interlocuteur unique suit votre dossier de la demande de devis jusqu'à la fin des travaux.</p>
+                <p className="text-slate-400">Un interlocuteur unique suit votre dossier de la demande de devis jusqu'é la fin des travaux.</p>
               </div>
             </div>
           </div>
@@ -631,13 +631,13 @@ export default function ContactPage() {
       <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600 mt-0">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             
-            {/* Col 1: À propos */}
+            {/* Col 1: é propos */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">À propos de nous</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">é propos de nous</h4>
               <p className="text-sm leading-relaxed text-slate-500 mb-6">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois, disponible 24h/24 et 7j/7.
               </p>
@@ -658,11 +658,11 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            {/* Col 3: Zones d’intervention */}
+            {/* Col 3: Zones d'intervention */}
             <div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d’intervention</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d'intervention</h4>
               <ul className="space-y-2 text-sm">
-                {["Liège", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
+                {["Liége", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
                   <li key={i}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
                 ))}
               </ul>
@@ -721,6 +721,8 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
 
 
 

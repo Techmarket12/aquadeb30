@@ -20,7 +20,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -29,7 +29,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -37,7 +37,7 @@ const NAV_LINKS = [
         title: 'Débouchage',
         desc: 'Intervention haute pression',
         items: [
-          'Débouchage WC & Éviers',
+          'Débouchage WC & éviers',
           'Débouchage canalisations',
           'Inspection caméra',
           'Service de débouchage égout',
@@ -55,7 +55,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -167,9 +167,9 @@ export default function BruxellesPage() {
       <main className="py-16">
         <div className="container mx-auto px-4 text-center">
           <p className="inline-flex items-center gap-2 text-orange-600 font-bold uppercase text-xs tracking-widest mb-3">
-            <MapPin className="w-4 h-4" /> Intervention rapide à Bruxelles et périphérie
+            <MapPin className="w-4 h-4" /> Intervention rapide é Bruxelles et périphérie
           </p>
-          <h1 className="text-4xl font-black text-slate-900 mb-4">Plomberie & débouchage à Bruxelles</h1>
+          <h1 className="text-4xl font-black text-slate-900 mb-4">Plomberie & débouchage é Bruxelles</h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Dépannages 24/7 pour fuites, débouchage et chauffe-eau sur Bruxelles et sa périphérie. Techniciens bilingues, devis clair avant travaux.
           </p>
@@ -192,7 +192,7 @@ export default function BruxellesPage() {
               <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
             </div>
             <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-              À propos de nous
+              é propos de nous
             </h4>
             <p className="text-sm leading-relaxed text-slate-500">
               Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -223,10 +223,10 @@ export default function BruxellesPage() {
 
           <div>
             <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-              Zones d’intervention
+              Zones d'intervention
             </h4>
             <ul className="space-y-2 text-sm">
-              {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+              {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                 (item, i) => (
                   <li key={i}>
                     <a href="#" className="hover:text-white transition-colors">
@@ -281,12 +281,14 @@ export default function BruxellesPage() {
         </div>
 
         <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-          <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+          <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
         </div>
       </footer>
     </div>
   );
 }
+
+
 
 
 

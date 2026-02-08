@@ -41,6 +41,7 @@ import DepannageChauffagePage from './pages/depannage_chauffage';
 import RenovationSanitairePage from './pages/renovation_sanitaire';
 import EntretienPage from './pages/entretien';
 import DebouchageWCEviersPage from './pages/wc_evier_debouchage';
+import GoogleAdsTracking from './components/GoogleAdsTracking';
 import NamurPage from './pages/Namur';
 import CharleroiPage from './pages/Charleroi';
 import MonsPage from './pages/mons';
@@ -53,7 +54,7 @@ import RemplacementCanalisationGresPage from './pages/remplacement_canalisation_
 import InspectionCameraRechercheFuitesPage from './pages/inspection_camera_recherche_fuites';
 import { getServiceLink } from './utils/serviceRoutes';
 
-// --- STYLES INJECTÉS POUR LES ANIMATIONS ---
+// --- STYLES INJECTéS POUR LES ANIMATIONS ---
 const styles = `
   @keyframes scroll {
     0% { transform: translateX(0); }
@@ -96,7 +97,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -105,7 +106,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -131,7 +132,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -164,21 +165,21 @@ const REALIZATIONS = [
 ];
 
 const REVIEWS = [
-  { name: "Jean Dupont", text: "Intervention rapide pour une fuite d'eau importante. Le technicien était très pro.", rating: 5, date: "Il y a 3 jours", avatar: "https://i.pravatar.cc/150?img=11" },
+  { name: "Jean Dupont", text: "Intervention rapide pour une fuite d'eau importante. Le technicien était trés pro.", rating: 5, date: "Il y a 3 jours", avatar: "https://i.pravatar.cc/150?img=11" },
   { name: "Marie Laurent", text: "WC débouché en 30 minutes. Travail propre et prix correct. Je recommande.", rating: 5, date: "Il y a 1 semaine", avatar: "https://i.pravatar.cc/150?img=5" },
-  { name: "Pierre Van Hout", text: "Remplacement de chauffe-eau effectué le jour même. Service impeccable.", rating: 5, date: "Il y a 2 semaines", avatar: "https://i.pravatar.cc/150?img=3" },
-  { name: "Sophie Martin", text: "Très satisfaite du service. Ils sont venus un dimanche pour une urgence.", rating: 5, date: "Il y a 3 semaines", avatar: "https://i.pravatar.cc/150?img=9" },
-  { name: "Ahmed Benali", text: "Plombier sympa et efficace. Il m'a bien expliqué le problème.", rating: 4, date: "Il y a 1 mois", avatar: "https://i.pravatar.cc/150?img=13" },
+  { name: "Pierre Van Hout", text: "Remplacement de chauffe-eau effectué le jour méme. Service impeccable.", rating: 5, date: "Il y a 2 semaines", avatar: "https://i.pravatar.cc/150?img=3" },
+  { name: "Sophie Martin", text: "Trés satisfaite du service. Ils sont venus un dimanche pour une urgence.", rating: 5, date: "Il y a 3 semaines", avatar: "https://i.pravatar.cc/150?img=9" },
+  { name: "Ahmed Benali", text: "Plombier sympa et efficace. Il m'a bien expliqué le probléme.", rating: 4, date: "Il y a 1 mois", avatar: "https://i.pravatar.cc/150?img=13" },
   { name: "Chantal Dubois", text: "Je recommande cette société pour leur réactivité et leur gentillesse.", rating: 5, date: "Il y a 1 mois", avatar: "https://i.pravatar.cc/150?img=20" },
-  { name: "Marc Lambert", text: "Problème d'égout bouché réglé en un rien de temps. Merci !", rating: 5, date: "Il y a 2 mois", avatar: "https://i.pravatar.cc/150?img=15" },
+  { name: "Marc Lambert", text: "Probléme d'égout bouché réglé en un rien de temps. Merci !", rating: 5, date: "Il y a 2 mois", avatar: "https://i.pravatar.cc/150?img=15" },
 ];
 
 const ZONES_INTERVENTION_LIST = [
-  "Namur", "Charleroi", "Liège", "Mons", "Bruxelles", "Wavre", "Nivelles", "Waterloo", "Verviers"
+  "Namur", "Charleroi", "Liége", "Mons", "Bruxelles", "Wavre", "Nivelles", "Waterloo", "Verviers"
 ];
 
 // --- AI DIAGNOSTIC MODAL ---
-const AiDiagnosticModal = ({ isOpen, onClose }) => {
+const AiDiagnosticModal = ({ isOpen, onClose, onPhoneClick }) => {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -246,7 +247,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
               </p>
               <textarea 
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Décrivez votre problème ici..."
+                placeholder="Décrivez votre probléme ici..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -267,7 +268,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
               <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
                 <p className="text-slate-700 font-medium">{result.safety_tip}</p>
               </div>
-              <a href={BRAND.phoneLink} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-xl animate-pulse text-xl">
+              <a href={BRAND.phoneLink} onClick={onPhoneClick} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-xl animate-pulse text-xl">
                 <Phone className="w-6 h-6" /> Appeler le Technicien
               </a>
             </div>
@@ -484,6 +485,11 @@ function HomePage() {
   const [selectedFiles, setSelectedFiles] = useState(null);
   const [uploadedUrls, setUploadedUrls] = useState([]);
   const [uploadingPhotos, setUploadingPhotos] = useState(false);
+  const handlePhoneClick = useCallback(() => {
+    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+      window.gtag_report_conversion();
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -564,7 +570,7 @@ function HomePage() {
     <div className="font-sans text-slate-800 antialiased bg-white selection:bg-orange-500 selection:text-white">
       <style>{styles}</style>
       
-      <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} />
+      <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} onPhoneClick={handlePhoneClick} />
       <Lightbox
         images={REALIZATIONS}
         currentIndex={selectedIndex}
@@ -583,7 +589,7 @@ function HomePage() {
 
       {/* --- FLASH INFO BAR --- */}
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold animate-pulse">
-        ?? Techniciens disponibles immédiatement dans votre secteur. Arrivée en 45 min garantie.
+        Techniciens disponibles immédiatement dans votre secteur. Arrivée en 45 min garantie.
       </div>
 
       {/* --- TOP BAR (Desktop) --- */}
@@ -684,6 +690,7 @@ function HomePage() {
                 <a 
                   key={idx}
                   href={link.href}
+                  onClick={handlePhoneClick}
                   className="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-black text-sm uppercase tracking-wide shadow-md transition-all hover:scale-105 flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" /> {link.label}
@@ -734,7 +741,7 @@ function HomePage() {
                                 <li key={iIdx} className="text-sm text-slate-600">
                                   <Link
                                     to={getServiceLink(item)}
-                                    onClick={() => setMobileMenuOpen(false)}
+                                    onClick={() => { if (link.isButton) handlePhoneClick(); setMobileMenuOpen(false); }}
                                     className="text-blue-700 font-semibold"
                                   >
                                     {item}
@@ -775,7 +782,7 @@ function HomePage() {
                       to={isRouterLink ? link.href : undefined} 
                       href={!isRouterLink ? link.href : undefined}
                       className={`block p-4 font-bold text-lg ${link.isButton ? 'bg-red-50 text-red-600' : 'text-slate-700'}`} 
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => { if (link.isButton) handlePhoneClick(); setMobileMenuOpen(false); }}
                     >
                       {link.label}
                     </NavComponent>
@@ -818,7 +825,7 @@ function HomePage() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight drop-shadow-2xl">
-                  STOP AUX <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">DÉGÂTS.</span><br/>
+                  STOP AUX <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">DéGéTS.</span><br/>
                   PLOMBIER D'URGENCE.
                 </h1>
                 
@@ -830,6 +837,7 @@ function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                   <a 
                     href={BRAND.phoneLink}
+                    onClick={handlePhoneClick}
                     className="group relative overflow-hidden bg-orange-600 hover:bg-orange-700 text-white text-xl font-black py-5 px-8 rounded-xl shadow-2xl shadow-orange-600/40 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 w-full sm:w-auto"
                   >
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
@@ -869,10 +877,10 @@ function HomePage() {
                         name="urgence"
                         className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
                       >
-                        <option>?? Fuite d'eau</option>
-                        <option>?? WC Bouché</option>
-                        <option>?? Canalisation bouchée</option>
-                        <option>?? Panne Chauffe-eau</option>
+                        <option>Fuite d'eau</option>
+                        <option>WC Bouché</option>
+                        <option>Canalisation bouchée</option>
+                        <option>Panne Chauffe-eau</option>
                         <option>? Autre</option>
                       </select>
                     </div>
@@ -887,7 +895,7 @@ function HomePage() {
                       />
                     </div>
                     <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2">
-                      <Phone className="w-5 h-5" /> Être rappelé
+                      <Phone className="w-5 h-5" /> étre rappelé
                     </button>
                   </form>
                 </div>
@@ -991,7 +999,7 @@ function HomePage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-600 uppercase">Détails du problème</label>
+                    <label className="text-xs font-bold text-slate-600 uppercase">Détails du probléme</label>
                     <textarea
                       name="message"
                       className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-colors h-24 resize-none"
@@ -1001,7 +1009,7 @@ function HomePage() {
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-600 uppercase flex items-center justify-between">
-                      <span>Photos du problème (Optionnel)</span>
+                      <span>Photos du probléme (Optionnel)</span>
                     </label>
                     <CloudinaryUploader onFilesChange={setSelectedFiles} />
                   </div>
@@ -1106,10 +1114,10 @@ function HomePage() {
                     name="urgence"
                     className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 font-bold text-slate-800 focus:border-blue-500 outline-none transition-colors"
                   >
-                    <option>?? Fuite d'eau</option>
-                    <option>?? WC Bouché</option>
-                    <option>?? Canalisation bouchée</option>
-                    <option>?? Panne Chauffe-eau</option>
+                    <option>Fuite d'eau</option>
+                    <option>WC Bouché</option>
+                    <option>Canalisation bouchée</option>
+                    <option>Panne Chauffe-eau</option>
                     <option>? Autre</option>
                   </select>
                 </div>
@@ -1123,24 +1131,24 @@ function HomePage() {
                   />
                 </div>
                 <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95 flex justify-center items-center gap-2">
-                  <Phone className="w-5 h-5" /> Être rappelé
+                  <Phone className="w-5 h-5" /> étre rappelé
                 </button>
               </form>
             </div>
           </div>
         </section>
 
-        {/* --- NOTRE SAVOIR FAIRE (Égouttage & Canalisations) --- */}
+        {/* --- NOTRE SAVOIR FAIRE (égouttage & Canalisations) --- */}
         <section id="services" className="py-20 bg-slate-50" ref={sectionRef}>
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <span className="text-blue-600 font-black uppercase tracking-widest text-sm mb-2 block">NOTRE SAVOIR FAIRE</span>
                 <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-                  Travaux d’égouttage et canalisations
+                  Travaux d'égouttage et canalisations
                 </h2>
                 <p className="text-blue-700 font-bold text-lg mt-2 mb-6 uppercase tracking-wider">un diagnostic précis, des solutions durables.</p>
-                {/* Vidéo mobile placée juste après le sous-titre */}
+                {/* Vidéo mobile placée juste aprés le sous-titre */}
                 <video
                   ref={mobileVideoRef}
                   className="block lg:hidden w-full rounded-2xl shadow-2xl h-64 object-cover mb-6"
@@ -1167,22 +1175,22 @@ function HomePage() {
                 />
                 <div className="space-y-6 text-lg text-slate-600">
                   <p>
-                    Chez <strong>Aqua&Deb</strong>, nous intervenons bien au-delà du simple dépannage. Nous sommes spécialisés dans les travaux d’égouttage, le remplacement de canalisations et l’inspection par caméra afin d’identifier précisément l’origine des problèmes et d’y apporter une solution fiable et durable.
+                    Chez <strong>Aqua&Deb</strong>, nous intervenons bien au-delé du simple dépannage. Nous sommes spécialisés dans les travaux d'égouttage, le remplacement de canalisations et l'inspection par caméra afin d'identifier précisément l'origine des problémes et d'y apporter une solution fiable et durable.
                   </p>
                   <p>
-                    Grâce à nos équipements de diagnostic de dernière génération, nous localisons fissures, affaissements, obstructions ou ruptures sans travaux inutiles. Chaque intervention commence par une analyse claire de la situation, suivie d’une proposition adaptée à l’installation et au budget du client.
+                    Gréce é nos équipements de diagnostic de derniére génération, nous localisons fissures, affaissements, obstructions ou ruptures sans travaux inutiles. Chaque intervention commence par une analyse claire de la situation, suivie d'une proposition adaptée é l'installation et au budget du client.
                   </p>
                   <p>
-                    Nous intervenons sur l’ensemble de la <strong>Wallonie et Bruxelles</strong>, aussi bien pour des habitations privées que pour des immeubles ou locaux professionnels, avec la même exigence de qualité et de propreté.
+                    Nous intervenons sur l'ensemble de la <strong>Wallonie et Bruxelles</strong>, aussi bien pour des habitations privées que pour des immeubles ou locaux professionnels, avec la méme exigence de qualité et de propreté.
                   </p>
                   <ul className="space-y-3 mt-6">
                     {[
                       "Inspection des canalisations par caméra haute définition",
-                      "Travaux d’égouttage complets et réparations ciblées",
-                      "Remplacement de canalisations défectueuses ou obsolètes",
+                      "Travaux d'égouttage complets et réparations ciblées",
+                      "Remplacement de canalisations défectueuses ou obsolétes",
                       "Diagnostic précis avant toute intervention",
                       "Devis clair et détaillé avant travaux",
-                      "Respect total de l’habitation et de l’environnement"
+                      "Respect total de l'habitation et de l'environnement"
                     ].map((item, i) => (
                        <li key={i} className="flex items-center font-bold text-slate-800">
                          <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
@@ -1229,13 +1237,13 @@ function HomePage() {
         <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             
-            {/* Col 1: À propos */}
+            {/* Col 1: é propos */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">À propos de nous</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">é propos de nous</h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois, disponible 24h/24 et 7j/7.
               </p>
@@ -1251,11 +1259,11 @@ function HomePage() {
               </ul>
             </div>
 
-            {/* Col 3: Zones d’intervention */}
+            {/* Col 3: Zones d'intervention */}
             <div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d’intervention</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d'intervention</h4>
               <ul className="space-y-2 text-sm">
-                {["Liège", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
+                {["Liége", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
                   <li key={i}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
                 ))}
               </ul>
@@ -1271,7 +1279,7 @@ function HomePage() {
                 </li>
                 <li className="flex items-center gap-3">
                    <Phone className="w-4 h-4 text-orange-600" />
-                   <a href={BRAND.phoneLink} className="text-white font-bold hover:text-orange-500 transition-colors">{BRAND.phoneDisplay}</a>
+                   <a href={BRAND.phoneLink} onClick={handlePhoneClick} className="text-white font-bold hover:text-orange-500 transition-colors">{BRAND.phoneDisplay}</a>
                 </li>
                 <li className="flex items-center gap-3">
                    <Mail className="w-4 h-4 text-slate-500" />
@@ -1300,7 +1308,8 @@ function HomePage() {
         {/* --- STICKY MOBILE CTA --- */}
         <div className="fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-slate-200 shadow-[0_-5px_30px_rgba(0,0,0,0.15)] md:hidden z-50 flex gap-3 pb-safe">
           <a 
-            href={BRAND.phoneLink} 
+            href={BRAND.phoneLink}
+            onClick={handlePhoneClick}
             className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold rounded-xl flex flex-col items-center justify-center py-3 active:scale-95 transition-transform shadow-lg animate-pulse-slow"
           >
             <span className="text-[10px] opacity-90 uppercase tracking-widest mb-0.5">Urgence 24h/24</span>
@@ -1325,6 +1334,7 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
+      <GoogleAdsTracking />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -1334,7 +1344,7 @@ export default function App() {
         <Route path="/depannage-chauffage" element={<DepannageChauffagePage />} />
         <Route path="/renovation-sanitaires" element={<RenovationSanitairePage />} />
         <Route path="/entretien" element={<EntretienPage />} />
-        <Route path="/wc-evier-debouchage" element={<DebouchageWCEviersPage />} />
+        <Route path="/services/debouchage" element={<DebouchageWCEviersPage />} />
         <Route path="/service-robinetterie" element={<ServiceRobinetteriePage />} />
         <Route path="/remplacement-canalisation-gres" element={<RemplacementCanalisationGresPage />} />
         <Route path="/inspection-camera-recherche-fuites" element={<InspectionCameraRechercheFuitesPage />} />
@@ -1353,3 +1363,35 @@ export default function App() {
     </Router>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

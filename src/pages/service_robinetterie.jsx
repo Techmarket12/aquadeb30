@@ -67,7 +67,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -76,7 +76,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -102,7 +102,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -174,11 +174,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Plus d'eau chaude ? Eau tiède ? Fuite sous le ballon ? Décrivez le problème, l'IA vous conseille.
+                Plus d'eau chaude ? Eau tiéde ? Fuite sous le ballon ? Décrivez le probléme, l'IA vous conseille.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : Mon boiler fait du bruit et l'eau n'est plus très chaude..."
+                placeholder="Exemple : Mon boiler fait du bruit et l'eau n'est plus trés chaude..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -504,7 +504,7 @@ export default function ServiceBoilerPage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Détartrage Pro
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Prolongez la vie de votre appareil et réduisez votre facture d'énergie grâce à un détartrage complet.
+                  Prolongez la vie de votre appareil et réduisez votre facture d'énergie gréce é un détartrage complet.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -540,7 +540,7 @@ export default function ServiceBoilerPage() {
               Expert en <span className="text-blue-600">Production d'Eau Chaude</span>
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
-              Le boiler est essentiel à votre confort quotidien. Le calcaire est son ennemi numéro un : il se dépose sur la résistance,
+              Le boiler est essentiel é votre confort quotidien. Le calcaire est son ennemi numéro un : il se dépose sur la résistance,
               augmente le temps de chauffe et votre consommation électrique. Aqua&Deb intervient pour l'entretien préventif et
               le dépannage curatif de toutes vos installations sanitaires.
             </p>
@@ -559,7 +559,7 @@ export default function ServiceBoilerPage() {
                   <Thermometer className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Solution complète pour <strong>{item.toLowerCase()}</strong>. 
+                    Solution compléte pour <strong>{item.toLowerCase()}</strong>. 
                     Nous garantissons la sécurité électrique et hydraulique de votre installation.
                   </p>
                 </div>
@@ -572,7 +572,7 @@ export default function ServiceBoilerPage() {
                 <ul className="space-y-3 text-slate-600 text-sm">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>L'eau est tiède ou chauffe très lentement</span>
+                    <span>L'eau est tiéde ou chauffe trés lentement</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -598,10 +598,10 @@ export default function ServiceBoilerPage() {
               </div>
 
               <div className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm">
-                <h3 className="font-black text-lg text-slate-900 mb-3">Économie d'énergie</h3>
+                <h3 className="font-black text-lg text-slate-900 mb-3">économie d'énergie</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Un boiler entartré consomme 15 à 20% d'électricité en plus.
-                  Le remplacement par un modèle <strong>thermodynamique</strong> peut diviser votre facture par 3.
+                  Un boiler entartré consomme 15 é 20% d'électricité en plus.
+                  Le remplacement par un modéle <strong>thermodynamique</strong> peut diviser votre facture par 3.
                 </p>
               </div>
             </div>
@@ -616,10 +616,10 @@ export default function ServiceBoilerPage() {
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Le calcaire est inévitable en Belgique. Sans entretien régulier (tous les 2-3 ans), la cuve se remplit de sédiments,
-                la résistance surchauffe et finit par claquer, ou la cuve se perce à cause de la corrosion (anode usée).
+                la résistance surchauffe et finit par claquer, ou la cuve se perce é cause de la corrosion (anode usée).
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Nos forfaits d'entretien comprennent la vidange, le détartrage de la cuve, le contrôle de l'anode magnésium
+                Nos forfaits d'entretien comprennent la vidange, le détartrage de la cuve, le contréle de l'anode magnésium
                 et le remplacement du joint de bride. C'est l'assurance de la tranquillité.
               </p>
               <ul className="space-y-4">
@@ -651,12 +651,12 @@ export default function ServiceBoilerPage() {
               Déroulement d'un <span className="text-blue-600">dépannage</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-3xl mx-auto">
-              Nous intervenons avec un stock de pièces détachées courantes pour rétablir l'eau chaude au plus vite.
+              Nous intervenons avec un stock de piéces détachées courantes pour rétablir l'eau chaude au plus vite.
             </p>
             <div className="grid md:grid-cols-4 gap-8 text-left">
               {[
                 {
-                  t: 'Diagnostic Électrique',
+                  t: 'Diagnostic électrique',
                   d: "Vérification de l'alimentation, du thermostat et de la valeur ohmique de la résistance."
                 },
                 {
@@ -664,7 +664,7 @@ export default function ServiceBoilerPage() {
                   d: 'Vidange de la cuve pour accéder aux composants internes et évacuer le calcaire.'
                 },
                 {
-                  t: 'Remplacement Pièces',
+                  t: 'Remplacement Piéces',
                   d: "Changement de la résistance (blindée ou stéatite), de l'anode ou du thermostat."
                 },
                 {
@@ -695,7 +695,7 @@ export default function ServiceBoilerPage() {
                   <Wrench className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Le groupe de sécurité protège votre boiler des surpressions. S'il coule en permanence, il est HS ou la pression réseau est trop forte.
+                    Le groupe de sécurité protége votre boiler des surpressions. S'il coule en permanence, il est HS ou la pression réseau est trop forte.
                     Nous installons des réducteurs de pression pour protéger votre installation.
                   </p>
                 </div>
@@ -706,7 +706,7 @@ export default function ServiceBoilerPage() {
               <h3 className="font-black text-slate-900 text-xl mb-3">Boiler Thermodynamique</h3>
               <p className="text-slate-700 leading-relaxed">
                 Vous souhaitez remplacer votre vieux boiler électrique ? Optez pour le <strong>thermodynamique</strong>.
-                Il utilise une pompe à chaleur intégrée pour chauffer l'eau, consommant 3 à 4 fois moins d'énergie.
+                Il utilise une pompe é chaleur intégrée pour chauffer l'eau, consommant 3 é 4 fois moins d'énergie.
                 Nous vous conseillons sur la faisabilité et les primes disponibles.
               </p>
             </div>
@@ -717,7 +717,7 @@ export default function ServiceBoilerPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black mb-6">Tarifs Transparents</h2>
             <p className="text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Pas de surprise. Nos forfaits incluent le déplacement et la main d'œuvre pour les interventions courantes.
+              Pas de surprise. Nos forfaits incluent le déplacement et la main d'ouvre pour les interventions courantes.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {["Forfait Dépannage", "Forfait Détartrage", "Remplacement Boiler"].map((t, i) => (
@@ -742,11 +742,11 @@ export default function ServiceBoilerPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nos plombiers-chauffagistes interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, à
+              Nos plombiers-chauffagistes interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, é
               <strong>Bruxelles</strong> et selon les disponibilités en Flandre.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -765,8 +765,8 @@ export default function ServiceBoilerPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   {
-                    q: "À quelle fréquence détartrer mon boiler ?",
-                    a: "Il est recommandé de le faire tous les 2 à 3 ans, surtout si l'eau de votre région est dure (calcaire)."
+                    q: "é quelle fréquence détartrer mon boiler ?",
+                    a: "Il est recommandé de le faire tous les 2 é 3 ans, surtout si l'eau de votre région est dure (calcaire)."
                   },
                   {
                     q: "Pourquoi mon groupe de sécurité coule ?",
@@ -778,7 +778,7 @@ export default function ServiceBoilerPage() {
                   },
                   {
                     q: "Combien de temps dure un boiler ?",
-                    a: "Un boiler bien entretenu dure entre 10 et 15 ans. L'anode magnésium doit être contrôlée pour éviter la corrosion."
+                    a: "Un boiler bien entretenu dure entre 10 et 15 ans. L'anode magnésium doit étre contrélée pour éviter la corrosion."
                   }
                 ].map((f, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm text-left">
@@ -809,7 +809,7 @@ export default function ServiceBoilerPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -844,10 +844,10 @@ export default function ServiceBoilerPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -906,13 +906,15 @@ export default function ServiceBoilerPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

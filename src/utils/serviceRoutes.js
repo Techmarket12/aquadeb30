@@ -1,11 +1,11 @@
-const normalizeServiceLabel = (label = "") =>
+﻿const normalizeServiceLabel = (label = "") =>
   label
     .toLowerCase()
     .replace(/&/g, " et ")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/ç/g, "c")
-    .replace(/œ/g, "oe")
+    .replace(/é"/g, "oe")
     .replace(/[^a-z0-9]+/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -23,9 +23,9 @@ const SERVICE_ROUTE_MAP = {
   "remplacement canalisation en gres": "/remplacement-canalisation-gres",
   "inspection camera et recherche fuites": "/inspection-camera-recherche-fuites",
   "inspection camera": "/inspection-camera-recherche-fuites",
-  "debouchage wc eviers": "/wc-evier-debouchage",
-  "debouchage canalisations": "/wc-evier-debouchage",
-  "service de debouchage egout": "/wc-evier-debouchage",
+  "debouchage wc eviers": "/services/debouchage",
+  "debouchage canalisations": "/services/debouchage",
+  "service de debouchage egout": "/services/debouchage",
   "service de curage et entretien": "/entretien",
 };
 
@@ -37,8 +37,11 @@ export const getServiceLink = (label = "") => {
   if (key.includes("fuite")) return "/depannage-fuites";
   if (key.includes("sanitaire")) return "/depannage-sanitaires";
   if (key.includes("renovation")) return "/renovation-sanitaires";
-  if (key.includes("debouchage") || key.includes("curage") || key.includes("egout")) return "/wc-evier-debouchage";
+  if (key.includes("debouchage") || key.includes("curage") || key.includes("egout")) return "/services/debouchage";
   if (key.includes("entretien")) return "/entretien";
 
   return "/contact";
 };
+
+
+

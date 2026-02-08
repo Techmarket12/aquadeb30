@@ -33,7 +33,7 @@ import {
   Maximize2
 } from 'lucide-react';
 
-// --- STYLES INJECTÉS ---
+// --- STYLES INJECTéS ---
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap');
   
@@ -113,7 +113,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -122,7 +122,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -148,7 +148,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -185,12 +185,12 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
     - Entretien
     - Service de robinetterie
     - Service de boiler / chauffe-eau
-    - Remplacement de canalisation en grès
+    - Remplacement de canalisation en grés
     - Inspection caméra et recherche de fuites
     - Débouchage WC & éviers
     - Débouchage de canalisations
     - Inspection caméra (Débouchage)
-    - Service de débouchage d’égout
+    - Service de débouchage d'égout
 
     JSON Response Schema:
     {
@@ -642,11 +642,11 @@ export default function RealisationsPage() {
               Savoir-Faire & Expertise
             </span>
             <h1 className="text-5xl md:text-7xl font-black mb-6 font-[Bebas_Neue] tracking-wide drop-shadow-2xl">
-              Nos Dernières <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Réalisations</span>
+              Nos Derniéres <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Réalisations</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
               Découvrez la qualité de nos interventions en images. <br className="hidden md:block"/>
-              Du débouchage express à la rénovation complète.
+              Du débouchage express é la rénovation compléte.
             </p>
           </div>
         </section>
@@ -686,11 +686,11 @@ export default function RealisationsPage() {
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Remplacement Chauffe-eau</h3>
                   <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Installation d'un nouveau boiler thermodynamique en remplacement d'un ancien modèle défectueux. Gain énergétique et eau chaude garantie.
+                    Installation d'un nouveau boiler thermodynamique en remplacement d'un ancien modéle défectueux. Gain énergétique et eau chaude garantie.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Installation</span>
-                    <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Économie</span>
+                    <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">économie</span>
                   </div>
                 </div>
               </div>
@@ -699,12 +699,12 @@ export default function RealisationsPage() {
               <div className="group bg-white rounded-3xl border border-slate-100 shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
                 <div className="h-64 overflow-hidden relative">
                   <img src="https://res.cloudinary.com/dw9jkwccj/image/upload/v1766142107/fuite-wc-avant-apres_pcejsa.png" alt="Réparation Fuite WC" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-800">Liège</div>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-800">Liége</div>
                 </div>
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">Réparation Fuite WC</h3>
                   <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Détection et réparation d'une fuite encastrée sur un bâti-support WC suspendu. Intervention rapide pour stopper le dégât des eaux.
+                    Détection et réparation d'une fuite encastrée sur un béti-support WC suspendu. Intervention rapide pour stopper le dégét des eaux.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded">Urgence</span>
@@ -741,7 +741,7 @@ export default function RealisationsPage() {
           <div className="container mx-auto px-4 relative z-10">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-[Montserrat]">Convaincu par notre travail ?</h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              Ne laissez pas vos problèmes de plomberie s'installer. Contactez des professionnels reconnus pour un résultat impeccable.
+              Ne laissez pas vos problémes de plomberie s'installer. Contactez des professionnels reconnus pour un résultat impeccable.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href={BRAND.phoneLink} className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-transform hover:scale-105 gap-2 text-lg">
@@ -760,13 +760,13 @@ export default function RealisationsPage() {
       <footer className="bg-slate-950 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600 mt-0">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             
-            {/* Col 1: À propos */}
+            {/* Col 1: é propos */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img src={BRAND.logoUrl} alt="Aqua&Deb" className="h-12 w-12 rounded-full border-2 border-white shadow" />
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">À propos de nous</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">é propos de nous</h4>
               <p className="text-sm leading-relaxed text-slate-500 mb-6">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois, disponible 24h/24 et 7j/7.
               </p>
@@ -787,11 +787,11 @@ export default function RealisationsPage() {
               </ul>
             </div>
 
-            {/* Col 3: Zones d’intervention */}
+            {/* Col 3: Zones d'intervention */}
             <div>
-              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d’intervention</h4>
+              <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">Zones d'intervention</h4>
               <ul className="space-y-2 text-sm">
-                {["Liège", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
+                {["Liége", "Namur", "Charleroi", "Mons", "Verviers", "Brabant wallon et flamand", "Toutes les zones"].map((item, i) => (
                   <li key={i}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
                 ))}
               </ul>
@@ -850,5 +850,7 @@ export default function RealisationsPage() {
     </div>
   );
 }
+
+
 
 

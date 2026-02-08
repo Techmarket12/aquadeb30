@@ -66,7 +66,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -75,7 +75,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -101,7 +101,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -173,11 +173,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Habitant de Namur ou environs ? Décrivez votre problème de plomberie ou débouchage.
+                Habitant de Namur ou environs ? Décrivez votre probléme de plomberie ou débouchage.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : J'habite à Jambes et mon évier est bouché..."
+                placeholder="Exemple : J'habite é Jambes et mon évier est bouché..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -188,7 +188,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse locale...' : "Analyser le problème"}
+                {loading ? 'Analyse locale...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -475,10 +475,10 @@ export default function ZoneNamurPage() {
 
           <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 bg-red-600/20 text-red-400 px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <MapPin className="w-4 h-4" /> Intervention rapide à Namur
+              <MapPin className="w-4 h-4" /> Intervention rapide é Namur
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Plombier & Déboucheur à <span className="text-orange-500">Namur</span>
+              Plombier & Déboucheur é <span className="text-orange-500">Namur</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
               Besoin d'un plombier en urgence sur <strong>Namur et sa province</strong> ? Aqua&Deb est votre spécialiste local
@@ -505,10 +505,10 @@ export default function ZoneNamurPage() {
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <Truck className="w-5 h-5 text-cyan-300" /> Camion Équipé
+                  <Truck className="w-5 h-5 text-cyan-300" /> Camion équipé
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Nos camionnettes sillonnent la région avec tout le matériel (haute pression, caméra, pièces).
+                  Nos camionnettes sillonnent la région avec tout le matériel (haute pression, caméra, piéces).
                 </p>
               </div>
             </div>
@@ -533,10 +533,10 @@ export default function ZoneNamurPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black text-slate-900 mb-6 text-center">
-              Vos services à <span className="text-blue-600">Namur</span>
+              Vos services é <span className="text-blue-600">Namur</span>
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
-              Que vous soyez un particulier à Salzinnes, un commerçant dans le piétonnier de Namur ou une entreprise
+              Que vous soyez un particulier é Salzinnes, un commeréant dans le piétonnier de Namur ou une entreprise
               dans le zoning de Naninne, nous avons la solution.
             </p>
           </div>
@@ -545,12 +545,12 @@ export default function ZoneNamurPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['Débouchage WC Namur', 'Fuite d\'eau Jambes', 'Boiler Saint-Servais', 'Égouttage Bouge'].map((item, i) => (
+              {['Débouchage WC Namur', 'Fuite d\'eau Jambes', 'Boiler Saint-Servais', 'égouttage Bouge'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <MapPin className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Service de proximité disponible 7j/7. Nous connaissons les spécificités des bâtiments de la région.
+                    Service de proximité disponible 7j/7. Nous connaissons les spécificités des bétiments de la région.
                   </p>
                 </div>
               ))}
@@ -563,8 +563,8 @@ export default function ZoneNamurPage() {
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
                   Installation et réparation de robinetterie, WC, chasse d'eau, et tuyauterie.
-                  Nous intervenons souvent dans les vieilles maisons de maître namuroises pour la rénovation
-                  de conduites en plomb ou en grès.
+                  Nous intervenons souvent dans les vieilles maisons de maétre namuroises pour la rénovation
+                  de conduites en plomb ou en grés.
                 </p>
                 <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Recherche de fuite</li>
@@ -579,8 +579,8 @@ export default function ZoneNamurPage() {
                   <Droplets className="w-6 h-6 text-blue-500" /> Débouchage Urgent
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  WC bouché ? Évier qui refoule ? Nous débouchons vos canalisations haute pression.
-                  Service rapide pour les restaurants et kots étudiants très présents à Namur.
+                  WC bouché ? évier qui refoule ? Nous débouchons vos canalisations haute pression.
+                  Service rapide pour les restaurants et kots étudiants trés présents é Namur.
                 </p>
                  <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Curage égout</li>
@@ -601,26 +601,26 @@ export default function ZoneNamurPage() {
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Notre équipe couvre l'ensemble du Grand Namur et les communes avoisinantes.
-                Nous garantissons un délai d'intervention court grâce à notre position centrale.
+                Nous garantissons un délai d'intervention court gréce é notre position centrale.
               </p>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <h4 className="font-bold text-slate-900 mb-4">Communes principales :</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-slate-600">
-                  <span>📍 Namur Centre</span>
-                  <span>📍 Jambes</span>
-                  <span>📍 Salzinnes</span>
-                  <span>📍 Saint-Servais</span>
-                  <span>📍 Belgrade</span>
-                  <span>📍 Bouge</span>
-                  <span>📍 Champion</span>
-                  <span>📍 Erpent</span>
-                  <span>📍 Wépion</span>
-                  <span>📍 Malonne</span>
-                  <span>📍 Flawinne</span>
-                  <span>📍 Naninne</span>
-                  <span>📍 Beez</span>
-                  <span>📍 Vedrin</span>
-                  <span>📍 Daussoulx</span>
+                  <span>?? Namur Centre</span>
+                  <span>?? Jambes</span>
+                  <span>?? Salzinnes</span>
+                  <span>?? Saint-Servais</span>
+                  <span>?? Belgrade</span>
+                  <span>?? Bouge</span>
+                  <span>?? Champion</span>
+                  <span>?? Erpent</span>
+                  <span>?? Wépion</span>
+                  <span>?? Malonne</span>
+                  <span>?? Flawinne</span>
+                  <span>?? Naninne</span>
+                  <span>?? Beez</span>
+                  <span>?? Vedrin</span>
+                  <span>?? Daussoulx</span>
                 </div>
               </div>
             </div>
@@ -637,7 +637,7 @@ export default function ZoneNamurPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-4">
-              L'eau à Namur : <span className="text-blue-600">Calcaire ?</span>
+              L'eau é Namur : <span className="text-blue-600">Calcaire ?</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-3xl mx-auto">
               L'eau de la région namuroise est moyennement dure. Le calcaire peut endommager vos boilers et robinets.
@@ -656,9 +656,9 @@ export default function ZoneNamurPage() {
                  </p>
                </div>
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                 <h3 className="font-bold text-slate-900 mb-2">Vieux Bâtiments</h3>
+                 <h3 className="font-bold text-slate-900 mb-2">Vieux Bétiments</h3>
                  <p className="text-sm text-slate-600">
-                   Dans le vieux Namur, attention aux canalisations en plomb ou grès qui peuvent fuir. Nous les remplaçons.
+                   Dans le vieux Namur, attention aux canalisations en plomb ou grés qui peuvent fuir. Nous les remplaéons.
                  </p>
                </div>
             </div>
@@ -691,8 +691,8 @@ export default function ZoneNamurPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">Urgence Plomberie à Namur ?</h2>
-          <p className="mb-8 text-lg">Un technicien est probablement déjà dans votre quartier.</p>
+          <h2 className="text-3xl font-black mb-4">Urgence Plomberie é Namur ?</h2>
+          <p className="mb-8 text-lg">Un technicien est probablement déjé dans votre quartier.</p>
           <a
             href={BRAND.phoneLink}
             className="inline-flex items-center gap-3 bg-white text-orange-600 font-black px-10 py-5 rounded-xl shadow-xl"
@@ -708,7 +708,7 @@ export default function ZoneNamurPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -743,10 +743,10 @@ export default function ZoneNamurPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -805,13 +805,15 @@ export default function ZoneNamurPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

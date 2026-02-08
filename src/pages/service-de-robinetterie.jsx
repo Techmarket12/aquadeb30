@@ -65,7 +65,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -74,7 +74,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -100,7 +100,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -172,11 +172,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Un robinet qui fuit, qui grippe ou de l'eau tiède ? Décrivez le problème, l'IA vous conseille.
+                Un robinet qui fuit, qui grippe ou de l'eau tiéde ? Décrivez le probléme, l'IA vous conseille.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : Mon robinet de cuisine goutte tout le temps, même fermé..."
+                placeholder="Exemple : Mon robinet de cuisine goutte tout le temps, méme fermé..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -187,7 +187,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse en cours...' : "Analyser le problème"}
+                {loading ? 'Analyse en cours...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -507,10 +507,10 @@ export default function ServiceRobinetteriePage() {
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-300" /> Étanchéité
+                  <CheckCircle2 className="w-5 h-5 text-cyan-300" /> étanchéité
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Fini le goutte-à-goutte. Nous garantissons une étanchéité parfaite et une fixation solide.
+                  Fini le goutte-é-goutte. Nous garantissons une étanchéité parfaite et une fixation solide.
                 </p>
               </div>
             </div>
@@ -538,8 +538,8 @@ export default function ServiceRobinetteriePage() {
               Expert en <span className="text-blue-600">Robinetterie</span> Sanitaire
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
-              Le robinet est l'élément le plus sollicité de votre installation. Une fuite, même petite, peut représenter
-              des dizaines de litres perdus par jour. Aqua&Deb intervient pour réparer vos robinets existants (changement de joints, têtes, cartouches)
+              Le robinet est l'élément le plus sollicité de votre installation. Une fuite, méme petite, peut représenter
+              des dizaines de litres perdus par jour. Aqua&Deb intervient pour réparer vos robinets existants (changement de joints, tétes, cartouches)
               ou pour installer des équipements neufs plus design et économes en eau.
             </p>
           </div>
@@ -552,13 +552,13 @@ export default function ServiceRobinetteriePage() {
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['Mitigeur Cuisine', 'Robinetterie Salle de Bain', 'Douche Thermostatique', 'Vanne & Robinet d\'arrêt'].map((item, i) => (
+              {['Mitigeur Cuisine', 'Robinetterie Salle de Bain', 'Douche Thermostatique', 'Vanne & Robinet d\'arrét'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <Droplets className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
                     Installation et réparation de <strong>{item.toLowerCase()}</strong>. 
-                    Nous traitons les problèmes de débit, de température, de fuites à la base ou au bec, et le grippage dû au calcaire.
+                    Nous traitons les problémes de débit, de température, de fuites é la base ou au bec, et le grippage dé au calcaire.
                   </p>
                 </div>
               ))}
@@ -574,11 +574,11 @@ export default function ServiceRobinetteriePage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>La poignée est très dure à manipuler (calcaire)</span>
+                    <span>La poignée est trés dure é manipuler (calcaire)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Le chrome est piqué ou abîmé</span>
+                    <span>Le chrome est piqué ou abémé</span>
                   </li>
                 </ul>
               </div>
@@ -596,10 +596,10 @@ export default function ServiceRobinetteriePage() {
               </div>
 
               <div className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm">
-                <h3 className="font-black text-lg text-slate-900 mb-3">Économies d'eau</h3>
+                <h3 className="font-black text-lg text-slate-900 mb-3">économies d'eau</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Saviez-vous qu'un mitigeur moderne avec mousseur éco consomme jusqu'à 50% d'eau en moins ?
-                  Nous installons des systèmes thermostatiques pour ne plus chercher la bonne température pendant des minutes.
+                  Saviez-vous qu'un mitigeur moderne avec mousseur éco consomme jusqu'é 50% d'eau en moins ?
+                  Nous installons des systémes thermostatiques pour ne plus chercher la bonne température pendant des minutes.
                 </p>
               </div>
             </div>
@@ -610,11 +610,11 @@ export default function ServiceRobinetteriePage() {
           <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
-                Pourquoi faire appel à un <span className="text-red-600">professionnel</span> ?
+                Pourquoi faire appel é un <span className="text-red-600">professionnel</span> ?
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Changer un robinet peut sembler simple, mais une mauvaise installation peut entraîner des dégâts des eaux sous votre évier
-                ou derrière votre douche. Sans les outils adaptés (clés à tube, clés lisses), vous risquez de rayer le chrome
+                Changer un robinet peut sembler simple, mais une mauvaise installation peut entraéner des dégéts des eaux sous votre évier
+                ou derriére votre douche. Sans les outils adaptés (clés é tube, clés lisses), vous risquez de rayer le chrome
                 ou de casser la céramique du lavabo.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -623,7 +623,7 @@ export default function ServiceRobinetteriePage() {
               </p>
               <ul className="space-y-4">
                 {[
-                  'Étanchéité garantie',
+                  'étanchéité garantie',
                   "Pas de rayures sur le chrome ou l'émail",
                   'Remplacement des joints de raccordement',
                   'Conseils d\'entretien anti-calcaire'
@@ -664,7 +664,7 @@ export default function ServiceRobinetteriePage() {
                 },
                 {
                   t: 'Pose et Raccordement',
-                  d: "Installation du nouveau robinet, joints neufs, serrage contrôlé des flexibles."
+                  d: "Installation du nouveau robinet, joints neufs, serrage contrélé des flexibles."
                 },
                 {
                   t: 'Mise en eau et Test',
@@ -689,7 +689,7 @@ export default function ServiceRobinetteriePage() {
               L'outillage du <span className="text-blue-600">plombier</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {['Clés à bonde', 'Graisse silicone', 'Clés lisses chromées'].map((item, i) => (
+              {['Clés é bonde', 'Graisse silicone', 'Clés lisses chromées'].map((item, i) => (
                 <div key={i} className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
                   <Wrench className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
@@ -705,7 +705,7 @@ export default function ServiceRobinetteriePage() {
               <h3 className="font-black text-slate-900 text-xl mb-3">Réparation Cartouche Céramique</h3>
               <p className="text-slate-700 leading-relaxed">
                 Votre mitigeur goutte ou la température est instable ? C'est souvent la <strong>cartouche céramique</strong> qui est entartrée ou usée.
-                Plutôt que de tout changer, nous pouvons souvent remplacer uniquement cette pièce interne pour une réparation économique.
+                Plutét que de tout changer, nous pouvons souvent remplacer uniquement cette piéce interne pour une réparation économique.
               </p>
             </div>
           </div>
@@ -719,13 +719,13 @@ export default function ServiceRobinetteriePage() {
               nous avons une solution adaptée.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {["Remplacement joint / tête", "Pose Mitigeur (fourni client)", "Fourniture et Pose Complète"].map((t, i) => (
+              {["Remplacement joint / téte", "Pose Mitigeur (fourni client)", "Fourniture et Pose Compléte"].map((t, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Tarif incluant déplacement et main d'œuvre. Garantie décennale sur les installations neuves.
+                    Tarif incluant déplacement et main d'ouvre. Garantie décennale sur les installations neuves.
                   </p>
                 </div>
               ))}
@@ -741,11 +741,11 @@ export default function ServiceRobinetteriePage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nos plombiers interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, à
+              Nos plombiers interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, é
               <strong>Bruxelles</strong> et selon les disponibilités en Flandre.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -765,11 +765,11 @@ export default function ServiceRobinetteriePage() {
                 {[
                   {
                     q: "Mon robinet goutte, faut-il le changer ?",
-                    a: "Pas forcément. Souvent, un simple remplacement de joint ou un détartrage de la cartouche suffit à stopper la fuite."
+                    a: "Pas forcément. Souvent, un simple remplacement de joint ou un détartrage de la cartouche suffit é stopper la fuite."
                   },
                   {
                     q: "Installez-vous des robinets achetés par le client ?",
-                    a: "Oui, nous pouvons poser votre matériel (Ikea, Leroy Merlin, etc.), mais nous ne garantissons alors que la main d'œuvre."
+                    a: "Oui, nous pouvons poser votre matériel (Ikea, Leroy Merlin, etc.), mais nous ne garantissons alors que la main d'ouvre."
                   },
                   {
                     q: "Mon mitigeur de douche ne chauffe plus",
@@ -777,7 +777,7 @@ export default function ServiceRobinetteriePage() {
                   },
                   {
                     q: "Quel est le meilleur type de robinet pour la cuisine ?",
-                    a: "Un mitigeur à douchette extractible est très pratique. Privilégiez un bec haut pour remplir les grandes casseroles."
+                    a: "Un mitigeur é douchette extractible est trés pratique. Privilégiez un bec haut pour remplir les grandes casseroles."
                   }
                 ].map((f, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm text-left">
@@ -808,7 +808,7 @@ export default function ServiceRobinetteriePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -843,10 +843,10 @@ export default function ServiceRobinetteriePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -905,13 +905,15 @@ export default function ServiceRobinetteriePage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

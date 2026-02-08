@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 const CLOUDINARY_CLOUD_NAME = "dw9jkwccj";
 const CLOUDINARY_UPLOAD_PRESET = "plombier_aquadeb";
@@ -38,7 +38,9 @@ export default function CloudinaryUploader({ onFilesChange }) {
         onChange={(e) => onFilesChange?.(e.target.files)}
         className="text-sm"
       />
-      <p className="text-xs text-slate-500">JPG/PNG, multiple autorisé. L’envoi se fera au clic sur “Envoyer”.</p>
+      <p className="text-xs text-slate-500">JPG/PNG, multiple autorisé. Lé?Tenvoi se fera au clic sur é?oEnvoyeré?é.</p>
     </div>
   );
 }
+
+

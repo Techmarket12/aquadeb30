@@ -68,7 +68,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -77,7 +77,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -103,7 +103,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -179,7 +179,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Ex: chaudière en panne, plus de chauffage, radiateurs froids, pression basse, fuite sur chaudière, code erreur..."
+                placeholder="Ex: chaudiére en panne, plus de chauffage, radiateurs froids, pression basse, fuite sur chaudiére, code erreur..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -240,7 +240,7 @@ export default function DepannageChauffagePage() {
       <AiDiagnosticModal isOpen={isAiModalOpen} onClose={() => setIsAiModalOpen(false)} />
 
       <div className="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold">
-        Dépannage chauffage 24h/24. Chaudière en panne, plus de chauffage, intervention rapide.
+        Dépannage chauffage 24h/24. Chaudiére en panne, plus de chauffage, intervention rapide.
       </div>
 
       <div className="bg-slate-900 text-slate-300 py-2 text-xs hidden lg:block border-b border-slate-800">
@@ -481,12 +481,12 @@ export default function DepannageChauffagePage() {
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
               Dépannage <span className="text-orange-500">chauffage</span>
               <br />
-              chaudière en panne, intervention rapide
+              chaudiére en panne, intervention rapide
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
               Plus de chauffage, plus d'eau chaude, radiateurs froids, pression instable, code erreur.
               Aqua&Deb intervient en <strong>urgence</strong> pour votre <strong>dépannage chauffage</strong>.
-              Diagnostic clair, réparation ciblée, remise en service rapide, avec priorité à votre confort.
+              Diagnostic clair, réparation ciblée, remise en service rapide, avec priorité é votre confort.
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
@@ -503,7 +503,7 @@ export default function DepannageChauffagePage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Intervention propre
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Sécurisation, contrôle, purge si nécessaire, et remise en service avec explications.
+                  Sécurisation, contréle, purge si nécessaire, et remise en service avec explications.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -511,7 +511,7 @@ export default function DepannageChauffagePage() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-300" /> Réparation durable
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Remplacement de pièces si nécessaire, réglages, tests de sécurité et conseils d'entretien.
+                  Remplacement de piéces si nécessaire, réglages, tests de sécurité et conseils d'entretien.
                 </p>
               </div>
             </div>
@@ -545,9 +545,9 @@ export default function DepannageChauffagePage() {
               Plombier et chauffagiste pour <span className="text-blue-600">dépannage chauffage</span>
             </h2>
             <p className="text-slate-600 max-w-5xl mx-auto text-center text-lg leading-relaxed">
-              Le <strong>dépannage chauffage</strong> concerne les pannes de <strong>chaudière</strong>, de <strong>radiateurs</strong>,
+              Le <strong>dépannage chauffage</strong> concerne les pannes de <strong>chaudiére</strong>, de <strong>radiateurs</strong>,
               de circuit d'eau chaude, de pression, de vannes, de circulateurs et de réglages.
-              Une chaudière qui se met en sécurité peut venir d'une pression trop basse, d'air dans le circuit,
+              Une chaudiére qui se met en sécurité peut venir d'une pression trop basse, d'air dans le circuit,
               d'un thermostat défaillant ou d'un manque d'entretien.
               Aqua&Deb intervient pour diagnostiquer, sécuriser et remettre votre installation en service avec une solution durable.
             </p>
@@ -563,8 +563,8 @@ export default function DepannageChauffagePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  t: 'Chaudière en panne',
-                  d: 'Plus de chauffage ou eau chaude. Diagnostic, remise en route, contrôle sécurité et réglages.',
+                  t: 'Chaudiére en panne',
+                  d: 'Plus de chauffage ou eau chaude. Diagnostic, remise en route, contréle sécurité et réglages.',
                   icon: <Flame className="w-8 h-8 text-blue-600 mb-4" />
                 },
                 {
@@ -574,12 +574,12 @@ export default function DepannageChauffagePage() {
                 },
                 {
                   t: 'Pression instable',
-                  d: "Contrôle manomètre, vase d'expansion, appoint d'eau, recherche de micro fuite.",
+                  d: "Contréle manométre, vase d'expansion, appoint d'eau, recherche de micro fuite.",
                   icon: <Thermometer className="w-8 h-8 text-blue-600 mb-4" />
                 },
                 {
                   t: 'Code erreur',
-                  d: "Lecture de l'erreur, contrôle combustion, capteurs, allumage, évacuation et sécurité.",
+                  d: "Lecture de l'erreur, contréle combustion, capteurs, allumage, évacuation et sécurité.",
                   icon: <Wrench className="w-8 h-8 text-blue-600 mb-4" />
                 }
               ].map((item, i) => (
@@ -597,11 +597,11 @@ export default function DepannageChauffagePage() {
                 <ul className="space-y-3 text-slate-600 text-sm">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Chaudière qui se met en sécurité, voyant rouge ou code erreur</span>
+                    <span>Chaudiére qui se met en sécurité, voyant rouge ou code erreur</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Radiateurs tièdes, chauffage irrégulier, bruits dans le circuit</span>
+                    <span>Radiateurs tiédes, chauffage irrégulier, bruits dans le circuit</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -619,7 +619,7 @@ export default function DepannageChauffagePage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Contrôlez la pression, souvent entre 1 et 2 bars selon l'installation</span>
+                    <span>Contrélez la pression, souvent entre 1 et 2 bars selon l'installation</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -648,16 +648,16 @@ export default function DepannageChauffagePage() {
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 Sans chauffage, le confort chute et le risque d'humidité augmente.
-                Une chaudière qui redémarre mal peut cacher un problème de sécurité ou une fuite.
-                Notre technicien contrôle la pression, les sécurités, les paramètres et l'état du circuit.
+                Une chaudiére qui redémarre mal peut cacher un probléme de sécurité ou une fuite.
+                Notre technicien contréle la pression, les sécurités, les paramétres et l'état du circuit.
                 Objectif, remise en service rapide, avec une réparation durable.
               </p>
               <ul className="space-y-4">
                 {[
                   'Retrouver chauffage et eau chaude rapidement',
-                  'Éviter la détérioration du système',
+                  'éviter la détérioration du systéme',
                   'Limiter les surconsommations',
-                  'Contrôle sécurité et conseils'
+                  'Contréle sécurité et conseils'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 font-bold">
                     <CheckCircle2 className="w-5 h-5 text-green-600" /> {item}
@@ -686,7 +686,7 @@ export default function DepannageChauffagePage() {
             <div className="grid md:grid-cols-4 gap-8 text-left">
               {[
                 { t: 'Appel', d: "Vous décrivez la panne. On vous guide sur les vérifications simples." },
-                { t: 'Contrôle sur place', d: "Pression, thermostat, sécurité, circuit, purge et réglages." },
+                { t: 'Contréle sur place', d: "Pression, thermostat, sécurité, circuit, purge et réglages." },
                 { t: 'Devis annoncé', d: 'Prix clair avant travaux. Aucune surprise.' },
                 { t: 'Remise en service', d: "Réparation, tests, vérifications et conseils d'entretien." }
               ].map((s, i) => (
@@ -712,27 +712,27 @@ export default function DepannageChauffagePage() {
                 {[
                   {
                     icon: <Flame className="w-7 h-7 text-blue-600" />,
-                    t: 'Dépannage chaudière',
-                    d: "Panne, mise en sécurité, codes erreurs. Contrôle et remise en service si possible."
+                    t: 'Dépannage chaudiére',
+                    d: "Panne, mise en sécurité, codes erreurs. Contréle et remise en service si possible."
                   },
                   {
                     icon: <Heater className="w-7 h-7 text-blue-600" />,
                     t: 'Radiateurs et circuit',
-                    d: "Purge, équilibrage, réglage, contrôle des vannes et du circulateur."
+                    d: "Purge, équilibrage, réglage, contréle des vannes et du circulateur."
                   },
                   {
                     icon: <Thermometer className="w-7 h-7 text-blue-600" />,
                     t: 'Pression et vase',
-                    d: "Pression basse, variations. Contrôle vase d'expansion et appoint d'eau."
+                    d: "Pression basse, variations. Contréle vase d'expansion et appoint d'eau."
                   },
                   {
                     icon: <Droplets className="w-7 h-7 text-blue-600" />,
-                    t: 'Fuite sur chaudière',
+                    t: 'Fuite sur chaudiére',
                     d: "Micro fuite, raccord, soupape. Diagnostic et réparation ciblée."
                   },
                   {
                     icon: <Wind className="w-7 h-7 text-blue-600" />,
-                    t: 'Problèmes de ventilation',
+                    t: 'Problémes de ventilation',
                     d: "Vérification évacuation, tirage, sécurité et fonctionnement global."
                   },
                   {
@@ -755,7 +755,7 @@ export default function DepannageChauffagePage() {
                 <h3 className="font-black text-slate-900 text-xl mb-3">Conseil entretien</h3>
                 <p className="text-slate-700 leading-relaxed">
                   Un entretien régulier réduit les pannes et prolonge la durée de vie du chauffage.
-                  Purge des radiateurs, contrôle pression, vérification du thermostat.
+                  Purge des radiateurs, contréle pression, vérification du thermostat.
                   En cas de panne répétée, un diagnostic complet permet de stabiliser l'installation.
                 </p>
               </div>
@@ -767,18 +767,18 @@ export default function DepannageChauffagePage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black mb-6">Tarifs transparents</h2>
             <p className="text-slate-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-              Pour un <strong>dépannage chauffage</strong>, le prix dépend du type de panne, des pièces nécessaires,
+              Pour un <strong>dépannage chauffage</strong>, le prix dépend du type de panne, des piéces nécessaires,
               du temps d'intervention et de l'accessibilité.
-              Nous annonçons le tarif avant travaux et vous recevez un <strong>devis</strong> clair.
+              Nous annonéons le tarif avant travaux et vous recevez un <strong>devis</strong> clair.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {['Déplacement et diagnostic', 'Réparation et réglages', 'Contrôle sécurité et conseils'].map((t, i) => (
+              {['Déplacement et diagnostic', 'Réparation et réglages', 'Contréle sécurité et conseils'].map((t, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Devis détaillé. Priorité à la remise en service rapide et à la solution durable.
+                    Devis détaillé. Priorité é la remise en service rapide et é la solution durable.
                   </p>
                 </div>
               ))}
@@ -795,9 +795,9 @@ export default function DepannageChauffagePage() {
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-5xl mx-auto leading-relaxed">
               Aqua&Deb intervient pour votre <strong>dépannage chauffage</strong> dans toute la <strong>Belgique</strong>.
-              Nous couvrons <strong>Bruxelles</strong> et la <strong>Wallonie</strong> (Namur, Liège, Charleroi, Mons, Verviers,
+              Nous couvrons <strong>Bruxelles</strong> et la <strong>Wallonie</strong> (Namur, Liége, Charleroi, Mons, Verviers,
               Brabant wallon). Intervention possible selon disponibilités en Flandre.
-              Si vous cherchez un <strong>chauffagiste</strong> près de chez vous, appelez maintenant.
+              Si vous cherchez un <strong>chauffagiste</strong> prés de chez vous, appelez maintenant.
             </p>
 
             <div className="mt-8 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
@@ -814,7 +814,7 @@ export default function DepannageChauffagePage() {
                   <MapPin className="w-5 h-5 text-blue-600" /> Wallonie
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Namur, Liège, Charleroi, Mons, La Louvière, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
+                  Namur, Liége, Charleroi, Mons, La Louviére, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
                   Verviers, Dinant, Ciney, Gembloux.
                 </p>
               </div>
@@ -832,7 +832,7 @@ export default function DepannageChauffagePage() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
                 'Namur',
-                'Liège',
+                'Liége',
                 'Charleroi',
                 'Bruxelles',
                 'Mons',
@@ -840,7 +840,7 @@ export default function DepannageChauffagePage() {
                 'Wavre',
                 'Nivelles',
                 'Waterloo',
-                'La Louvière',
+                'La Louviére',
                 'Tournai',
                 'Seraing',
                 'Huy',
@@ -863,8 +863,8 @@ export default function DepannageChauffagePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   {
-                    q: 'Chaudière en panne, vous intervenez',
-                    a: "Oui. Diagnostic, contrôle des sécurités, réglages et remise en service si possible."
+                    q: 'Chaudiére en panne, vous intervenez',
+                    a: "Oui. Diagnostic, contréle des sécurités, réglages et remise en service si possible."
                   },
                   {
                     q: 'Radiateurs froids, que faire',
@@ -909,7 +909,7 @@ export default function DepannageChauffagePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -944,10 +944,10 @@ export default function DepannageChauffagePage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -1006,13 +1006,15 @@ export default function DepannageChauffagePage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

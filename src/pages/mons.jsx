@@ -67,7 +67,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -76,7 +76,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -102,7 +102,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -174,11 +174,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Vous habitez la région de Mons ? Décrivez votre problème sanitaire ou chauffage.
+                Vous habitez la région de Mons ? Décrivez votre probléme sanitaire ou chauffage.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : Chasse d'eau qui coule à Jemappes, facture d'eau élevée..."
+                placeholder="Exemple : Chasse d'eau qui coule é Jemappes, facture d'eau élevée..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -189,7 +189,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse locale...' : "Analyser le problème"}
+                {loading ? 'Analyse locale...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -476,15 +476,15 @@ export default function ZoneMonsPage() {
 
           <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <MapPin className="w-4 h-4" /> Intervention 24h/24 à Mons
+              <MapPin className="w-4 h-4" /> Intervention 24h/24 é Mons
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Plombier & Déboucheur à <span className="text-orange-500">Mons</span>
+              Plombier & Déboucheur é <span className="text-orange-500">Mons</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Au cœur du Borinage et de la région montoise, Aqua&Deb est votre référence pour
+              Au cour du Borinage et de la région montoise, Aqua&Deb est votre référence pour
               <strong>plomberie</strong>, <strong>chauffage</strong> et <strong>débouchage</strong>.
-              Intervention rapide à Mons-Centre, Jemappes, Cuesmes, Nimy, Havré et Saint-Ghislain.
+              Intervention rapide é Mons-Centre, Jemappes, Cuesmes, Nimy, Havré et Saint-Ghislain.
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6 mt-10 max-w-3xl lg:max-w-4xl">
@@ -506,10 +506,10 @@ export default function ZoneMonsPage() {
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <Truck className="w-5 h-5 text-cyan-300" /> Équipement Complet
+                  <Truck className="w-5 h-5 text-cyan-300" /> équipement Complet
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Débouchage haute pression et inspection caméra pour tous types de canalisations, même difficiles d'accès.
+                  Débouchage haute pression et inspection caméra pour tous types de canalisations, méme difficiles d'accés.
                 </p>
               </div>
             </div>
@@ -534,7 +534,7 @@ export default function ZoneMonsPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-black text-slate-900 mb-6 text-center">
-              Vos services à <span className="text-blue-600">Mons et environs</span>
+              Vos services é <span className="text-blue-600">Mons et environs</span>
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
               Nous couvrons l'ensemble du Grand Mons et le Borinage, pour les particuliers (étudiants, familles)
@@ -551,7 +551,7 @@ export default function ZoneMonsPage() {
                   <MapPin className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Une présence locale forte pour répondre à vos urgences plomberie dans toute la région.
+                    Une présence locale forte pour répondre é vos urgences plomberie dans toute la région.
                   </p>
                 </div>
               ))}
@@ -563,8 +563,8 @@ export default function ZoneMonsPage() {
                   <Wrench className="w-6 h-6 text-orange-500" /> Rénovation & Entretien
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Mons est une ville historique. Nous remplaçons les anciennes tuyauteries,
-                  rénovons les salles de bain et entretenons les chaudières pour garantir confort et sécurité.
+                  Mons est une ville historique. Nous remplaéons les anciennes tuyauteries,
+                  rénovons les salles de bain et entretenons les chaudiéres pour garantir confort et sécurité.
                 </p>
                 <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500"/> Fuite d'eau</li>
@@ -579,7 +579,7 @@ export default function ZoneMonsPage() {
                   <Droplets className="w-6 h-6 text-blue-500" /> Débouchage Urgent
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4">
-                  Canalisations bouchées à cause des racines ou de la vétusté ?
+                  Canalisations bouchées é cause des racines ou de la vétusté ?
                   Nous intervenons rapidement avec hydrocureuse et caméra pour déboucher égouts, WC et éviers.
                 </p>
                  <ul className="grid grid-cols-2 gap-2 text-sm text-slate-600">
@@ -606,21 +606,21 @@ export default function ZoneMonsPage() {
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <h4 className="font-bold text-slate-900 mb-4">Communes principales :</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-slate-600">
-                  <span>📍 Mons-Centre</span>
-                  <span>📍 Jemappes</span>
-                  <span>📍 Cuesmes</span>
-                  <span>📍 Nimy</span>
-                  <span>📍 Havré</span>
-                  <span>📍 Obourg</span>
-                  <span>📍 Ghlin</span>
-                  <span>📍 Saint-Symphorien</span>
-                  <span>📍 Saint-Ghislain</span>
-                  <span>📍 Boussu</span>
-                  <span>📍 Frameries</span>
-                  <span>📍 Quaregnon</span>
-                  <span>📍 Binche</span>
-                  <span>📍 La Louvière</span>
-                  <span>📍 Soignies</span>
+                  <span>?? Mons-Centre</span>
+                  <span>?? Jemappes</span>
+                  <span>?? Cuesmes</span>
+                  <span>?? Nimy</span>
+                  <span>?? Havré</span>
+                  <span>?? Obourg</span>
+                  <span>?? Ghlin</span>
+                  <span>?? Saint-Symphorien</span>
+                  <span>?? Saint-Ghislain</span>
+                  <span>?? Boussu</span>
+                  <span>?? Frameries</span>
+                  <span>?? Quaregnon</span>
+                  <span>?? Binche</span>
+                  <span>?? La Louviére</span>
+                  <span>?? Soignies</span>
                 </div>
               </div>
             </div>
@@ -637,16 +637,16 @@ export default function ZoneMonsPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-4">
-              Habitat & Eau à <span className="text-blue-600">Mons</span>
+              Habitat & Eau é <span className="text-blue-600">Mons</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-3xl mx-auto">
-              L'habitat montois demande une attention particulière. Nous sommes là pour vous conseiller.
+              L'habitat montois demande une attention particuliére. Nous sommes lé pour vous conseiller.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                 <h3 className="font-bold text-slate-900 mb-2">Vieux Bâtiments</h3>
+                 <h3 className="font-bold text-slate-900 mb-2">Vieux Bétiments</h3>
                  <p className="text-sm text-slate-600">
-                   Les maisons anciennes ont souvent des installations vétustes. Nous remplaçons colonnes et évacuations pour éviter les fuites.
+                   Les maisons anciennes ont souvent des installations vétustes. Nous remplaéons colonnes et évacuations pour éviter les fuites.
                  </p>
                </div>
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
@@ -656,7 +656,7 @@ export default function ZoneMonsPage() {
                  </p>
                </div>
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                 <h3 className="font-bold text-slate-900 mb-2">Étudiants & Kots</h3>
+                 <h3 className="font-bold text-slate-900 mb-2">étudiants & Kots</h3>
                  <p className="text-sm text-slate-600">
                    Mons est une ville étudiante. Nous intervenons souvent pour des débouchages urgents dans les kots et résidences.
                  </p>
@@ -691,7 +691,7 @@ export default function ZoneMonsPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">Urgence à Mons ?</h2>
+          <h2 className="text-3xl font-black mb-4">Urgence é Mons ?</h2>
           <p className="mb-8 text-lg">Nos techniciens interviennent rapidement dans votre quartier.</p>
           <a
             href={BRAND.phoneLink}
@@ -708,7 +708,7 @@ export default function ZoneMonsPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -743,10 +743,10 @@ export default function ZoneMonsPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -805,13 +805,15 @@ export default function ZoneMonsPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

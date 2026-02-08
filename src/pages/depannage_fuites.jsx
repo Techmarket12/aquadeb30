@@ -63,7 +63,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -72,7 +72,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -98,7 +98,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -174,7 +174,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Décrivez votre problème ici..."
+                placeholder="Décrivez votre probléme ici..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -481,7 +481,7 @@ export default function DepannageFuitesPage() {
               intervention immédiate
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Une <strong>fuite d'eau</strong> non traitée peut provoquer des <strong>dégâts des eaux</strong>, une
+              Une <strong>fuite d'eau</strong> non traitée peut provoquer des <strong>dégéts des eaux</strong>, une
               surconsommation et des moisissures. Nos plombiers spécialisés interviennent en <strong>urgence</strong>
               pour toute <strong>recherche de fuite</strong> et <strong>réparation</strong>, avec un diagnostic précis et une
               solution durable.
@@ -493,7 +493,7 @@ export default function DepannageFuitesPage() {
                   <Clock className="w-5 h-5 text-orange-300" /> Arrivée rapide
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Un technicien disponible près de chez vous. Intervention possible en <strong>45 minutes</strong> selon votre zone.
+                  Un technicien disponible prés de chez vous. Intervention possible en <strong>45 minutes</strong> selon votre zone.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -509,7 +509,7 @@ export default function DepannageFuitesPage() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-300" /> Réparation garantie
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Solution propre, matériaux adaptés, et conseils de prévention après réparation de la <strong>fuite</strong>.
+                  Solution propre, matériaux adaptés, et conseils de prévention aprés réparation de la <strong>fuite</strong>.
                 </p>
               </div>
             </div>
@@ -537,10 +537,10 @@ export default function DepannageFuitesPage() {
               Dépannage <span className="text-blue-600">fuite d'eau</span> en Belgique
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
-              Aqua&Deb intervient pour tout <strong>dépannage plomberie</strong> lié à une <strong>fuite d'eau</strong> dans une maison,
+              Aqua&Deb intervient pour tout <strong>dépannage plomberie</strong> lié é une <strong>fuite d'eau</strong> dans une maison,
               un appartement, un commerce ou un immeuble. Nous traitons les fuites visibles et les <strong>fuites invisibles</strong>
               (infiltrations, humidité, baisse de pression) avec une approche technique et rapide.
-              Notre objectif est simple, stopper la fuite, limiter les dégâts, sécuriser l'installation et remettre votre réseau
+              Notre objectif est simple, stopper la fuite, limiter les dégéts, sécuriser l'installation et remettre votre réseau
               en état avec une solution durable.
             </p>
           </div>
@@ -558,8 +558,8 @@ export default function DepannageFuitesPage() {
                   <Droplets className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Intervention rapide pour <strong>{item.toLowerCase()}</strong>. Contrôle des joints, flexibles, mécanismes,
-                    raccords et pièces d'usure. Réparation immédiate ou remplacement si nécessaire.
+                    Intervention rapide pour <strong>{item.toLowerCase()}</strong>. Contréle des joints, flexibles, mécanismes,
+                    raccords et piéces d'usure. Réparation immédiate ou remplacement si nécessaire.
                   </p>
                 </div>
               ))}
@@ -589,7 +589,7 @@ export default function DepannageFuitesPage() {
                 <ul className="space-y-3 text-slate-600 text-sm">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Coupez l'arrivée d'eau au compteur ou à la vanne principale</span>
+                    <span>Coupez l'arrivée d'eau au compteur ou é la vanne principale</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
@@ -606,7 +606,7 @@ export default function DepannageFuitesPage() {
                 <h3 className="font-black text-lg text-slate-900 mb-3">Cas fréquents</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Fuite sous évier, fuite au niveau d'un siphon, fuite sur tuyauterie cuivre ou multicouche,
-                  infiltration après gel, fuite de chasse d'eau, fuite sur groupe de sécurité,
+                  infiltration aprés gel, fuite de chasse d'eau, fuite sur groupe de sécurité,
                   fuite chauffe eau, joint usé, raccord desserré.
                   Dans tous les cas, un <strong>diagnostic</strong> précis évite des travaux inutiles.
                 </p>
@@ -622,19 +622,19 @@ export default function DepannageFuitesPage() {
                 Pourquoi réparer une <span className="text-red-600">fuite d'eau</span> sans attendre
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Une <strong>fuite d'eau invisible</strong> peut rapidement entraîner une surconsommation, des moisissures
-                et des dégâts structurels. Plus vous attendez, plus le risque de <strong>dégâts des eaux</strong> augmente
+                Une <strong>fuite d'eau invisible</strong> peut rapidement entraéner une surconsommation, des moisissures
+                et des dégéts structurels. Plus vous attendez, plus le risque de <strong>dégéts des eaux</strong> augmente
                 (plafond, murs, parquet, isolation). Nos experts utilisent des techniques modernes pour une
                 <strong>détection de fuite sans casse</strong> quand c'est possible, puis une réparation ciblée.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Nous intervenons aussi sur les fuites liées à la pression, aux tuyaux vieillissants, aux joints,
-                aux raccords et aux installations sanitaires. Chaque intervention inclut un contrôle de sécurité
+                Nous intervenons aussi sur les fuites liées é la pression, aux tuyaux vieillissants, aux joints,
+                aux raccords et aux installations sanitaires. Chaque intervention inclut un contréle de sécurité
                 et des conseils pour éviter une récidive.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Éviter les dégâts des eaux',
+                  'éviter les dégéts des eaux',
                   "Réduire votre facture d'eau",
                   'Préserver votre habitation',
                   'Intervention propre et garantie'
@@ -668,11 +668,11 @@ export default function DepannageFuitesPage() {
               {[
                 {
                   t: 'Appel et diagnostic',
-                  d: "Vous décrivez la situation. On vous guide pour sécuriser et limiter les dégâts."
+                  d: "Vous décrivez la situation. On vous guide pour sécuriser et limiter les dégéts."
                 },
                 {
                   t: 'Arrivée du technicien',
-                  d: 'Un plombier se déplace rapidement selon votre zone. Contrôle et localisation de la fuite.'
+                  d: 'Un plombier se déplace rapidement selon votre zone. Contréle et localisation de la fuite.'
                 },
                 {
                   t: 'Devis clair',
@@ -680,7 +680,7 @@ export default function DepannageFuitesPage() {
                 },
                 {
                   t: 'Réparation et conseils',
-                  d: "Réparation durable, contrôle final, conseils d'entretien et prévention."
+                  d: "Réparation durable, contréle final, conseils d'entretien et prévention."
                 }
               ].map((s, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
@@ -717,7 +717,7 @@ export default function DepannageFuitesPage() {
               <h3 className="font-black text-slate-900 text-xl mb-3">Détection sans casse</h3>
               <p className="text-slate-700 leading-relaxed">
                 Quand c'est possible, nous privilégions une <strong>recherche de fuite sans casse</strong>.
-                Cela permet de limiter les coûts, de préserver vos murs et votre sol, et d'intervenir plus rapidement.
+                Cela permet de limiter les coéts, de préserver vos murs et votre sol, et d'intervenir plus rapidement.
                 Si une ouverture est nécessaire, elle est ciblée et expliquée clairement.
               </p>
             </div>
@@ -729,7 +729,7 @@ export default function DepannageFuitesPage() {
             <h2 className="text-3xl font-black mb-6">Tarifs transparents</h2>
             <p className="text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               Nos prix sont annoncés avant intervention. Pour un <strong>dépannage fuite d'eau</strong>, le tarif dépend
-              de la localisation de la fuite, de l'accessibilité et des pièces à remplacer. Vous recevez un <strong>devis</strong>
+              de la localisation de la fuite, de l'accessibilité et des piéces é remplacer. Vous recevez un <strong>devis</strong>
               clair avant travaux, sans surprise.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -739,7 +739,7 @@ export default function DepannageFuitesPage() {
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Devis détaillé. Matériel adapté. Intervention propre. Priorité à la solution durable.
+                    Devis détaillé. Matériel adapté. Intervention propre. Priorité é la solution durable.
                   </p>
                 </div>
               ))}
@@ -755,12 +755,12 @@ export default function DepannageFuitesPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nos plombiers interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, à
+              Nos plombiers interviennent rapidement partout en <strong>Belgique</strong>, en <strong>Wallonie</strong>, é
               <strong>Bruxelles</strong> et selon les disponibilités en Flandre. Nous privilégions la proximité pour réduire
               le temps d'attente.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -788,7 +788,7 @@ export default function DepannageFuitesPage() {
                   },
                   {
                     q: "Faites vous de la recherche de fuite sans casser",
-                    a: "Quand c'est possible, oui. Nous privilégions les méthodes de détection pour limiter les dégâts."
+                    a: "Quand c'est possible, oui. Nous privilégions les méthodes de détection pour limiter les dégéts."
                   },
                   {
                     q: "Puis je faire marcher mon assurance",
@@ -807,7 +807,7 @@ export default function DepannageFuitesPage() {
 
         <section className="py-20 bg-orange-600 text-white text-center">
           <h2 className="text-3xl font-black mb-4">Fuite d'eau ? Agissez maintenant</h2>
-          <p className="mb-8 text-lg">Un plombier Aqua&Deb intervient au plus vite pour stopper la fuite et limiter les dégâts.</p>
+          <p className="mb-8 text-lg">Un plombier Aqua&Deb intervient au plus vite pour stopper la fuite et limiter les dégéts.</p>
           <a
             href={BRAND.phoneLink}
             className="inline-flex items-center gap-3 bg-white text-orange-600 font-black px-10 py-5 rounded-xl shadow-xl"
@@ -823,7 +823,7 @@ export default function DepannageFuitesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -858,10 +858,10 @@ export default function DepannageFuitesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -920,13 +920,15 @@ export default function DepannageFuitesPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

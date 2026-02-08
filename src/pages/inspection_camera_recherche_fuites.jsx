@@ -67,7 +67,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -76,7 +76,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -102,7 +102,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -130,7 +130,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
     {
       "urgency": "Faible" | "Moyenne" | "Haute",
       "safety_tip": "Short immediate advice in French (e.g. Cut main water valve)",
-      "service_detected": "Inspection Caméra" or "Détection Thermique" or "Gaz Traceur" or "Écoute Acoustique",
+      "service_detected": "Inspection Caméra" or "Détection Thermique" or "Gaz Traceur" or "écoute Acoustique",
       "estimated_intervention_time": "1h - 2h"
     }`;
 
@@ -189,7 +189,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse en cours...' : "Analyser le problème"}
+                {loading ? 'Analyse en cours...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -485,8 +485,8 @@ export default function InspectionCameraRechercheFuitesPage() {
               Recherche de Fuites
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Ne laissez pas une fuite invisible dégrader votre habitat. Nous localisons <strong>précisément</strong> l'origine du problème
-              sans casse inutile grâce à nos technologies de pointe (caméra endoscopique, thermique, gaz traceur).
+              Ne laissez pas une fuite invisible dégrader votre habitat. Nous localisons <strong>précisément</strong> l'origine du probléme
+              sans casse inutile gréce é nos technologies de pointe (caméra endoscopique, thermique, gaz traceur).
               <strong>Rapport complet fourni pour votre assurance.</strong>
             </p>
 
@@ -541,7 +541,7 @@ export default function InspectionCameraRechercheFuitesPage() {
             </h2>
             <p className="text-slate-600 max-w-4xl mx-auto text-center text-lg leading-relaxed">
               Une surconsommation d'eau inexpliquée ? Une tache d'humidité qui s'étend ? Des mauvaises odeurs récurrentes ?
-              Le problème se cache souvent sous terre ou derrière un mur. Aqua&Deb utilise un arsenal technologique
+              Le probléme se cache souvent sous terre ou derriére un mur. Aqua&Deb utilise un arsenal technologique
               pour rendre l'invisible visible et diagnostiquer l'état de santé réel de vos réseaux.
             </p>
           </div>
@@ -554,13 +554,13 @@ export default function InspectionCameraRechercheFuitesPage() {
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['Inspection Caméra', 'Caméra Thermique', 'Gaz Traceur', 'Écoute Acoustique'].map((item, i) => (
+              {['Inspection Caméra', 'Caméra Thermique', 'Gaz Traceur', 'écoute Acoustique'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <Activity className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
                     Utilisation de technologie de pointe pour <strong>{item.toLowerCase()}</strong>.
-                    Chaque méthode est adaptée à un type de fuite (eau chaude, canalisation enterrée, micro-fuite).
+                    Chaque méthode est adaptée é un type de fuite (eau chaude, canalisation enterrée, micro-fuite).
                   </p>
                 </div>
               ))}
@@ -570,8 +570,8 @@ export default function InspectionCameraRechercheFuitesPage() {
               <div className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm">
                 <h3 className="font-black text-lg text-slate-900 mb-3">Inspection Vidéo (Endoscopie)</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Nous insérons une caméra HD dans vos tuyaux (diamètres 32mm à 200mm).
-                  Cela permet de visualiser l'intérieur en temps réel et d'enregistrer la cause du problème :
+                  Nous insérons une caméra HD dans vos tuyaux (diamétres 32mm é 200mm).
+                  Cela permet de visualiser l'intérieur en temps réel et d'enregistrer la cause du probléme :
                   bouchon, calcaire, racine, cassure, contre-pente ou joint défectueux.
                 </p>
               </div>
@@ -585,10 +585,10 @@ export default function InspectionCameraRechercheFuitesPage() {
               </div>
 
               <div className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm">
-                <h3 className="font-black text-lg text-slate-900 mb-3">Traçage de Réseaux</h3>
+                <h3 className="font-black text-lg text-slate-900 mb-3">Traéage de Réseaux</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Vous ne savez pas où passent vos tuyaux ou votre fosse septique ?
-                  Grâce à nos sondes émettrices, nous pouvons cartographier précisément votre réseau d'égouttage
+                  Vous ne savez pas oé passent vos tuyaux ou votre fosse septique ?
+                  Gréce é nos sondes émettrices, nous pouvons cartographier précisément votre réseau d'égouttage
                   et marquer l'emplacement exact au sol (profondeur et direction).
                 </p>
               </div>
@@ -603,18 +603,18 @@ export default function InspectionCameraRechercheFuitesPage() {
                 Pourquoi choisir une <span className="text-red-600">recherche de fuite</span> professionnelle ?
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Casser un mur ou un carrelage au hasard coûte cher et ne garantit pas de trouver la fuite.
+                Casser un mur ou un carrelage au hasard coéte cher et ne garantit pas de trouver la fuite.
                 Notre approche est scientifique : nous localisons le point exact de la rupture pour minimiser
                 les travaux de réparation.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                De plus, la plupart des contrats d'assurance habitation ("dégâts des eaux") couvrent les frais
+                De plus, la plupart des contrats d'assurance habitation ("dégéts des eaux") couvrent les frais
                 de recherche de fuite. Notre rapport détaillé facilite votre remboursement.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Localisation précise au cm près',
-                  "Économie de travaux de démolition",
+                  'Localisation précise au cm prés',
+                  "économie de travaux de démolition",
                   'Rapport accepté par les experts',
                   'Intervention propre et rapide'
                 ].map((item, i) => (
@@ -627,7 +627,7 @@ export default function InspectionCameraRechercheFuitesPage() {
             <div className="relative flex justify-center">
               <img
                 src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1000"
-                alt="Écran de caméra thermique"
+                alt="écran de caméra thermique"
                 className="rounded-2xl shadow-2xl w-full max-w-xl object-cover object-center mx-auto"
               />
             </div>
@@ -694,8 +694,8 @@ export default function InspectionCameraRechercheFuitesPage() {
             <div className="mt-12 max-w-4xl mx-auto bg-blue-50 border border-blue-100 rounded-2xl p-8 text-left">
               <h3 className="font-black text-slate-900 text-xl mb-3">La réparation post-détection</h3>
               <p className="text-slate-700 leading-relaxed">
-                Une fois la fuite trouvée, nous ne vous laissons pas seul. Aqua&Deb peut procéder immédiatement à la réparation,
-                souvent de manière moins invasive grâce au diagnostic précis. Nous proposons des solutions de réparation
+                Une fois la fuite trouvée, nous ne vous laissons pas seul. Aqua&Deb peut procéder immédiatement é la réparation,
+                souvent de maniére moins invasive gréce au diagnostic précis. Nous proposons des solutions de réparation
                 ponctuelle ou de chemisage partiel.
               </p>
             </div>
@@ -709,7 +709,7 @@ export default function InspectionCameraRechercheFuitesPage() {
               Des forfaits clairs. La recherche de fuite est souvent remboursée par votre assurance habitation.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {["Passage Caméra", "Recherche Complète", "Pack Recherche + Réparation"].map((t, i) => (
+              {["Passage Caméra", "Recherche Compléte", "Pack Recherche + Réparation"].map((t, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
@@ -732,10 +732,10 @@ export default function InspectionCameraRechercheFuitesPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
               Nous intervenons pour les inspections et recherches de fuites partout en <strong>Belgique</strong>,
-              en <strong>Wallonie</strong> et à <strong>Bruxelles</strong>.
+              en <strong>Wallonie</strong> et é <strong>Bruxelles</strong>.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Namur', 'Liège', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
+              {['Namur', 'Liége', 'Charleroi', 'Bruxelles', 'Mons', 'Verviers', 'Wavre', 'Nivelles', 'Waterloo'].map((city, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full font-medium"
@@ -755,15 +755,15 @@ export default function InspectionCameraRechercheFuitesPage() {
                 {[
                   {
                     q: "L'assurance rembourse-t-elle la recherche de fuite ?",
-                    a: "Oui, la plupart des contrats habitation multirisques couvrent les frais de recherche de fuite, même si la fuite elle-même n'est pas couverte."
+                    a: "Oui, la plupart des contrats habitation multirisques couvrent les frais de recherche de fuite, méme si la fuite elle-méme n'est pas couverte."
                   },
                   {
                     q: "Pouvez-vous trouver une fuite sous du béton ?",
-                    a: "Oui, grâce au gaz traceur et à l'écoute électro-acoustique, nous pouvons localiser une fuite sous une dalle béton."
+                    a: "Oui, gréce au gaz traceur et é l'écoute électro-acoustique, nous pouvons localiser une fuite sous une dalle béton."
                   },
                   {
                     q: "Faut-il casser pour passer la caméra ?",
-                    a: "Non, nous passons par les accès existants (regards, siphons, toilettes, toitures) pour inspecter les canalisations."
+                    a: "Non, nous passons par les accés existants (regards, siphons, toilettes, toitures) pour inspecter les canalisations."
                   },
                   {
                     q: "Fournissez-vous un rapport écrit ?",
@@ -798,7 +798,7 @@ export default function InspectionCameraRechercheFuitesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -833,10 +833,10 @@ export default function InspectionCameraRechercheFuitesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -895,13 +895,15 @@ export default function InspectionCameraRechercheFuitesPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

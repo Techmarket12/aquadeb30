@@ -67,7 +67,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -76,7 +76,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -102,7 +102,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -174,11 +174,11 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
           {!result ? (
             <>
               <p className="text-slate-600 mb-4 font-medium">
-                Vous habitez le Grand Charleroi ? Décrivez votre problème sanitaire ou chauffage.
+                Vous habitez le Grand Charleroi ? Décrivez votre probléme sanitaire ou chauffage.
               </p>
               <textarea
                 className="w-full border-2 border-slate-200 rounded-xl p-4 min-h-[120px] focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none resize-none bg-slate-50 text-slate-800 font-medium"
-                placeholder="Exemple : Égout bouché à Marcinelle, ça refoule..."
+                placeholder="Exemple : égout bouché é Marcinelle, éa refoule..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -189,7 +189,7 @@ const AiDiagnosticModal = ({ isOpen, onClose }) => {
                 className="w-full mt-6 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg text-lg"
               >
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Sparkles className="w-6 h-6" />}
-                {loading ? 'Analyse locale...' : "Analyser le problème"}
+                {loading ? 'Analyse locale...' : "Analyser le probléme"}
               </button>
             </>
           ) : (
@@ -476,13 +476,13 @@ export default function ZoneCharleroiPage() {
 
           <div className="container mx-auto px-4 relative z-10 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <MapPin className="w-4 h-4" /> Intervention 24h/24 à Charleroi
+              <MapPin className="w-4 h-4" /> Intervention 24h/24 é Charleroi
             </span>
             <h1 className="text-4xl lg:text-6xl font-black text-white mb-6">
-              Plombier & Déboucheur à <span className="text-orange-500">Charleroi</span>
+              Plombier & Déboucheur é <span className="text-orange-500">Charleroi</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
-              Au cœur du Pays Noir, Aqua&Deb est votre partenaire de confiance pour tous problèmes de
+              Au cour du Pays Noir, Aqua&Deb est votre partenaire de confiance pour tous problémes de
               <strong>plomberie</strong>, <strong>chauffage</strong> et <strong>débouchage</strong>.
               Nos équipes couvrent tout le Grand Charleroi (Marcinelle, Jumet, Gosselies) pour une intervention rapide et efficace.
             </p>
@@ -501,12 +501,12 @@ export default function ZoneCharleroiPage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Expérience
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Habitués aux bâtiments de la région (maisons ouvrières, appartements, zonings), nous avons l'expertise.
+                  Habitués aux bétiments de la région (maisons ouvriéres, appartements, zonings), nous avons l'expertise.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
                 <div className="flex items-center gap-3 text-white font-black">
-                  <Truck className="w-5 h-5 text-cyan-300" /> Équipement Complet
+                  <Truck className="w-5 h-5 text-cyan-300" /> équipement Complet
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
                   Nos véhicules disposent de tout le matériel pour déboucher, réparer ou remplacer immédiatement.
@@ -546,12 +546,12 @@ export default function ZoneCharleroiPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {['Débouchage Marcinelle', 'Fuite Gosselies', 'Chauffage Jumet', 'Égouts Courcelles'].map((item, i) => (
+              {['Débouchage Marcinelle', 'Fuite Gosselies', 'Chauffage Jumet', 'égouts Courcelles'].map((item, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
                   <MapPin className="w-8 h-8 text-blue-600 mb-4" />
                   <h3 className="font-black text-lg mb-2">{item}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Une présence locale forte pour répondre à vos urgences dans toute la région de Charleroi.
+                    Une présence locale forte pour répondre é vos urgences dans toute la région de Charleroi.
                   </p>
                 </div>
               ))}
@@ -600,27 +600,27 @@ export default function ZoneCharleroiPage() {
                 Zones desservies autour de <span className="text-red-600">Charleroi</span>
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Nous sommes actifs dans les 15 communes du grand Charleroi et au-delà.
+                Nous sommes actifs dans les 15 communes du grand Charleroi et au-delé.
                 De l'aéroport de Gosselies jusqu'aux limites de Thuin.
               </p>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                 <h4 className="font-bold text-slate-900 mb-4">Communes principales :</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-slate-600">
-                  <span>📍 Charleroi-Ville</span>
-                  <span>📍 Marcinelle</span>
-                  <span>📍 Gosselies</span>
-                  <span>📍 Jumet</span>
-                  <span>📍 Marchienne</span>
-                  <span>📍 Mont-sur-Marchienne</span>
-                  <span>📍 Couillet</span>
-                  <span>📍 Dampremy</span>
-                  <span>📍 Gilly</span>
-                  <span>📍 Montignies-sur-Sambre</span>
-                  <span>📍 Ransart</span>
-                  <span>📍 Roux</span>
-                  <span>📍 Lodelinsart</span>
-                  <span>📍 Monceau-sur-Sambre</span>
-                  <span>📍 Fontaine-l'Évêque</span>
+                  <span>?? Charleroi-Ville</span>
+                  <span>?? Marcinelle</span>
+                  <span>?? Gosselies</span>
+                  <span>?? Jumet</span>
+                  <span>?? Marchienne</span>
+                  <span>?? Mont-sur-Marchienne</span>
+                  <span>?? Couillet</span>
+                  <span>?? Dampremy</span>
+                  <span>?? Gilly</span>
+                  <span>?? Montignies-sur-Sambre</span>
+                  <span>?? Ransart</span>
+                  <span>?? Roux</span>
+                  <span>?? Lodelinsart</span>
+                  <span>?? Monceau-sur-Sambre</span>
+                  <span>?? Fontaine-l'évéque</span>
                 </div>
               </div>
             </div>
@@ -637,7 +637,7 @@ export default function ZoneCharleroiPage() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-4">
-              L'eau à Charleroi : <span className="text-blue-600">Attention au Calcaire</span>
+              L'eau é Charleroi : <span className="text-blue-600">Attention au Calcaire</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-3xl mx-auto">
               L'eau est dure dans la région de Charleroi. Protégez vos installations.
@@ -658,7 +658,7 @@ export default function ZoneCharleroiPage() {
                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                  <h3 className="font-bold text-slate-900 mb-2">Entretien Gaz</h3>
                  <p className="text-sm text-slate-600">
-                   Entretien périodique de chaudière gaz (obligatoire) et convecteurs. Agrément Cerga.
+                   Entretien périodique de chaudiére gaz (obligatoire) et convecteurs. Agrément Cerga.
                  </p>
                </div>
             </div>
@@ -678,7 +678,7 @@ export default function ZoneCharleroiPage() {
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Nous vous annonçons le prix total avant de toucher à quoi que ce soit. Pas de mauvaise surprise.
+                    Nous vous annonéons le prix total avant de toucher é quoi que ce soit. Pas de mauvaise surprise.
                   </p>
                 </div>
               ))}
@@ -691,8 +691,8 @@ export default function ZoneCharleroiPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">Urgence à Charleroi ?</h2>
-          <p className="mb-8 text-lg">Nos techniciens sont prêts à intervenir chez vous.</p>
+          <h2 className="text-3xl font-black mb-4">Urgence é Charleroi ?</h2>
+          <p className="mb-8 text-lg">Nos techniciens sont préts é intervenir chez vous.</p>
           <a
             href={BRAND.phoneLink}
             className="inline-flex items-center gap-3 bg-white text-orange-600 font-black px-10 py-5 rounded-xl shadow-xl"
@@ -708,7 +708,7 @@ export default function ZoneCharleroiPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -743,10 +743,10 @@ export default function ZoneCharleroiPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -805,13 +805,15 @@ export default function ZoneCharleroiPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 

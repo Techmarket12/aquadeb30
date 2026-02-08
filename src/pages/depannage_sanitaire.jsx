@@ -70,7 +70,7 @@ const NAV_LINKS = [
     columns: [
       {
         title: 'Plomberie',
-        desc: "Solutions complètes pour l'habitat",
+        desc: "Solutions complétes pour l'habitat",
         items: [
           'Dépannage fuites',
           'Dépannage sanitaires',
@@ -79,7 +79,7 @@ const NAV_LINKS = [
           'Entretien',
           'Service de robinetterie',
           'Service de boiler / chauffe-eau',
-          'Remplacement canalisation en grès',
+          'Remplacement canalisation en grés',
           'Inspection caméra et recherche fuites'
         ]
       },
@@ -105,7 +105,7 @@ const NAV_LINKS = [
       { label: 'Toutes nos zones', href: '/zones' },
       { label: 'Namur et alentours', href: '/zones/namur' },
       { label: 'Charleroi et alentours', href: '/zones/charleroi' },
-      { label: 'Liège et alentours', href: '/zones/liege' },
+      { label: 'Liége et alentours', href: '/zones/liege' },
       { label: 'Verviers et alentours', href: '/zones/verviers' },
       { label: 'Mons et alentours', href: '/zones/mons' },
       { label: 'Brabant Wallon & Flamand', href: '/zones/brabant-wallon-flamand' }
@@ -489,7 +489,7 @@ export default function DepannageSanitairesPage() {
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl lg:max-w-2xl">
               WC bouché ou qui fuit, <strong>chasse d'eau</strong> qui coule, <strong>robinet</strong> qui goutte, siphon cassé,
-              fuite sous lavabo, problème de douche ou baignoire. Aqua&Deb réalise votre <strong>dépannage sanitaires</strong>
+              fuite sous lavabo, probléme de douche ou baignoire. Aqua&Deb réalise votre <strong>dépannage sanitaires</strong>
               en <strong>urgence</strong>, avec un diagnostic clair et une réparation durable.
             </p>
 
@@ -507,7 +507,7 @@ export default function DepannageSanitairesPage() {
                   <ShieldCheck className="w-5 h-5 text-green-300" /> Agréé assurances
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Conseils et documentation utiles en cas de dégât des eaux ou sinistre sanitaire.
+                  Conseils et documentation utiles en cas de dégét des eaux ou sinistre sanitaire.
                 </p>
               </div>
               <div className="bg-white/10 border border-white/10 rounded-2xl p-5 text-left">
@@ -515,7 +515,7 @@ export default function DepannageSanitairesPage() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-300" /> Réparation durable
                 </div>
                 <p className="text-slate-200 text-sm mt-2">
-                  Pièces adaptées, installation propre, contrôle final, conseils d'entretien.
+                  Piéces adaptées, installation propre, contréle final, conseils d'entretien.
                 </p>
               </div>
             </div>
@@ -562,7 +562,7 @@ export default function DepannageSanitairesPage() {
                   <Toilet className="w-6 h-6 text-blue-600" /> WC et chasse d'eau
                 </div>
                 <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-                  Remplacement de <strong>mécanisme</strong>, flotteur, joint de cuvette, robinet d'arrêt, fuite au pied du WC,
+                  Remplacement de <strong>mécanisme</strong>, flotteur, joint de cuvette, robinet d'arrét, fuite au pied du WC,
                   chasse d'eau qui coule en continu, bruit de remplissage, mauvais serrage.
                 </p>
               </div>
@@ -572,7 +572,7 @@ export default function DepannageSanitairesPage() {
                 </div>
                 <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                   Fuite de mitigeur, flexible, pommeau, colonne, bonde, siphon, fuite sous receveur, joints silicone,
-                  problème d'évacuation, remplacement de robinetterie.
+                  probléme d'évacuation, remplacement de robinetterie.
                 </p>
               </div>
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-100">
@@ -592,18 +592,18 @@ export default function DepannageSanitairesPage() {
           <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
-                Pourquoi un <span className="text-red-600">dépannage sanitaire</span> doit être rapide
+                Pourquoi un <span className="text-red-600">dépannage sanitaire</span> doit étre rapide
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Un problème sanitaire semble souvent banal, mais une <strong>chasse d'eau</strong> qui coule peut faire exploser la facture,
+                Un probléme sanitaire semble souvent banal, mais une <strong>chasse d'eau</strong> qui coule peut faire exploser la facture,
                 et une fuite sous lavabo peut détériorer un meuble, un parquet, un mur et créer des moisissures.
                 Un <strong>WC inutilisable</strong> ou une douche bloquée devient vite critique.
                 Notre plombier identifie la cause, sécurise l'installation et effectue une réparation immédiate.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Limiter les dégâts et les coûts',
-                  "Éviter l'humidité et les moisissures",
+                  'Limiter les dégéts et les coéts',
+                  "éviter l'humidité et les moisissures",
                   'Retrouver un usage normal rapidement',
                   'Réparation propre et durable'
                 ].map((item, i) => (
@@ -629,15 +629,15 @@ export default function DepannageSanitairesPage() {
               Comment se déroule votre <span className="text-blue-600">dépannage sanitaires</span>
             </h2>
             <p className="text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Méthode simple, efficace et orientée résultat. Chaque intervention est faite pour résoudre le problème et éviter la récidive.
+              Méthode simple, efficace et orientée résultat. Chaque intervention est faite pour résoudre le probléme et éviter la récidive.
               Nous privilégions la réparation ciblée et le remplacement uniquement si nécessaire.
             </p>
             <div className="grid md:grid-cols-4 gap-8 text-left">
               {[
-                { t: 'Diagnostic', d: "Vous expliquez la panne. On vous guide pour sécuriser l'eau et limiter les dégâts." },
-                { t: 'Contrôle sur place', d: "Test des mécanismes, joints, siphons, raccords, pression et évacuation." },
+                { t: 'Diagnostic', d: "Vous expliquez la panne. On vous guide pour sécuriser l'eau et limiter les dégéts." },
+                { t: 'Contréle sur place', d: "Test des mécanismes, joints, siphons, raccords, pression et évacuation." },
                 { t: 'Devis annoncé', d: 'Prix clair avant travaux. Aucune surprise.' },
-                { t: 'Réparation', d: "Remplacement de pièces, réglages, étanchéité, test final et conseils d'entretien." }
+                { t: 'Réparation', d: "Remplacement de piéces, réglages, étanchéité, test final et conseils d'entretien." }
               ].map((s, i) => (
                 <div key={i} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                   <div className="w-10 h-10 rounded-full bg-blue-600 text-white font-black flex items-center justify-center mb-4">
@@ -655,19 +655,19 @@ export default function DepannageSanitairesPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-black text-slate-900 mb-12 text-center">
-                Problèmes sanitaires fréquents
+                Problémes sanitaires fréquents
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
                     icon: <Toilet className="w-7 h-7 text-blue-600" />,
                     t: 'Chasse d\'eau qui coule',
-                    d: "Flotteur mal réglé, joint usé, mécanisme défectueux. On répare ou remplace avec une pièce adaptée."
+                    d: "Flotteur mal réglé, joint usé, mécanisme défectueux. On répare ou remplace avec une piéce adaptée."
                   },
                   {
                     icon: <Droplet className="w-7 h-7 text-blue-600" />,
                     t: 'Robinet qui goutte',
-                    d: "Cartouche, joint, tête, flexible. Réglage et remplacement pour éviter la surconsommation."
+                    d: "Cartouche, joint, téte, flexible. Réglage et remplacement pour éviter la surconsommation."
                   },
                   {
                     icon: <Wrench className="w-7 h-7 text-blue-600" />,
@@ -677,7 +677,7 @@ export default function DepannageSanitairesPage() {
                   {
                     icon: <ShowerHead className="w-7 h-7 text-blue-600" />,
                     t: 'Douche qui fuit',
-                    d: "Flexible, mitigeur, joints silicone, bonde. Étanchéité et réparation ciblée."
+                    d: "Flexible, mitigeur, joints silicone, bonde. étanchéité et réparation ciblée."
                   },
                   {
                     icon: <Home className="w-7 h-7 text-blue-600" />,
@@ -707,18 +707,18 @@ export default function DepannageSanitairesPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-black mb-6">Tarifs transparents</h2>
             <p className="text-slate-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-              Pour un <strong>dépannage sanitaires</strong>, le prix dépend du type de panne, des pièces à remplacer, de l'accessibilité
-              et du temps d'intervention. Nous annonçons le tarif avant travaux et vous recevez un <strong>devis</strong> clair.
-              Notre objectif est de régler le problème vite et proprement.
+              Pour un <strong>dépannage sanitaires</strong>, le prix dépend du type de panne, des piéces é remplacer, de l'accessibilité
+              et du temps d'intervention. Nous annonéons le tarif avant travaux et vous recevez un <strong>devis</strong> clair.
+              Notre objectif est de régler le probléme vite et proprement.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {['Déplacement et diagnostic', 'Réparation et pièces', 'Garantie et conseils'].map((t, i) => (
+              {['Déplacement et diagnostic', 'Réparation et piéces', 'Garantie et conseils'].map((t, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-6 text-left">
                   <div className="flex items-center gap-3 font-black">
                     <Euro className="w-5 h-5 text-orange-400" /> {t}
                   </div>
                   <p className="text-slate-200 text-sm mt-2 leading-relaxed">
-                    Devis détaillé. Intervention propre. Contrôle final et conseils pour éviter une récidive.
+                    Devis détaillé. Intervention propre. Contréle final et conseils pour éviter une récidive.
                   </p>
                 </div>
               ))}
@@ -735,9 +735,9 @@ export default function DepannageSanitairesPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-6">Zones d'intervention</h2>
             <p className="text-slate-600 mb-10 max-w-5xl mx-auto leading-relaxed">
               Aqua&Deb intervient pour votre <strong>dépannage sanitaires</strong> dans toute la <strong>Belgique</strong>.
-              Nous couvrons <strong>Bruxelles</strong>, la <strong>Wallonie</strong> (Namur, Liège, Hainaut, Brabant wallon, Luxembourg)
+              Nous couvrons <strong>Bruxelles</strong>, la <strong>Wallonie</strong> (Namur, Liége, Hainaut, Brabant wallon, Luxembourg)
               et selon disponibilités une partie de la <strong>Flandre</strong>. La proximité permet une arrivée rapide.
-              Si vous cherchez un <strong>plombier dépannage sanitaires</strong> près de chez vous, appelez maintenant.
+              Si vous cherchez un <strong>plombier dépannage sanitaires</strong> prés de chez vous, appelez maintenant.
             </p>
 
             <div className="mt-8 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
@@ -754,7 +754,7 @@ export default function DepannageSanitairesPage() {
                   <MapPin className="w-5 h-5 text-blue-600" /> Wallonie
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Namur, Liège, Charleroi, Mons, La Louvière, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
+                  Namur, Liége, Charleroi, Mons, La Louviére, Tournai, Nivelles, Wavre, Waterloo, Huy, Seraing,
                   Verviers, Dinant, Ciney, Gembloux.
                 </p>
               </div>
@@ -772,7 +772,7 @@ export default function DepannageSanitairesPage() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
                 'Namur',
-                'Liège',
+                'Liége',
                 'Charleroi',
                 'Bruxelles',
                 'Mons',
@@ -780,7 +780,7 @@ export default function DepannageSanitairesPage() {
                 'Wavre',
                 'Nivelles',
                 'Waterloo',
-                'La Louvière',
+                'La Louviére',
                 'Tournai',
                 'Seraing',
                 'Huy',
@@ -804,11 +804,11 @@ export default function DepannageSanitairesPage() {
                 {[
                   {
                     q: "Vous réparez une chasse d'eau qui coule",
-                    a: "Oui. On contrôle le flotteur, le joint, le mécanisme et le robinet d'arrivée. Réparation ou remplacement selon le cas."
+                    a: "Oui. On contréle le flotteur, le joint, le mécanisme et le robinet d'arrivée. Réparation ou remplacement selon le cas."
                   },
                   {
                     q: 'Mon robinet goutte, vous intervenez',
-                    a: "Oui. Nous remplaçons la cartouche, les joints ou la tête. Cela évite la surconsommation et protège le meuble."
+                    a: "Oui. Nous remplaéons la cartouche, les joints ou la téte. Cela évite la surconsommation et protége le meuble."
                   },
                   {
                     q: "Fuite sous lavabo ou évier",
@@ -816,7 +816,7 @@ export default function DepannageSanitairesPage() {
                   },
                   {
                     q: 'Quel délai pour intervenir',
-                    a: "Le délai dépend de votre zone et des urgences. Nous faisons le maximum pour intervenir rapidement, souvent le jour même." 
+                    a: "Le délai dépend de votre zone et des urgences. Nous faisons le maximum pour intervenir rapidement, souvent le jour méme." 
                   }
                 ].map((f, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-slate-100 p-7 shadow-sm text-left">
@@ -830,7 +830,7 @@ export default function DepannageSanitairesPage() {
         </section>
 
         <section className="py-20 bg-orange-600 text-white text-center">
-          <h2 className="text-3xl font-black mb-4">Problème sanitaire ? Appelez maintenant</h2>
+          <h2 className="text-3xl font-black mb-4">Probléme sanitaire ? Appelez maintenant</h2>
           <p className="mb-8 text-lg">
             Un plombier Aqua&Deb intervient au plus vite pour réparer vos sanitaires et remettre votre installation en état.
           </p>
@@ -849,7 +849,7 @@ export default function DepannageSanitairesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                À propos de nous
+                é propos de nous
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 Aqua&Deb est un partenaire de confiance pour la plomberie et le débouchage. Intervention rapide, garantie 12 mois,
@@ -884,10 +884,10 @@ export default function DepannageSanitairesPage() {
                 <span className="text-white font-extrabold text-lg">Aqua&Deb</span>
               </div>
               <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-wider border-b border-slate-800 pb-2 inline-block">
-                Zones d’intervention
+                Zones d'intervention
               </h4>
               <ul className="space-y-2 text-sm">
-                {['Liège', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
+                {['Liége', 'Namur', 'Charleroi', 'Mons', 'Verviers', 'Brabant wallon et flamand', 'Toutes les zones'].map(
                   (item, i) => (
                     <li key={i}>
                       <a href="#" className="hover:text-white transition-colors">
@@ -946,13 +946,15 @@ export default function DepannageSanitairesPage() {
           </div>
 
           <div className="container mx-auto px-4 border-t border-slate-900 pt-8 text-xs text-center text-slate-600">
-            <p>© 2025 Aqua&Deb. Tous droits réservés.</p>
+            <p>é 2025 Aqua&Deb. Tous droits réservés.</p>
           </div>
         </footer>
       </main>
     </div>
   );
 }
+
+
 
 
 
