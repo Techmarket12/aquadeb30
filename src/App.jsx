@@ -1339,7 +1339,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/realisations" element={<RealisationsPage />} />
-        <Route path="/depannage-fuites" element={<DepannageFuitesPage />} />
+        <Route path="/services/plomberie" element={<DepannageFuitesPage />} />
         <Route path="/depannage-sanitaires" element={<DepannageSanitairesPage />} />
         <Route path="/depannage-chauffage" element={<DepannageChauffagePage />} />
         <Route path="/renovation-sanitaires" element={<RenovationSanitairePage />} />

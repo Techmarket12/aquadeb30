@@ -11,7 +11,7 @@
     .trim();
 
 const SERVICE_ROUTE_MAP = {
-  "depannage fuites": "/depannage-fuites",
+  "depannage fuites": "/services/plomberie",
   "depannage sanitaires": "/depannage-sanitaires",
   "depannage chauffage": "/depannage-chauffage",
   "renovation sanitaires": "/renovation-sanitaires",
@@ -34,7 +34,7 @@ export const getServiceLink = (label = "") => {
   if (SERVICE_ROUTE_MAP[key]) return SERVICE_ROUTE_MAP[key];
 
   if (key.includes("chauffage") || key.includes("boiler")) return "/depannage-chauffage";
-  if (key.includes("fuite")) return "/depannage-fuites";
+  if (key.includes("fuite")) return "/services/plomberie";
   if (key.includes("sanitaire")) return "/depannage-sanitaires";
   if (key.includes("renovation")) return "/renovation-sanitaires";
   if (key.includes("debouchage") || key.includes("curage") || key.includes("egout")) return "/services/debouchage";
